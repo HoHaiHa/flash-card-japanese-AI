@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .perspective-1000 { perspective: 1000px; }
+        .preserve-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        
+        /* Triple Flip - Triangular Prism Logic */
+        /* To create a 3-sided card that rotates correctly, we position them in 3D space */
+        /* Distance from center = (height/2) / tan(180/n) - using a simplified offset for visual clarity */
+        
+        #card-inner {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .face-1 { transform: rotateY(0deg) translateZ(1px); }
+        .face-2 { transform: rotateY(120deg) translateZ(1px); }
+        .face-3 { transform: rotateY(240deg) translateZ(1px); }
+
+        .state-1 { transform: rotateY(0deg); }
+        .state-2 { transform: rotateY(-120deg); }
+        .state-3 { transform: rotateY(-240deg); }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#124af0",
+                        "tertiary-fixed-dim": "#ffb874",
+                        "on-surface-variant": "#434656",
+                        "on-surface": "#0b1c30",
+                        "inverse-surface": "#213145",
+                        "tertiary-fixed": "#ffdcbf",
+                        "on-tertiary-fixed": "#2d1600",
+                        "primary-fixed-dim": "#b8c3ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "outline": "#747688",
+                        "on-secondary-fixed": "#002112",
+                        "tertiary-container": "#a15c00",
+                        "background": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#6a3b00",
+                        "on-secondary": "#ffffff",
+                        "primary": "#0040e0",
+                        "on-background": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#005233",
+                        "on-primary-fixed": "#001356",
+                        "surface-container": "#e5eeff",
+                        "primary-container": "#2e5bff",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c4c5d9",
+                        "primary-fixed": "#dde1ff",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-container": "#ffeddf",
+                        "on-primary-fixed-variant": "#0035be",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#7e4700",
+                        "secondary-fixed": "#5ffdb4",
+                        "on-secondary-container": "#007149",
+                        "secondary": "#006c46",
+                        "surface-container-low": "#eff4ff",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary-container": "#efefff",
+                        "surface-dim": "#cbdbf5",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#3ae09a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-container": "#5cfbb2",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#b8c3ff",
+                        "surface": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "4px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "12px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-jp": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "display-jp": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky bg-background z-40 flex justify-between items-center px-margin-mobile py-base">
+<div class="flex items-center gap-base"><button class="p-2 -ml-2 active:scale-95 transition-transform flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+<div class="flex items-center gap-stack-md">
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Session Progress</span>
+<span class="font-label-md text-label-md text-primary">12 / 20</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+</div>
+</div>
+</header>
+<!-- Progress Bar -->
+<div class="w-full px-margin-mobile pt-base">
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[60%] transition-all duration-500 rounded-full"></div>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-center p-margin-mobile relative overflow-hidden">
+<!-- Flashcard Container -->
+<div class="flex justify-center gap-4 mb-stack-lg w-full max-w-md mx-auto">
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-low rounded-full hover:bg-surface-variant transition-colors group">
+<span class="material-symbols-outlined text-[18px] text-error">close</span>
+<span class="text-label-sm text-on-surface-variant">Chưa thuộc</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-low rounded-full hover:bg-surface-variant transition-colors group">
+<span class="material-symbols-outlined text-[18px] text-primary">shuffle</span>
+<span class="text-label-sm text-on-surface-variant">Ngẫu nhiên</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-low rounded-full hover:bg-surface-variant transition-colors group">
+<span class="material-symbols-outlined text-[18px] text-tertiary">favorite</span>
+<span class="text-label-sm text-on-surface-variant">Yêu thích</span>
+</button>
+</div><div class="w-full max-w-md aspect-[3/4] perspective-1000 group" id="card-container">
+<div class="relative w-full h-full preserve-3d cursor-pointer state-1" id="card-inner">
+<!-- Side 1: Vocabulary/Kanji (Front) -->
+<div class="absolute inset-0 backface-hidden bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant flex flex-col items-center justify-center p-stack-lg face-1">
+<span class="absolute top-4 left-4 font-label-md text-label-md text-primary bg-primary-fixed px-3 py-1 rounded-full">N2</span>
+<div class="flex flex-col items-center text-center">
+<span class="font-display-jp text-display-jp text-on-surface mb-stack-sm">構造</span>
+<span class="font-body-lg text-body-lg text-on-surface-variant opacity-60">こうぞう</span>
+</div>
+<div class="mt-20 flex items-center gap-base text-outline">
+<span class="material-symbols-outlined">touch_app</span>
+<span class="font-label-sm text-label-sm">Chạm để xem âm Hán</span>
+</div>
+</div>
+<!-- Side 2: Sino-Vietnamese / Composition (Middle) -->
+<div class="absolute inset-0 backface-hidden bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant flex flex-col items-center justify-center p-stack-lg face-2">
+<div class="w-full text-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline mb-base block">Âm Hán &amp; Cấu trúc</span>
+<div class="bg-surface-container-low p-stack-md rounded-lg inline-block border border-surface-variant mb-stack-lg">
+<span class="font-headline-md text-headline-md text-on-surface">Âm Hán: CẤU TẠO</span>
+</div>
+<div class="flex flex-col items-center gap-base">
+<div class="flex items-center gap-base p-base bg-surface-container-low rounded-lg w-full max-w-[200px]">
+<span class="text-headline-md font-bold text-tertiary">木</span>
+<span class="text-label-sm text-on-surface-variant">Bộ Mộc (Gỗ)</span>
+</div>
+<div class="flex items-center gap-base p-base bg-surface-container-low rounded-lg w-full max-w-[200px]">
+<span class="text-headline-md font-bold text-tertiary">宀</span>
+<span class="text-label-sm text-on-surface-variant">Bộ Miên (Mái nhà)</span>
+</div>
+</div>
+</div>
+<div class="mt-stack-lg flex items-center gap-base text-outline">
+<span class="material-symbols-outlined">rotate_right</span>
+<span class="font-label-sm text-label-sm">Xem nghĩa &amp; Ví dụ</span>
+</div>
+</div>
+<!-- Side 3: Meaning / Example (Back) -->
+<div class="absolute inset-0 backface-hidden bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant flex flex-col p-stack-lg face-3">
+<div class="flex-grow flex flex-col justify-center">
+<div class="text-center mb-stack-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline mb-base block">Nghĩa Tiếng Việt</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Cấu trúc / Cấu tạo</h2>
+</div>
+<div class="border-t border-outline-variant pt-stack-md">
+<span class="font-label-md text-label-md text-primary mb-stack-sm block">Ví dụ minh họa</span>
+<p class="font-body-md text-body-md text-on-surface italic">"Tòa nhà này có cấu trúc rất vững chãi."</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-stack-sm">この建物は構造がしっかりしている。</p>
+</div>
+</div>
+<div class="mt-auto flex justify-center text-outline gap-base">
+<span class="material-symbols-outlined">restart_alt</span>
+<span class="font-label-sm text-label-sm">Về mặt trước</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full max-w-md mt-stack-lg grid grid-cols-2 gap-gutter px-4">
+<button class="flex flex-col items-center justify-center py-4 bg-surface-container-lowest border-2 border-error rounded-xl text-error active:scale-95 transition-all shadow-sm" onclick="handleResponse('forgot')">
+<span class="material-symbols-outlined mb-1">close</span>
+<span class="font-label-md text-label-md">Chưa thuộc</span>
+</button>
+<button class="flex flex-col items-center justify-center py-4 bg-primary-container border-b-[4px] border-on-primary-fixed-variant rounded-xl text-on-primary active:translate-y-[2px] active:border-b-0 transition-all shadow-lg" onclick="handleResponse('learned')">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md">Đã thuộc</span>
+</button>
+</div>
+</main>
+<script>
+        const cardInner = document.getElementById('card-inner');
+        let state = 1;
+
+        cardInner.addEventListener('click', () => {
+            state = (state % 3) + 1;
+            
+            // Remove previous state classes
+            cardInner.classList.remove('state-1', 'state-2', 'state-3');
+            // Add current state class
+            cardInner.classList.add(`state-${state}`);
+        });
+
+        function handleResponse(type) {
+            const container = document.getElementById('card-container');
+            const flashColor = type === 'learned' ? 'rgba(0, 108, 70, 0.1)' : 'rgba(186, 26, 26, 0.1)';
+            
+            // Visual feedback flash
+            document.body.style.transition = 'background-color 0.2s ease';
+            document.body.style.backgroundColor = flashColor;
+            
+            setTimeout(() => {
+                document.body.style.backgroundColor = '';
+                // Reset card to state 1 for "next card"
+                state = 1;
+                cardInner.classList.remove('state-1', 'state-2', 'state-3');
+                cardInner.classList.add('state-1');
+                
+                // Pop animation
+                container.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    container.classList.remove('scale-95', 'opacity-0');
+                }, 250);
+            }, 300);
+        }
+    </script>
+</body></html>

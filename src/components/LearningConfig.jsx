@@ -1,13 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getLessons } from '../services/db';
 
 function LearningConfig({ onStart, onViewList }) {
   // Form states
   const [translationDirection, setTranslationDirection] = useState('ja-vi');
   const [contentTypes, setContentTypes] = useState(['vocab', 'sentence']); // Default: vocab & sentence selected
-  const [selectedLessons, setSelectedLessons] = useState(['Lesson 1', 'Lesson 2']); // Default: Lesson 1 & Lesson 2 selected
+  const [selectedLessons, setSelectedLessons] = useState([]); // Loaded dynamically
+  const [lessons, setLessons] = useState([]);
+  const [loading, setLoading] = useState(true);
   
   // Validation state
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    let active = true;
+    getLessons()
+      .then(data => {
+        if (active) {
+          setLessons(data || []);
+          setSelectedLessons((data || []).map(l => l.id));
+          setLoading(false);
+        }
+      })
+      .catch(err => {
+        console.error('Lỗi khi tải bài học:', err);
+        if (active) {
+          setError('Không thể kết nối đến cơ sở dữ liệu. Vui lòng kiểm tra lại file .env hoặc kết nối mạng.');
+          setLoading(false);
+        }
+      });
+    return () => { active = false; };
+  }, []);
 
   // Handle content types toggle
   const toggleContentType = (type) => {
@@ -139,45 +162,34 @@ function LearningConfig({ onStart, onViewList }) {
         {/* Chọn bài học */}
         <section className="config-section">
           <label className="config-label">Chọn bài học</label>
-          <div className="dashed-container">
-            {/* Bài 1 */}
-            <div 
-              className={`lesson-item ${selectedLessons.includes('Lesson 1') ? 'checked' : ''}`}
-              onClick={() => onViewList('Lesson 1')}
-            >
-              <span className="lesson-label">Bài 1</span>
-              <div 
-                className="lesson-indicator"
-                onClick={(e) => {
-                  e.stopPropagation(); // Ngăn sự kiện click lan ra ngoài để không chuyển màn hình
-                  toggleLesson('Lesson 1');
-                }}
-              >
-                {selectedLessons.includes('Lesson 1') && (
-                  <span className="material-symbols-outlined text-[16px]">check</span>
-                )}
-              </div>
+          {loading ? (
+            <div className="dashed-container" style={{ justifyContent: 'center', padding: '16px' }}>
+              <span style={{ color: 'var(--on-surface-variant)', fontSize: '14px' }}>Đang tải bài học...</span>
             </div>
-
-            {/* Bài 2 */}
-            <div 
-              className={`lesson-item ${selectedLessons.includes('Lesson 2') ? 'checked' : ''}`}
-              onClick={() => onViewList('Lesson 2')}
-            >
-              <span className="lesson-label">Bài 2</span>
-              <div 
-                className="lesson-indicator"
-                onClick={(e) => {
-                  e.stopPropagation(); // Ngăn sự kiện click lan ra ngoài để không chuyển màn hình
-                  toggleLesson('Lesson 2');
-                }}
-              >
-                {selectedLessons.includes('Lesson 2') && (
-                  <span className="material-symbols-outlined text-[16px]">check</span>
-                )}
-              </div>
+          ) : (
+            <div className="dashed-container">
+              {lessons.map((lesson) => (
+                <div 
+                  key={lesson.id}
+                  className={`lesson-item ${selectedLessons.includes(lesson.id) ? 'checked' : ''}`}
+                  onClick={() => onViewList(lesson.id)}
+                >
+                  <span className="lesson-label">{lesson.name}</span>
+                  <div 
+                    className="lesson-indicator"
+                    onClick={(e) => {
+                      e.stopPropagation(); // Ngăn sự kiện click lan ra ngoài để không chuyển màn hình
+                      toggleLesson(lesson.id);
+                    }}
+                  >
+                    {selectedLessons.includes(lesson.id) && (
+                      <span className="material-symbols-outlined text-[16px]">check</span>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
+          )}
         </section>
 
         {/* Validation Error Message */}

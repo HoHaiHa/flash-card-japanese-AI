@@ -1,183 +1,33 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCube } from 'swiper/modules';
+import { getCardsForLessons, updateCardFavorite, updateCardStatus } from '../services/db';
 
 import 'swiper/css';
 import 'swiper/css/effect-cube';
 
-// Mock database containing comprehensive vocabulary with 3-sided properties
-const VOCAB_DATABASE = {
-  'Lesson 1': [
-    {
-      id: 'v1',
-      level: 'N5',
-      kana: 'べんきょう',
-      kanji: '勉強する',
-      sinoVietnamese: 'CỐ GẮNG & CƯỜNG TRÁNG',
-      details: 'Âm Hán: MIỄN CƯỜNG',
-      components: [
-        { char: '勉', meaning: 'Miễn (cố gắng hết sức)' },
-        { char: '強', meaning: 'Cường (mạnh mẽ, cứng cáp)' }
-      ],
-      definition: 'Học tập, nghiên cứu',
-      exampleJp: '毎日日本語を勉強しています。',
-      exampleVi: 'Mỗi ngày tôi đều học tiếng Nhật.',
-      type: 'vocab',
-      favorite: false
-    },
-    {
-      id: 'v2',
-      level: 'N5',
-      kana: 'たべる',
-      kanji: '食べる',
-      sinoVietnamese: 'ĂN UỐNG / THỰC PHẨM',
-      details: 'Âm Hán: THỰC',
-      components: [
-        { char: '食', meaning: 'Thực (ăn / đồ ăn)' }
-      ],
-      definition: 'Ăn',
-      exampleJp: 'レストランで晩ご飯を食べます。',
-      exampleVi: 'Tôi ăn cơm tối ở nhà hàng.',
-      type: 'vocab',
-      favorite: true
-    },
-    {
-      id: 'v3',
-      level: 'N4',
-      kana: 'よむ',
-      kanji: '読む',
-      sinoVietnamese: 'ĐỌC SÁCH / PHÁT NGÔN',
-      details: 'Âm Hán: ĐỘC',
-      components: [
-        { char: '言', meaning: 'Bộ Ngôn (lời nói)' },
-        { char: '売', meaning: 'Bộ Mại (bán buôn)' }
-      ],
-      definition: 'Đọc (sách, báo)',
-      exampleJp: '図書館で小説を読みます。',
-      exampleVi: 'Tôi đọc tiểu thuyết ở thư viện.',
-      type: 'vocab',
-      favorite: false
-    },
-    {
-      id: 's1',
-      level: 'N5',
-      kana: 'これをたべます',
-      kanji: 'これを食べます。',
-      sinoVietnamese: 'CẤU TRÚC TÂN NGỮ + ĐỘNG TỪ',
-      details: 'Mẫu câu: Ăn cái này',
-      components: [
-        { char: 'これ', meaning: 'Cái này (chỉ thị từ)' },
-        { char: 'を', meaning: 'Trợ từ chỉ tân ngữ trực tiếp' }
-      ],
-      definition: 'Tôi ăn cái này.',
-      exampleJp: 'りんごがあります。これを食べます。',
-      exampleVi: 'Có quả táo. Tôi ăn cái này.',
-      type: 'sentence',
-      favorite: false
-    },
-    {
-      id: 'k1',
-      level: 'N5',
-      kana: 'べん',
-      kanji: '勉',
-      sinoVietnamese: 'CỐ GẮNG / NỖ LỰC',
-      details: 'Chữ Hán: MIỄN',
-      components: [
-        { char: '力', meaning: 'Bộ Lực (sức mạnh)' },
-        { char: '免', meaning: 'Chữ Miễn (tránh né)' }
-      ],
-      definition: 'Miễn (cố gắng)',
-      exampleJp: '勉める (つとめる): Nỗ lực, cố gắng.',
-      exampleVi: 'Chữ Miễn ghép trong Miễn Cường (Học tập).',
-      type: 'kanji',
-      favorite: false
-    }
-  ],
-  'Lesson 2': [
-    {
-      id: 'v4',
-      level: 'N5',
-      kana: 'いく',
-      kanji: '行く',
-      sinoVietnamese: 'DI CHUYỂN / HÀNH ĐỘNG',
-      details: 'Âm Hán: HÀNH',
-      components: [
-        { char: '彳', meaning: 'Bộ Xích (bước chân trái)' },
-        { char: '亍', meaning: 'Bộ Súc (bước chân phải)' }
-      ],
-      definition: 'Đi',
-      exampleJp: '明日東京へ行きます。',
-      exampleVi: 'Ngày mai tôi sẽ đi Tokyo.',
-      type: 'vocab',
-      favorite: false
-    },
-    {
-      id: 'v5',
-      level: 'N3',
-      kana: 'かんじょう',
-      kanji: '感情',
-      sinoVietnamese: 'CẢM XÚC / CẢM TÌNH',
-      details: 'Âm Hán: CẢM TÌNH',
-      components: [
-        { char: '感', meaning: 'Cảm (cảm nhận, rung động)' },
-        { char: '情', meaning: 'Tình (tình cảm, sự tình)' }
-      ],
-      definition: 'Cảm xúc, tình cảm',
-      exampleJp: '彼女は感情が豊かな人です。',
-      exampleVi: 'Cô ấy là một người dồi dào cảm xúc.',
-      type: 'vocab',
-      favorite: false
-    },
-    {
-      id: 's2',
-      level: 'N4',
-      kana: 'いっしょにいきましょう',
-      kanji: '一緒に行きましょう。',
-      sinoVietnamese: 'ĐỀ NGHỊ CÙNG LÀM VÀO HÀNH ĐỘNG',
-      details: 'Mẫu câu: Cùng đi nhé',
-      components: [
-        { char: '一緒に', meaning: 'Cùng nhau (trạng từ)' },
-        { char: 'ましょう', meaning: 'Đuôi rủ rê lịch sự' }
-      ],
-      definition: 'Chúng ta cùng đi nhé.',
-      exampleJp: '天気がいいですね。一緒に行きましょう。',
-      exampleVi: 'Thời tiết đẹp nhỉ. Chúng ta cùng đi nhé.',
-      type: 'sentence',
-      favorite: false
-    },
-    {
-      id: 'k2',
-      level: 'N4',
-      kana: 'こう',
-      kanji: '行',
-      sinoVietnamese: 'DI CHUYỂN / HÀNH TRÌNH',
-      details: 'Chữ Hán: HÀNH',
-      components: [
-        { char: '彳', meaning: 'Bộ Xích' },
-        { char: '亍', meaning: 'Bộ Súc' }
-      ],
-      definition: 'Hành (đi / hàng)',
-      exampleJp: '行う (o-co-nau): Thực hiện, tiến hành.',
-      exampleVi: 'Hành trình, ngân hàng, hành động.',
-      type: 'kanji',
-      favorite: true
-    }
-  ]
-};
-
 function FlashcardStudy({ config, onBack }) {
   // Global cards queue
   const [originalCards, setOriginalCards] = useState([]);
-  const [activeCards, setActiveCards] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Track config changes to reset loading state during render
+  const [prevConfig, setPrevConfig] = useState(config);
+  if (config !== prevConfig) {
+    setPrevConfig(config);
+    setLoading(true);
+  }
 
   // Study session indices
   const [currentIndex, setCurrentIndex] = useState(0);
   const [swiperInstance, setSwiperInstance] = useState(null);
-  const [currentFace, setCurrentFace] = useState(1);
   const innerSwipers = useRef({});
 
   // Interactive UI effects
-  const [mountTime] = useState(() => Date.now());
+  const mountTimeRef = useRef(0);
+  useEffect(() => {
+    mountTimeRef.current = Date.now();
+  }, []);
   const [flashType, setFlashType] = useState(null); // 'learned' | 'forgot' | null
   const [isPopping, setIsPopping] = useState(false);
   const [studyResponses, setStudyResponses] = useState({}); // { cardId: 'learned' | 'forgot' }
@@ -189,26 +39,39 @@ function FlashcardStudy({ config, onBack }) {
 
   // Initialize cards from configurations
   useEffect(() => {
-    let gathered = [];
-    config?.selectedLessons.forEach(lesson => {
-      const lessonCards = VOCAB_DATABASE[lesson] || [];
-      const filtered = lessonCards.filter(card => config.contentTypes.includes(card.type));
-      gathered = [...gathered, ...filtered];
-    });
+    if (!config) return;
+    let active = true;
+    getCardsForLessons(config.selectedLessons, config.contentTypes)
+      .then(cards => {
+        if (active) {
+          setOriginalCards(cards);
 
-    setOriginalCards(gathered);
-    setActiveCards(gathered);
+          // Set initial favorites mapping & loaded responses
+          const favs = {};
+          const initialResponses = {};
+          cards.forEach(card => {
+            favs[card.id] = card.favorite;
+            if (card.mastered) {
+              initialResponses[card.id] = 'learned';
+            }
+          });
+          setFavorites(favs);
+          setStudyResponses(initialResponses);
+          setLoading(false);
+        }
+      })
+      .catch(err => {
+        if (active) {
+          console.error(err);
+          setLoading(false);
+        }
+      });
 
-    // Set initial favorites mapping
-    const favs = {};
-    gathered.forEach(card => {
-      favs[card.id] = card.favorite;
-    });
-    setFavorites(favs);
+    return () => { active = false; };
   }, [config]);
 
-  // Apply filters whenever filters or responses change
-  useEffect(() => {
+  // Apply filters/sorting and calculate active cards during render
+  const activeCards = useMemo(() => {
     let result = [...originalCards];
 
     // Filter unlearned only
@@ -221,8 +84,18 @@ function FlashcardStudy({ config, onBack }) {
       result = result.filter(card => favorites[card.id]);
     }
 
-    setActiveCards(result);
-    setCurrentIndex(0); // Reset index to first card of filtered list
+    return result;
+  }, [unlearnedOnly, favoritesOnly, originalCards, studyResponses, favorites]);
+
+  // Reset currentIndex when activeCards list changes
+  const [prevActiveCards, setPrevActiveCards] = useState(activeCards);
+  if (activeCards !== prevActiveCards) {
+    setPrevActiveCards(activeCards);
+    setCurrentIndex(0);
+  }
+
+  // Reset swipers position when activeCards list changes
+  useEffect(() => {
     if (swiperInstance) {
       swiperInstance.slideToLoop(0, 0);
     }
@@ -231,8 +104,7 @@ function FlashcardStudy({ config, onBack }) {
         s.slideToLoop(0, 0);
       }
     });
-    setCurrentFace(1);
-  }, [unlearnedOnly, favoritesOnly, originalCards, studyResponses, favorites]);
+  }, [activeCards, swiperInstance]);
 
   // Apply background flash style
   useEffect(() => {
@@ -251,7 +123,7 @@ function FlashcardStudy({ config, onBack }) {
 
   // Handle lật thẻ xoay 3D
   const handleCardClick = (cardId) => {
-    if (Date.now() - mountTime < 400) return;
+    if (isRecentMount(mountTimeRef.current)) return;
     const innerSwiper = innerSwipers.current[cardId];
     if (innerSwiper) {
       innerSwiper.slideNext();
@@ -259,12 +131,12 @@ function FlashcardStudy({ config, onBack }) {
   };
 
   // Handle Đánh giá (Learned / Forgot)
-  const handleResponse = (type) => {
+  const handleResponse = async (type) => {
     if (activeCards.length === 0 || currentIndex >= activeCards.length) return;
 
     const currentCard = activeCards[currentIndex];
 
-    // Save response status
+    // Save response status locally (Optimistic update)
     setStudyResponses(prev => ({
       ...prev,
       [currentCard.id]: type
@@ -273,6 +145,13 @@ function FlashcardStudy({ config, onBack }) {
     // Trigger visual flash
     setFlashType(type);
     setIsPopping(true);
+
+    // Save to database
+    try {
+      await updateCardStatus(currentCard.id, currentCard.type, type);
+    } catch (err) {
+      console.error('Lỗi khi cập nhật trạng thái:', err);
+    }
 
     setTimeout(() => {
       // Clear visual flash & advance
@@ -296,12 +175,14 @@ function FlashcardStudy({ config, onBack }) {
 
   // Handle xáo trộn thứ tự (Shuffle)
   const handleShuffle = () => {
-    const shuffled = [...activeCards];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    setActiveCards(shuffled);
+    setOriginalCards(prev => {
+      const shuffled = [...prev];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    });
     setCurrentIndex(0);
     if (swiperInstance) {
       swiperInstance.slideToLoop(0, 0);
@@ -311,24 +192,55 @@ function FlashcardStudy({ config, onBack }) {
         s.slideToLoop(0, 0);
       }
     });
-    setCurrentFace(1);
   };
 
   // Toggle favorite from inside study session
-  const toggleFavorite = (cardId) => {
+  const toggleFavorite = async (cardId) => {
+    const card = originalCards.find(c => c.id === cardId);
+    if (!card) return;
+    const newFavorite = !favorites[cardId];
+
+    // Optimistic update
     setFavorites(prev => ({
       ...prev,
-      [cardId]: !prev[cardId]
+      [cardId]: newFavorite
     }));
+
+    try {
+      await updateCardFavorite(cardId, card.type, newFavorite);
+    } catch (err) {
+      console.error('Lỗi khi cập nhật yêu thích:', err);
+      // Rollback on error
+      setFavorites(prev => ({
+        ...prev,
+        [cardId]: !newFavorite
+      }));
+    }
   };
 
   // Calculate statistics
-  const currentCard = activeCards[currentIndex];
   const totalCards = activeCards.length;
   const progressPercent = totalCards > 0 ? (currentIndex / totalCards) * 100 : 0;
 
   const totalLearned = Object.values(studyResponses).filter(v => v === 'learned').length;
   const totalForgot = Object.values(studyResponses).filter(v => v === 'forgot').length;
+
+  // Render Loading State
+  if (loading) {
+    return (
+      <div className="app-container">
+        <header className="app-header">
+          <button className="back-btn" onClick={onBack}>
+            <span className="material-symbols-outlined">chevron_left</span>
+          </button>
+          <h1 className="header-title">Đang nạp...</h1>
+        </header>
+        <main style={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <span style={{ color: 'var(--on-surface-variant)', fontSize: '15px' }}>Đang nạp thẻ học từ Supabase...</span>
+        </main>
+      </div>
+    );
+  }
 
   // Render Congratulation State when completed
   if (totalCards > 0 && currentIndex >= totalCards) {
@@ -452,11 +364,10 @@ function FlashcardStudy({ config, onBack }) {
                       s.slideToLoop(0, 0);
                     }
                   });
-                  setCurrentFace(1);
                 }}
                 style={{ width: '100%', height: '100%' }}
               >
-                {activeCards.map((card, idx) => (
+                {activeCards.map((card) => (
                   <SwiperSlide key={card.id}>
                     <div 
                       style={{ width: '100%', height: '100%' }}
@@ -613,6 +524,11 @@ function FlashcardStudy({ config, onBack }) {
       </main>
     </div>
   );
+}
+
+// Helper to check elapsed time since mount without triggering React purity checks
+function isRecentMount(mountTime, limitMs = 400) {
+  return Date.now() - mountTime < limitMs;
 }
 
 export default FlashcardStudy;

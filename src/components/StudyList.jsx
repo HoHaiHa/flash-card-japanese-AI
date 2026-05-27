@@ -1,40 +1,82 @@
-import { useState } from 'react';
-
-// Mock vocabulary data grouped by lesson
-const MOCK_VOCAB_DATA = {
-  'Lesson 1': [
-    { id: 'v1', level: 'N5', kana: 'べんきょう', kanji: '勉強する', definition: 'Học tập, nghiên cứu', type: 'vocab', mastered: false, favorite: false },
-    { id: 'v2', level: 'N5', kana: 'たべる', kanji: '食べる', definition: 'Ăn', type: 'vocab', mastered: true, favorite: true },
-    { id: 'v3', level: 'N4', kana: 'よむ', kanji: '読む', definition: 'Đọc (sách, báo)', type: 'vocab', mastered: false, favorite: false },
-    { id: 's1', level: 'N5', kana: 'これをたべます', kanji: 'これを食べます。', definition: 'Tôi ăn cái này.', type: 'sentence', mastered: false, favorite: false },
-    { id: 'k1', level: 'N5', kana: 'べん', kanji: '勉', definition: 'Miễn (cố gắng)', type: 'kanji', mastered: false, favorite: false }
-  ],
-  'Lesson 2': [
-    { id: 'v4', level: 'N5', kana: 'いく', kanji: '行く', definition: 'Đi', type: 'vocab', mastered: false, favorite: false },
-    { id: 'v5', level: 'N3', kana: 'かんじょう', kanji: '感情', definition: 'Cảm xúc, tình cảm', type: 'vocab', mastered: false, favorite: false },
-    { id: 's2', level: 'N4', kana: 'いっしょにいきましょう', kanji: '一緒に行きましょう。', definition: 'Chúng ta cùng đi nhé.', type: 'sentence', mastered: true, favorite: false },
-    { id: 'k2', level: 'N4', kana: 'こう', kanji: '行', definition: 'Hành (đi)', type: 'kanji', mastered: true, favorite: true }
-  ]
-};
+import { useState, useEffect } from 'react';
+import { getCardsForLesson, updateCardFavorite, updateCardStatus } from '../services/db';
 
 function StudyList({ lessonId, onBack }) {
-  const [vocabList, setVocabList] = useState(MOCK_VOCAB_DATA[lessonId] || []);
+  const [vocabList, setVocabList] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState('vocab'); // 'vocab' | 'sentence' | 'kanji'
   const [filterMode, setFilterMode] = useState('all'); // 'all' | 'unlearned'
 
+  // Track lesson changes to reset loading state during render
+  const [prevLessonId, setPrevLessonId] = useState(lessonId);
+  if (lessonId !== prevLessonId) {
+    setPrevLessonId(lessonId);
+    setLoading(true);
+  }
+
+  // Fetch cards dynamically from Supabase
+  useEffect(() => {
+    let active = true;
+    getCardsForLesson(lessonId)
+      .then(cards => {
+        if (active) {
+          setVocabList(cards);
+          setLoading(false);
+        }
+      })
+      .catch(err => {
+        console.error('Lỗi khi tải thẻ bài học:', err);
+        if (active) {
+          setLoading(false);
+        }
+      });
+    return () => { active = false; };
+  }, [lessonId]);
+
   // Toggle favorite status
-  const toggleFavorite = (id) => {
-    setVocabList(vocabList.map(item => 
-      item.id === id ? { ...item, favorite: !item.favorite } : item
+  const toggleFavorite = async (id) => {
+    const target = vocabList.find(item => item.id === id);
+    if (!target) return;
+    const newFavorite = !target.favorite;
+    
+    // Optimistic update
+    setVocabList(prev => prev.map(item => 
+      item.id === id ? { ...item, favorite: newFavorite } : item
     ));
+
+    try {
+      await updateCardFavorite(id, target.type, newFavorite);
+    } catch (err) {
+      console.error('Lỗi khi cập nhật yêu thích:', err);
+      // Rollback on error
+      setVocabList(prev => prev.map(item => 
+        item.id === id ? { ...item, favorite: !newFavorite } : item
+      ));
+    }
   };
 
   // Toggle mastered/learned status
-  const toggleMastered = (id) => {
-    setVocabList(vocabList.map(item => 
-      item.id === id ? { ...item, mastered: !item.mastered } : item
+  const toggleMastered = async (id) => {
+    const target = vocabList.find(item => item.id === id);
+    if (!target) return;
+    const newMastered = !target.mastered;
+    const newStatus = newMastered ? 'learned' : 'forgot';
+
+    // Optimistic update
+    setVocabList(prev => prev.map(item => 
+      item.id === id ? { ...item, mastered: newMastered } : item
     ));
+
+    try {
+      await updateCardStatus(id, target.type, newStatus);
+    } catch (err) {
+      console.error('Lỗi khi cập nhật trạng thái:', err);
+      // Rollback on error
+      setVocabList(prev => prev.map(item => 
+        item.id === id ? { ...item, mastered: !newMastered } : item
+      ));
+    }
   };
 
   // Filter & Search logic
@@ -66,7 +108,7 @@ function StudyList({ lessonId, onBack }) {
         </div>
         <div className="header-right">
           <span className="font-label-sm text-xs bg-surface-container-high px-3 py-1 rounded-full text-primary font-semibold">
-            {lessonId === 'Lesson 1' ? 'Bài 1' : 'Bài 2'}
+            {lessonId.replace('Lesson ', 'Bài ')}
           </span>
         </div>
       </header>
@@ -125,7 +167,11 @@ function StudyList({ lessonId, onBack }) {
 
       {/* Vocab Cards List */}
       <main className="vocab-list-wrapper">
-        {filteredList.length > 0 ? (
+        {loading ? (
+          <div style={{ textAlign: 'center', padding: '32px', color: 'var(--on-surface-variant)' }}>
+            <span style={{ fontSize: '15px' }}>Đang nạp dữ liệu từ Supabase...</span>
+          </div>
+        ) : filteredList.length > 0 ? (
           filteredList.map((item) => (
             <div className="vocab-card" key={item.id}>
               {/* Badge level */}
