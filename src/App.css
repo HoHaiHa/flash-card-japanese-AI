@@ -1,184 +1,868 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-}
-
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
-}
-
-#center {
+/* Main layout wrapper */
+.app-container {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  min-height: 100vh;
+  padding-bottom: 24px;
 }
 
-#next-steps {
+/* Header styling */
+.app-header {
   display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-stack-md) var(--spacing-margin-mobile);
+  background: var(--background);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
+.header-title-wrapper {
   display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  align-items: center;
+  gap: var(--spacing-base);
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+.header-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--on-surface);
 }
 
-.ticks {
+.header-icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--rounded-full);
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-stack-md);
+}
+
+.header-progress-text {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+}
+
+.progress-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--rounded-full);
+  background-color: var(--surface-container-high);
+  border: 2px solid var(--surface-container);
+  overflow: hidden;
+}
+
+/* Back button */
+.back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--on-surface-variant);
+  padding: 8px;
+  margin-left: -8px;
+  border-radius: var(--rounded-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+  background-color: var(--surface-container-low);
+}
+
+/* Learning Config screen specific styles */
+.config-card {
+  background: var(--surface);
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--outline-variant);
+  box-shadow: var(--shadow-md);
+  margin: var(--spacing-stack-md) var(--spacing-margin-mobile);
+  padding: var(--spacing-stack-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-stack-lg);
+}
+
+.config-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-base);
+}
+
+.config-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+}
+
+/* Dropdown styling */
+.dropdown-wrapper {
   position: relative;
   width: 100%;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
+.custom-select {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--on-surface);
+  background-color: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded-default);
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
+.custom-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 64, 224, 0.15);
+}
+
+.dropdown-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--on-surface-variant);
+}
+
+/* Checkbox lists */
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gutter);
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px var(--spacing-stack-md);
+  background-color: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded-default);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.checkbox-item:hover {
+  background-color: var(--surface-container);
+}
+
+.checkbox-item.checked {
+  border-color: var(--primary-container);
+  background-color: var(--surface-container);
+}
+
+.checkbox-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-stack-md);
+  color: var(--on-surface);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.checkbox-icon-badge {
+  color: var(--primary-container);
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-indicator {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--outline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface);
+  transition: all 0.2s;
+}
+
+.checkbox-item.checked .checkbox-indicator {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* Dashed container for lesson select */
+.dashed-container {
+  border: 2px dashed var(--outline-variant);
+  border-radius: var(--rounded-md);
+  padding: var(--spacing-stack-md);
+  background-color: rgba(248, 249, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gutter);
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background-color: var(--surface-container-low);
+  border-radius: var(--rounded-default);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.lesson-item:hover {
+  background-color: var(--surface-container);
+}
+
+.lesson-item.checked {
+  background-color: var(--surface-container);
+  border-color: var(--outline-variant);
+}
+
+.lesson-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+.lesson-list-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-container);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-sm);
+  transition: background-color 0.2s;
+}
+
+.lesson-list-btn:hover {
+  background-color: rgba(0, 64, 224, 0.08);
+}
+
+.lesson-indicator {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--rounded-full);
+  border: 2px solid var(--outline);
+  background-color: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  transition: all 0.2s;
+}
+
+.lesson-item.checked .lesson-indicator {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* Primary play button */
+.primary-btn {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--rounded-md);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-base);
+  cursor: pointer;
+  box-shadow: var(--shadow-tactile), var(--shadow-md);
+  transition: transform 0.1s, box-shadow 0.1s;
+  margin-top: 8px;
+}
+
+.primary-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 transparent, var(--shadow-sm);
+}
+
+.primary-btn:disabled {
+  background-color: var(--outline-variant);
+  color: var(--outline);
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Error message list */
+.error-message {
+  color: var(--error);
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Study List / Vocab List screen styling */
+.search-bar-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: var(--spacing-stack-md);
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 42px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--on-surface);
+  background-color: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded-xl);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 64, 224, 0.1);
+  background-color: var(--surface);
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--outline);
+  pointer-events: none;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--outline-variant);
+  margin-bottom: var(--spacing-stack-md);
+  padding: 0 var(--spacing-margin-mobile);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.tab-btn.active {
+  color: var(--primary);
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--primary);
+  border-radius: var(--rounded-full) var(--rounded-full) 0 0;
+}
+
+/* Filter Chips */
+.filter-chips {
+  display: flex;
+  gap: var(--spacing-base);
+  padding: 0 var(--spacing-margin-mobile);
+  margin-bottom: var(--spacing-stack-md);
+}
+
+.chip-btn {
+  padding: 6px 16px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--outline-variant);
+  background-color: var(--surface);
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chip-btn.active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Vocabulary List Cards wrapper */
+.vocab-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gutter);
+  padding: 0 var(--spacing-margin-mobile);
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.vocab-card {
+  background-color: var(--surface);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-stack-md);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.vocab-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.vocab-level-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: var(--surface-container-low);
+  padding: 2px 8px;
+  border-radius: var(--rounded-full);
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--outline-variant);
+  transition: color 0.2s, transform 0.1s;
+}
+
+.favorite-btn:active {
+  transform: scale(0.9);
+}
+
+.favorite-btn.active {
+  color: #ffb800;
+  /* Yellow star */
+}
+
+.vocab-details {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  /* Avoid overlapping badge */
+}
+
+.vocab-kana {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+.vocab-kanji {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--on-surface);
+  margin: 2px 0 6px 0;
+}
+
+.vocab-definition {
+  font-size: 15px;
+  color: var(--on-surface-variant);
+  line-height: 1.4;
+}
+
+.master-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--rounded-full);
+  border: none;
+  background-color: var(--surface-container-low);
+  color: var(--outline-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-end;
+  margin-bottom: 2px;
+}
+
+.master-btn:hover {
+  background-color: var(--surface-container);
+}
+
+.master-btn.active {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+/* Empty state */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px var(--spacing-margin-mobile);
+  text-align: center;
+  color: var(--outline);
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
+
+.empty-text {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* --- STITCH-003 Flashcard study screen specific styles --- */
+
+/* Perspective viewport wrapper */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Card inner transition */
+.card-inner-3d {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Face positions: using translateZ to separate faces slightly and prevent flickering */
+.face-1 {
+  transform: rotateY(0deg) translateZ(1px);
+}
+
+.face-2 {
+  transform: rotateY(120deg) translateZ(1px);
+}
+
+.face-3 {
+  transform: rotateY(240deg) translateZ(1px);
+}
+
+/* Root container rotation states around X-axis with 3D perspective tilt */
+.state-1 {
+  transform: rotateY(12deg) rotateX(0deg);
+}
+
+.state-2 {
+  transform: rotateY(12deg) rotateX(-120deg);
+}
+
+.state-3 {
+  transform: rotateY(12deg) rotateX(-240deg);
+}
+
+/* Quick active button bar inside flashcard */
+.quick-action-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: var(--spacing-stack-lg);
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quick-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--rounded-full);
+  cursor: pointer;
+  color: var(--on-surface-variant);
+  transition: all 0.2s;
+}
+
+.quick-pill-btn:hover {
+  background-color: var(--surface-container);
+}
+
+.quick-pill-btn.active {
+  background-color: var(--surface-container-highest);
+  border-color: var(--primary);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Card typography styling */
+.font-display-jp {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -0.02em;
+}
+
+.card-instruction-row {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-base);
+  color: var(--outline);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Congratulation screen card styles */
+.congrats-card {
+  text-align: center;
+  padding: 36px var(--spacing-stack-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-stack-md);
+}
+
+.congrats-icon-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--rounded-full);
+  background-color: rgba(0, 201, 133, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-container);
+  color: #00c985;
+  margin-bottom: 8px;
+}
+
+.congrats-stat-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.congrats-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--surface-container-low);
+  padding: 12px 20px;
+  border-radius: var(--rounded-md);
+  min-width: 100px;
+}
+
+.congrats-stat-val {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.congrats-stat-val.learned {
+  color: #00c985;
+}
+
+.congrats-stat-val.unlearned {
+  color: var(--error);
+}
+
+.congrats-stat-lbl {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  margin-top: 2px;
+}
+
+/* Card faces inside 3D container */
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--rounded-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--outline-variant);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.card-face-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Badge for level inside card */
+.card-level-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: var(--surface-container);
+  padding: 4px 12px;
+  border-radius: var(--rounded-full);
+}
+
+/* Favorite button inside card */
+.card-favorite-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.1s;
+}
+
+.card-favorite-btn:active {
+  transform: scale(0.9);
+}
+
+/* Bottom action buttons */
+.study-btn-forgot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background-color: var(--surface);
+  border-radius: var(--rounded-xl);
+  color: var(--error);
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--error);
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+.study-btn-forgot:active {
+  transform: scale(0.95);
+}
+
+.study-btn-learned {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background-color: var(--primary-container);
+  border-radius: var(--rounded-xl);
+  color: var(--on-primary);
+  box-shadow: var(--shadow-lg);
+  border: none;
+  border-bottom: 4px solid #002db3;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.study-btn-learned:active {
+  transform: translateY(2px);
+  border-bottom-width: 0;
+}
+
+/* Swiper Card face styling */
+.swiper-card-face {
+  width: 100%;
+  height: 100%;
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--rounded-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--outline-variant);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-card-face-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Utility classes for missing Tailwind styles */
+.block {
+  display: block;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.tracking-widest {
+  letter-spacing: 0.15em;
+}
+
+.text-outline {
+  color: var(--outline);
+}
+
+.mb-base {
+  margin-bottom: var(--spacing-base);
 }

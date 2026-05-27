@@ -217,19 +217,9 @@ When adding new commands that need shell access, update `settings.json`.
 
 ## Project Context
 
-**Tên dự án**: my-react-app  
-**PM/Dev**: User & Antigravity  
-**Repo**: `c:\project-ai\my-react-app`  
-**Deadline**: 2026-06-30 (Sprint 1)  
-
-### Tech Stack
-| Layer | Công nghệ | Phiên bản / 詳細 |
-|-------|-----------|---------------------|
-| **Frontend** | React SPA (Vite) | React 18+ |
-| **Database** | Supabase | BaaS (Serverless DB) |
-| **Authentication** | None | Dự án public / Chưa cấu hình Auth |
-| **Giao tiếp API** | PostgREST / Supabase Client | Truy cập trực tiếp qua SDK |
-
+**Công ty**: [Tên công ty / Company name]  
+**Model**: [Mô hình team — ví dụ: Dev team ↔ Bridge Engineer ↔ Client]  
+**Ngôn ngữ**: Code comments = tiếng Anh; Tài liệu nội bộ = tiếng Việt; Giao tiếp khách JP = tiếng Nhật  
 **Encoding**: UTF-8 (hỗ trợ ký tự Nhật)  
 **Timezone**: JST (UTC+9) cho deadline và meeting với khách  
 **Deliverables JP style**: 設計書 (design doc), 単体テスト仕様書 (unit test spec), 成果物 (deliverables), 引き継ぎ書 (handover doc), 月次保守報告書 (monthly maintenance report), 変更依頼書 (change request doc), リリースノート (release notes)

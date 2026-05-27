@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables
+.env
+
+# One-shot review HTML files
+docs/tasks/**/*.html
+
+
