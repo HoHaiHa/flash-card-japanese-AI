@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getLessons } from '../services/db';
+import { getLessons, getStudySettings, saveStudySettings } from '../services/db';
 
 function LearningConfig({ onStart, onViewList }) {
   // Form states
@@ -17,8 +17,31 @@ function LearningConfig({ onStart, onViewList }) {
     getLessons()
       .then(data => {
         if (active) {
-          setLessons(data || []);
-          setSelectedLessons((data || []).map(l => l.id));
+          const loadedLessons = data || [];
+          setLessons(loadedLessons);
+
+          // Load settings from local storage
+          const savedSettings = getStudySettings();
+          if (savedSettings) {
+            if (savedSettings.translationDirection) {
+              setTranslationDirection(savedSettings.translationDirection);
+            }
+            if (savedSettings.contentTypes) {
+              setContentTypes(savedSettings.contentTypes);
+            }
+            if (savedSettings.selectedLessons) {
+              // Intersect with loaded lessons to ensure they still exist
+              const validLessonIds = savedSettings.selectedLessons.filter(id =>
+                loadedLessons.some(l => l.id === id)
+              );
+              setSelectedLessons(validLessonIds);
+            } else {
+              setSelectedLessons(loadedLessons.map(l => l.id));
+            }
+          } else {
+            setSelectedLessons(loadedLessons.map(l => l.id));
+          }
+
           setLoading(false);
         }
       })
@@ -62,6 +85,13 @@ function LearningConfig({ onStart, onViewList }) {
       setError('Vui lòng chọn ít nhất một bài học để tiếp tục.');
       return;
     }
+
+    // Save configurations to LocalStorage
+    saveStudySettings({
+      translationDirection,
+      contentTypes,
+      selectedLessons
+    });
     
     // Call parent handler with config data
     onStart({

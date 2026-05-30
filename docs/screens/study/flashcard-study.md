@@ -2,9 +2,9 @@
 
 **Route/URL**: `/study/flashcard`  
 **Feature**: Flashcard Study Session  
-**Last updated**: 2026-05-24 16:00 JST  
-**Updated by task**: STITCH-001  
-**Commit**: `[short-sha]` — Initial setup of 3-sided flashcard study screen spec
+**Last updated**: 2026-05-30 09:45 JST  
+**Updated by task**: SUPABASE-002  
+**Commit**: `draft` — Update screen flow specifications for learning config and flashcards
 
 ---
 
@@ -38,27 +38,30 @@ Nằm ngay phía trên thẻ flashcard, gồm 3 nút hình viên thuốc (pill s
 | Yêu thích | Button | Yes | Icon trái tim `favorite` màu nâu/đỏ, nhãn "Yêu thích". Lọc nhanh danh sách từ yêu thích |
 
 ### 3. Main Flashcard (Thẻ 3 mặt xoay 3D)
-Khung chứa thẻ có hiệu ứng 3D (`perspective: 1000px`). Khi click vào thẻ sẽ xoay vòng tròn qua 3 mặt:
+Khung chứa thẻ có hiệu ứng 3D (`perspective: 1000px`). Khi click vào thẻ sẽ xoay vòng tròn qua 3 mặt. Nội dung hiển thị trên các mặt phụ thuộc vào 3 loại thẻ học khác nhau:
 
-#### Mặt 1: Từ vựng / Chữ Hán (Front - face-1)
-* **Badge cấp độ**: Góc trên bên trái (Ví dụ: `N2` trong chip màu xanh dương).
-* **Từ vựng Kanji**: Hiển thị chính giữa, cỡ chữ rất lớn (`font-display-jp`).
-* **Phiên âm (Furigana)**: Hiển thị nhỏ hơn ngay dưới Kanji (`こうぞう`).
-* **Hướng dẫn**: Góc dưới cùng của thẻ: Icon bàn tay chạm `touch_app` + nhãn "Chạm để xem âm Hán".
+#### Loại 1: Từ vựng (Vocab Card)
+Loại thẻ này bị ảnh hưởng trực tiếp bởi cấu hình **Hướng dịch**:
+*   **Khi chọn Hướng dịch là "Nhật → Việt" (Mặc định)**:
+    *   **Mặt 1 (Front)**: Hiragana hoặc Katakana + chữ Kanji chính hiển thị kích thước lớn.
+    *   **Mặt 2 (Middle)**: Nghĩa tiếng Việt giải thích cho từ vựng.
+    *   **Mặt 3 (Back)**: Mẫu câu ví dụ (Tiếng Nhật và dịch nghĩa tiếng Việt đi kèm).
+*   **Khi chọn Hướng dịch là "Việt → Nhật"**:
+    *   **Mặt 1 (Front)**: Nghĩa tiếng Việt hiển thị kích thước lớn chính giữa.
+    *   **Mặt 2 (Middle)**: Từ vựng tiếng Nhật (Hiragana/Katakana + chữ Kanji chính).
+    *   **Mặt 3 (Back)**: Mẫu câu ví dụ (Tiếng Nhật và dịch nghĩa tiếng Việt đi kèm).
 
-#### Mặt 2: Âm Hán & Cấu tạo (Middle - face-2)
-* **Tiêu đề**: "ÂM HÁN & CẤU TRÚC" (chữ hoa, nhỏ).
-* **Âm Hán**: Hiển thị trong khung nổi bật (Ví dụ: "Âm Hán: CẤU TẠO").
-* **Chi tiết bộ thủ**: Danh sách các bộ cấu thành chữ Hán đó (Ví dụ: "木 - Bộ Mộc (Gỗ)", "宀 - Bộ Miên (Mái nhà)").
-* **Hướng dẫn**: Góc dưới cùng: Icon xoay `rotate_right` + nhãn "Xem nghĩa & Ví dụ".
+#### Loại 2: Cấu trúc mẫu câu (Sentence Card)
+Loại thẻ này **không bị ảnh hưởng** bởi cấu hình "Hướng dịch":
+*   **Mặt 1 (Front)**: Câu ví dụ tiếng Nhật (câu mẫu chính hiển thị kích thước lớn) kèm phiên âm Furigana.
+*   **Mặt 2 (Middle)**: Ý nghĩa tiếng Việt của câu mẫu và phân tích trợ từ / cấu trúc ngữ pháp mẫu câu.
+*   **Mặt 3 (Back)**: Cách sử dụng chi tiết hơn, câu ví dụ bổ sung (tiếng Nhật/tiếng Việt).
 
-#### Mặt 3: Nghĩa & Ví dụ (Back - face-3)
-* **Tiêu đề**: "NGHĨA TIẾNG VIỆT" (chữ hoa, nhỏ).
-* **Nghĩa chính**: Chữ to màu xanh dương (Ví dụ: "Cấu trúc / Cấu tạo").
-* **Ví dụ minh họa**: 
-  * Câu ví dụ tiếng Việt (in nghiêng).
-  * Câu ví dụ tiếng Nhật tương ứng ngay bên dưới.
-* **Hướng dẫn**: Góc dưới cùng: Icon reset `restart_alt` + nhãn "Về mặt trước".
+#### Loại 3: Hán tự (Kanji Card)
+Loại thẻ này **không bị ảnh hưởng** bởi cấu hình "Hướng dịch":
+*   **Mặt 1 (Front)**: Chữ Kanji chính hiển thị kích thước rất lớn kèm âm On/Kun.
+*   **Mặt 2 (Middle)**: Ý nghĩa tiếng Việt (Nghĩa Hán Việt và định nghĩa tiếng Việt của chữ Kanji).
+*   **Mặt 3 (Back)**: Phân tích các bộ thủ cấu thành chữ Hán đó (danh sách chi tiết các bộ thủ cấu thành kèm ý nghĩa từng bộ).
 
 ### 4. Bottom Response Actions (Nút đánh giá)
 | Component | Type | Required | Mô tả |
@@ -70,7 +73,7 @@ Khung chứa thẻ có hiệu ứng 3D (`perspective: 1000px`). Khi click vào t
 
 | ID | Rule |
 |----|------|
-| BR-001 | Thẻ flashcard hỗ trợ xoay 3D tuần tự: **Mặt 1 (Kanji)** $\rightarrow$ click $\rightarrow$ **Mặt 2 (Âm Hán)** $\rightarrow$ click $\rightarrow$ **Mặt 3 (Nghĩa)** $\rightarrow$ click $\rightarrow$ **Mặt 1**. Sử dụng CSS 3D Transforms (`rotateY`). |
+| BR-001 | Thẻ flashcard hỗ trợ xoay 3D tuần tự: **Mặt 1** $\rightarrow$ click $\rightarrow$ **Mặt 2** $\rightarrow$ click $\rightarrow$ **Mặt 3** $\rightarrow$ click $\rightarrow$ **Mặt 1**. Thứ tự thông tin trên từng mặt sẽ thay đổi tùy thuộc vào cấu hình hướng dịch đã chọn. Sử dụng CSS 3D Transforms (`rotateY`). |
 | BR-002 | Khi người dùng nhấn nút đánh giá ở dưới hoặc phím tắt tương ứng: <br> 1. Hệ thống ghi nhận trạng thái từ vựng đó (thuộc hay chưa thuộc). <br> 2. Kích hoạt hiệu ứng flash màu nền toàn trang: chớp xanh lá nhẹ (`rgba(0,108,70,0.1)`) khi chọn "Đã thuộc", chớp đỏ nhẹ (`rgba(186,26,26,0.1)`) khi chọn "Chưa thuộc". <br> 3. Tự động reset thẻ về **Mặt 1** trước khi chuyển sang thẻ tiếp theo. <br> 4. Thực hiện hiệu ứng thu nhỏ và ẩn dần (pop animation) để chuyển sang thẻ mới. |
 | BR-003 | Tiến độ học tập ở Header (`X / Y`) và thanh progress bar sẽ tăng lên mỗi khi người dùng nhấn nút đánh giá thuộc/chưa thuộc của một từ mới. |
 | BR-004 | Nhấn nút **Back (<)** sẽ lưu lại tiến độ phiên học hiện tại vào database và quay về màn hình cấu hình học tập `/study/config`. |

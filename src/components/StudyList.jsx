@@ -108,7 +108,7 @@ function StudyList({ lessonId, onBack }) {
         </div>
         <div className="header-right">
           <span className="font-label-sm text-xs bg-surface-container-high px-3 py-1 rounded-full text-primary font-semibold">
-            {lessonId.replace('Lesson ', 'Bài ')}
+            {typeof lessonId === 'string' ? lessonId.replace('Lesson ', 'Bài ') : (lessonId ? `Bài ${lessonId}` : '')}
           </span>
         </div>
       </header>

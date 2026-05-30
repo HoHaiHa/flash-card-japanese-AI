@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCube } from 'swiper/modules';
-import { getCardsForLessons, updateCardFavorite, updateCardStatus } from '../services/db';
+import { getCardsForLessons, updateCardFavorite, updateCardStatus, saveSessionResult } from '../services/db';
 
 import 'swiper/css';
 import 'swiper/css/effect-cube';
@@ -158,7 +158,21 @@ function FlashcardStudy({ config, onBack }) {
       setFlashType(null);
       
       if (currentIndex === activeCards.length - 1) {
-        // Last card, trigger congratulations screen
+        // Last card, save session results to database
+        const updatedResponses = { ...studyResponses, [currentCard.id]: type };
+        const learnedCount = Object.values(updatedResponses).filter(v => v === 'learned').length;
+        const forgotCount = Object.values(updatedResponses).filter(v => v === 'forgot').length;
+        const totalCardsCount = activeCards.length;
+
+        saveSessionResult({
+          totalCards: totalCardsCount,
+          learnedCount,
+          forgotCount
+        }).catch(err => {
+          console.error('Lỗi khi lưu kết quả phiên học:', err);
+        });
+
+        // Trigger congratulations screen
         setCurrentIndex(prev => prev + 1);
       } else {
         if (swiperInstance) {
@@ -216,6 +230,334 @@ function FlashcardStudy({ config, onBack }) {
         [cardId]: !newFavorite
       }));
     }
+  };
+
+  const renderCardFaces = (card) => {
+    const isViJa = config?.translationDirection === 'vi-ja';
+    
+    // common header elements
+    const renderHeader = (isFront) => {
+      if (!isFront) return null;
+      return (
+        <>
+          <span className="card-level-badge">{card.level}</span>
+          <button 
+            className="card-favorite-btn" 
+            style={{ color: favorites[card.id] ? '#ffb800' : 'var(--outline-variant)' }}
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleFavorite(card.id);
+            }}
+          >
+            <span className="material-symbols-outlined">
+              {favorites[card.id] ? 'star' : 'star'}
+            </span>
+          </button>
+        </>
+      );
+    };
+
+    if (card.type === 'vocab') {
+      if (isViJa) {
+        // Việt -> Nhật
+        return (
+          <>
+            {/* Mặt 1: Nghĩa tiếng Việt */}
+            <SwiperSlide>
+              <div className="swiper-card-face swiper-card-face-center">
+                {renderHeader(true)}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 16px' }}>
+                  <span className="font-headline-md text-on-surface" style={{ fontSize: '28px', fontWeight: '600', color: 'var(--primary)' }}>
+                    {card.definition}
+                  </span>
+                </div>
+                <div className="card-instruction-row">
+                  <span className="material-symbols-outlined">touch_app</span>
+                  <span>Chạm để xem từ vựng tiếng Nhật</span>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            {/* Mặt 2: Từ vựng tiếng Nhật (Kanji/Kana) */}
+            <SwiperSlide>
+              <div className="swiper-card-face swiper-card-face-center">
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                  <span className="font-display-jp text-on-surface mb-stack-sm" style={{ fontSize: card.kanji.length > 5 ? '32px' : '48px' }}>
+                    {card.kanji}
+                  </span>
+                  <span className="font-body-lg text-on-surface-variant opacity-60">
+                    {card.kana}
+                  </span>
+                  {card.details && (
+                    <span className="font-label-sm text-outline mt-base" style={{ fontSize: '12px' }}>
+                      ({card.details})
+                    </span>
+                  )}
+                </div>
+                <div className="card-instruction-row">
+                  <span className="material-symbols-outlined">rotate_right</span>
+                  <span>Xem cách sử dụng (Ví dụ)</span>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            {/* Mặt 3: Cách sử dụng (Ví dụ) */}
+            <SwiperSlide>
+              <div className="swiper-card-face swiper-card-face-center">
+                <div style={{ width: '100%', textAlign: 'center', padding: '0 16px' }}>
+                  <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
+                    Cách sử dụng &amp; Ví dụ
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%', maxWidth: '300px', margin: '0 auto' }}>
+                    <p className="font-body-md text-on-surface-variant" style={{ fontStyle: 'italic', color: 'var(--primary)', fontWeight: '500', fontSize: '16px' }}>
+                      {card.exampleJp}
+                    </p>
+                    <p className="font-body-sm text-on-surface-variant opacity-80" style={{ fontSize: '14px' }}>
+                      {card.exampleVi}
+                    </p>
+                  </div>
+                </div>
+                <div className="card-instruction-row" style={{ marginTop: 'auto', justifyContent: 'center' }}>
+                  <span className="material-symbols-outlined">restart_alt</span>
+                  <span>Về mặt trước</span>
+                </div>
+              </div>
+            </SwiperSlide>
+          </>
+        );
+      } else {
+        // Nhật -> Việt (Mặc định)
+        return (
+          <>
+            {/* Mặt 1: Từ vựng tiếng Nhật (Kanji/Kana) */}
+            <SwiperSlide>
+              <div className="swiper-card-face swiper-card-face-center">
+                {renderHeader(true)}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                  <span className="font-display-jp text-on-surface mb-stack-sm" style={{ fontSize: card.kanji.length > 5 ? '32px' : '48px' }}>
+                    {card.kanji}
+                  </span>
+                  <span className="font-body-lg text-on-surface-variant opacity-60">
+                    {card.kana}
+                  </span>
+                </div>
+                <div className="card-instruction-row">
+                  <span className="material-symbols-outlined">touch_app</span>
+                  <span>Chạm để xem nghĩa tiếng Việt</span>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            {/* Mặt 2: Nghĩa tiếng Việt */}
+            <SwiperSlide>
+              <div className="swiper-card-face swiper-card-face-center">
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 16px' }}>
+                  <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
+                    Ý nghĩa tiếng Việt
+                  </div>
+                  <span className="font-headline-md text-on-surface" style={{ fontSize: '24px', fontWeight: '600', color: 'var(--primary)' }}>
+                    {card.definition}
+                  </span>
+                  {card.details && (
+                    <span className="font-body-sm text-on-surface-variant opacity-60 mt-stack-sm">
+                      {card.details}
+                    </span>
+                  )}
+                </div>
+                <div className="card-instruction-row">
+                  <span className="material-symbols-outlined">rotate_right</span>
+                  <span>Chạm để xem mẫu câu ví dụ</span>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            {/* Mặt 3: Mẫu câu ví dụ */}
+            <SwiperSlide>
+              <div className="swiper-card-face swiper-card-face-center">
+                <div style={{ width: '100%', textAlign: 'center', padding: '0 16px' }}>
+                  <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
+                    Mẫu câu ví dụ
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%', maxWidth: '300px', margin: '0 auto' }}>
+                    <p className="font-body-md text-on-surface-variant" style={{ fontStyle: 'italic', color: 'var(--primary)', fontWeight: '500', fontSize: '16px' }}>
+                      {card.exampleJp}
+                    </p>
+                    <p className="font-body-sm text-on-surface-variant opacity-80" style={{ fontSize: '14px' }}>
+                      {card.exampleVi}
+                    </p>
+                  </div>
+                </div>
+                <div className="card-instruction-row" style={{ marginTop: 'auto', justifyContent: 'center' }}>
+                  <span className="material-symbols-outlined">restart_alt</span>
+                  <span>Về mặt trước</span>
+                </div>
+              </div>
+            </SwiperSlide>
+          </>
+        );
+      }
+    } else if (card.type === 'sentence') {
+      // Cấu trúc mẫu câu (Sentence Card)
+      return (
+        <>
+          {/* Mặt 1: Câu ví dụ tiếng Nhật chính */}
+          <SwiperSlide>
+            <div className="swiper-card-face swiper-card-face-center">
+              {renderHeader(true)}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 16px' }}>
+                <span className="font-display-jp text-on-surface mb-stack-sm" style={{ fontSize: card.kanji.length > 10 ? '24px' : '32px', lineHeight: '1.4' }}>
+                  {card.kanji}
+                </span>
+                <span className="font-body-lg text-on-surface-variant opacity-60">
+                  {card.kana}
+                </span>
+              </div>
+              <div className="card-instruction-row">
+                <span className="material-symbols-outlined">touch_app</span>
+                <span>Chạm để xem ý nghĩa &amp; cấu trúc</span>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Mặt 2: Ý nghĩa tiếng Việt & cấu trúc */}
+          <SwiperSlide>
+            <div className="swiper-card-face swiper-card-face-center">
+              <div style={{ width: '100%', textAlign: 'center', padding: '0 16px' }}>
+                <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
+                  Ý nghĩa &amp; Cấu trúc
+                </div>
+                <div style={{ backgroundColor: 'var(--surface-container-low)', padding: '10px 14px', borderRadius: '8px', display: 'inline-block', border: '1px solid var(--surface-variant)', marginBottom: '12px' }}>
+                  <span className="font-headline-md text-on-surface" style={{ fontSize: '15px', fontWeight: '600', color: 'var(--primary)' }}>
+                    {card.definition}
+                  </span>
+                </div>
+                {card.details && (
+                  <p style={{ fontSize: '13px', color: 'var(--on-surface-variant)', margin: '0 auto', maxWidth: '280px', lineHeight: '1.4' }}>
+                    <strong>Mẫu câu:</strong> {card.details}
+                  </p>
+                )}
+                {card.sinoVietnamese && (
+                  <p style={{ fontSize: '11px', color: 'var(--outline)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    {card.sinoVietnamese}
+                  </p>
+                )}
+              </div>
+              <div className="card-instruction-row">
+                <span className="material-symbols-outlined">rotate_right</span>
+                <span>Chạm để xem ví dụ chi tiết</span>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Mặt 3: Ví dụ bổ sung / cách sử dụng */}
+          <SwiperSlide>
+            <div className="swiper-card-face swiper-card-face-center">
+              <div style={{ width: '100%', textAlign: 'center', padding: '0 16px' }}>
+                <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
+                  Cách sử dụng &amp; Ví dụ
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%', maxWidth: '300px', margin: '0 auto' }}>
+                  <p className="font-body-md text-on-surface-variant" style={{ fontStyle: 'italic', color: 'var(--primary)', fontWeight: '500', fontSize: '15px' }}>
+                    {card.exampleJp}
+                  </p>
+                  <p className="font-body-sm text-on-surface-variant opacity-80" style={{ fontSize: '13px' }}>
+                    {card.exampleVi}
+                  </p>
+                </div>
+              </div>
+              <div className="card-instruction-row" style={{ marginTop: 'auto', justifyContent: 'center' }}>
+                <span className="material-symbols-outlined">restart_alt</span>
+                <span>Về mặt trước</span>
+              </div>
+            </div>
+          </SwiperSlide>
+        </>
+      );
+    } else if (card.type === 'kanji') {
+      // Chữ Hán (Kanji Card)
+      return (
+        <>
+          {/* Mặt 1: Chữ Kanji chính */}
+          <SwiperSlide>
+            <div className="swiper-card-face swiper-card-face-center">
+              {renderHeader(true)}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <span className="font-display-jp text-on-surface mb-stack-sm" style={{ fontSize: '72px', color: 'var(--tertiary)' }}>
+                  {card.kanji}
+                </span>
+                <span className="font-body-lg text-on-surface-variant opacity-60">
+                  On/Kun: {card.kana}
+                </span>
+              </div>
+              <div className="card-instruction-row">
+                <span className="material-symbols-outlined">touch_app</span>
+                <span>Chạm để xem nghĩa Hán Việt</span>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Mặt 2: Nghĩa Hán Việt & Định nghĩa */}
+          <SwiperSlide>
+            <div className="swiper-card-face swiper-card-face-center">
+              <div style={{ width: '100%', textAlign: 'center', padding: '0 16px' }}>
+                <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
+                  Hán Việt &amp; Ý nghĩa
+                </div>
+                <div style={{ backgroundColor: 'var(--surface-container-low)', padding: '10px 16px', borderRadius: '8px', display: 'inline-block', border: '1px solid var(--surface-variant)', marginBottom: '12px' }}>
+                  <span className="font-headline-md text-on-surface" style={{ fontSize: '18px', fontWeight: '700', color: 'var(--tertiary)' }}>
+                    {card.details}
+                  </span>
+                </div>
+                <p className="font-headline-sm text-on-surface" style={{ fontSize: '16px', fontWeight: '500', marginTop: '4px' }}>
+                  Nghĩa: {card.definition}
+                </p>
+                {card.sinoVietnamese && (
+                  <p style={{ fontSize: '12px', color: 'var(--outline-variant)', marginTop: '8px' }}>
+                    ({card.sinoVietnamese})
+                  </p>
+                )}
+              </div>
+              <div className="card-instruction-row">
+                <span className="material-symbols-outlined">rotate_right</span>
+                <span>Chạm để xem phân tích bộ thủ</span>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Mặt 3: Cấu tạo bộ thủ */}
+          <SwiperSlide>
+            <div className="swiper-card-face swiper-card-face-center">
+              <div style={{ width: '100%', textAlign: 'center', padding: '0 16px' }}>
+                <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
+                  Cấu tạo bộ thủ
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', width: '100%', maxWidth: '260px', margin: '0 auto' }}>
+                  {card.components && card.components.map((comp, idx) => (
+                    <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '6px 10px', backgroundColor: 'var(--surface-container-low)', borderRadius: '8px', width: '100%', border: '1px solid var(--surface-variant)' }}>
+                      <span style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--tertiary)' }}>
+                        {comp.char}
+                      </span>
+                      <span style={{ fontSize: '12px', color: 'var(--on-surface-variant)', textAlign: 'left' }}>
+                        {comp.meaning}
+                      </span>
+                    </div>
+                  ))}
+                  {(!card.components || card.components.length === 0) && (
+                    <span style={{ fontSize: '12px', color: 'var(--on-surface-variant)' }}>Không có thông tin bộ thủ.</span>
+                  )}
+                </div>
+              </div>
+              <div className="card-instruction-row" style={{ marginTop: 'auto', justifyContent: 'center' }}>
+                <span className="material-symbols-outlined">restart_alt</span>
+                <span>Về mặt trước</span>
+              </div>
+            </div>
+          </SwiperSlide>
+        </>
+      );
+    }
+
+    return null;
   };
 
   // Calculate statistics
@@ -387,107 +729,7 @@ function FlashcardStudy({ config, onBack }) {
                         }}
                         style={{ width: '100%', height: '100%' }}
                       >
-                        {/* Mặt 1: Kanji / Chữ Nhật chính (Front) */}
-                        <SwiperSlide>
-                          <div className="swiper-card-face swiper-card-face-center">
-                            <span className="card-level-badge">
-                              {card.level}
-                            </span>
-                            
-                            {/* Toggle Favorite Star inside Card */}
-                            <button 
-                              className="card-favorite-btn" 
-                              style={{ color: favorites[card.id] ? '#ffb800' : 'var(--outline-variant)' }}
-                              onClick={(e) => {
-                                e.stopPropagation(); // Avoid triggering card rotation click
-                                toggleFavorite(card.id);
-                              }}
-                            >
-                              <span className="material-symbols-outlined">
-                                {favorites[card.id] ? 'star' : 'star'}
-                              </span>
-                            </button>
-
-                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                              <span className="font-display-jp text-on-surface mb-stack-sm" style={{ fontSize: card.kanji.length > 5 ? '32px' : '48px' }}>
-                                {card.kanji}
-                              </span>
-                              <span className="font-body-lg text-on-surface-variant opacity-60">
-                                {card.kana}
-                              </span>
-                            </div>
-                            
-                            <div className="card-instruction-row">
-                              <span className="material-symbols-outlined">touch_app</span>
-                              <span>Chạm để xem âm Hán</span>
-                            </div>
-                          </div>
-                        </SwiperSlide>
-
-                        {/* Mặt 2: Âm Hán Việt & Cấu tạo bộ thủ (Middle) */}
-                        <SwiperSlide>
-                          <div className="swiper-card-face swiper-card-face-center">
-                            <div style={{ width: '100%', textAlign: 'center' }}>
-                              <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
-                                Âm Hán &amp; Cấu trúc
-                              </div>
-                              <div style={{ backgroundColor: 'var(--surface-container-low)', padding: '12px 16px', borderRadius: '8px', display: 'inline-block', border: '1px solid var(--surface-variant)', marginBottom: '16px' }}>
-                                <span className="font-headline-md text-on-surface" style={{ fontSize: '16px', fontWeight: '600' }}>
-                                  {card.details}
-                                </span>
-                              </div>
-                              
-                              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', width: '100%', maxWidth: '240px', margin: '0 auto' }}>
-                                {card.components.map((comp, idx) => (
-                                  <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 12px', backgroundColor: 'var(--surface-container-low)', borderRadius: '8px', width: '100%' }}>
-                                    <span style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--tertiary)' }}>
-                                      {comp.char}
-                                    </span>
-                                    <span style={{ fontSize: '12px', color: 'var(--on-surface-variant)', textAlign: 'left' }}>
-                                      {comp.meaning}
-                                    </span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-
-                            <div className="card-instruction-row" style={{ marginTop: 'auto' }}>
-                              <span className="material-symbols-outlined">rotate_right</span>
-                              <span>Xem nghĩa &amp; Ví dụ</span>
-                            </div>
-                          </div>
-                        </SwiperSlide>
-
-                        {/* Mặt 3: Nghĩa & Ví dụ minh họa (Back) */}
-                        <SwiperSlide>
-                          <div className="swiper-card-face swiper-card-face-center">
-                            <div style={{ width: '100%', textAlign: 'center' }}>
-                              <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
-                                Ý nghĩa &amp; Ví dụ
-                              </div>
-                              
-                              <div style={{ backgroundColor: 'var(--surface-container-low)', padding: '12px 16px', borderRadius: '8px', display: 'inline-block', border: '1px solid var(--surface-variant)', marginBottom: '16px' }}>
-                                <span className="font-headline-md text-on-surface" style={{ fontSize: '16px', fontWeight: '600' }}>
-                                  {card.definition}
-                                </span>
-                              </div>
-
-                              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%', maxWidth: '280px', margin: '0 auto' }}>
-                                <p className="font-body-md text-on-surface-variant" style={{ fontStyle: 'italic', color: 'var(--primary)', fontWeight: '500' }}>
-                                  {card.exampleJp}
-                                </p>
-                                <p className="font-body-sm text-on-surface-variant opacity-80">
-                                  {card.exampleVi}
-                                </p>
-                              </div>
-                            </div>
-
-                            <div className="card-instruction-row" style={{ marginTop: 'auto', justifyContent: 'center' }}>
-                              <span className="material-symbols-outlined">restart_alt</span>
-                              <span>Về mặt trước</span>
-                            </div>
-                          </div>
-                        </SwiperSlide>
+                        {renderCardFaces(card)}
                       </Swiper>
                     </div>
                   </SwiperSlide>

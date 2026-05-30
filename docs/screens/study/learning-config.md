@@ -2,9 +2,9 @@
 
 **Route/URL**: `/study/config`  
 **Feature**: Study Configuration  
-**Last updated**: 2026-05-24 16:00 JST  
-**Updated by task**: STITCH-001  
-**Commit**: `[short-sha]` — Initial setup of learning configuration screen spec
+**Last updated**: 2026-05-30 09:45 JST  
+**Updated by task**: SUPABASE-002  
+**Commit**: `draft` — Update screen flow specifications for learning config and flashcards
 
 ---
 
@@ -42,18 +42,19 @@ Màn hình cho phép người dùng cấu hình các thiết lập học tập t
 | ID | Rule |
 |----|------|
 | BR-001 | Hướng dịch có các tùy chọn: "Nhật → Việt" (mặc định) và "Việt → Nhật". |
-| BR-002 | Ít nhất một "Nội dung học" phải được chọn để có thể tiếp tục. Nếu bỏ chọn toàn bộ, nút "Bắt đầu học ngay" sẽ bị disabled hoặc hiển thị thông báo lỗi. |
-| BR-003 | Ít nhất một "Bài học" phải được chọn. Nếu danh sách bài học trống hoặc không chọn bài nào, hiển thị cảnh báo yêu cầu chọn bài học. |
-| BR-004 | Khi nhấn "Bắt đầu học ngay", hệ thống sẽ lưu cấu hình tạm thời vào session/state và chuyển hướng sang màn hình học flashcard tương ứng với các cấu hình đã chọn. |
+| BR-002 | Việc chọn loại nội dung học (Từ vựng, Mẫu câu, Hán tự) sẽ quyết định loại flashcard nào xuất hiện trong phiên học. Mỗi mục là một loại thẻ học riêng biệt. Ít nhất một "Nội dung học" phải được chọn. |
+| BR-003 | Mỗi bài học hiển thị dưới dạng một ô hình chữ nhật kèm theo một checkbox hình tròn ở bên phải. Khi người dùng click vào vùng chữ nhật của bài học, ứng dụng sẽ chuyển hướng sang màn hình Danh sách học tập của bài đó. Khi click vào checkbox tròn, bài học đó sẽ được chọn hoặc bỏ chọn để đưa vào danh sách học flashcard. |
+| BR-004 | Khi nhấn "Bắt đầu học ngay", hệ thống sẽ lưu cấu hình học tập hiện tại vào LocalStorage và chuyển hướng sang màn hình học flashcard tương ứng với các cấu hình đã chọn. |
 
 ## User Actions
 
 | Action | Trigger | Result |
 |--------|---------|--------|
 | Chọn hướng dịch | Thay đổi giá trị ở dropdown "Hướng dịch" | Cập nhật hướng dịch được chọn |
-| Chọn nội dung học | Tích chọn/bỏ chọn checkbox "Từ vựng", "Mẫu câu", hoặc "Hán tự" | Cập nhật danh sách nội dung học |
-| Chọn bài học | Tích chọn/bỏ chọn các bài học trong danh sách | Cập nhật danh sách bài học sẽ học |
-| Bắt đầu học | Click nút "Bắt đầu học ngay" | Chuyển hướng đến `/study/flashcard` với các tham số cấu hình đã chọn |
+| Chọn nội dung học | Tích chọn/bỏ chọn checkbox "Từ vựng", "Mẫu câu", hoặc "Hán tự" | Cập nhật danh sách nội dung học (từ vựng, mẫu câu, hán tự là các loại flashcard riêng biệt) |
+| Tích chọn bài học | Click vào checkbox hình tròn của bài học trong danh sách | Thêm hoặc loại bỏ bài học đó khỏi danh sách học Flashcard |
+| Xem danh sách từ bài học | Click vào vùng hình chữ nhật của bài học | Chuyển hướng đến màn hình danh sách học tập (`/study/list`) của bài học đó |
+| Bắt đầu học | Click nút "Bắt đầu học ngay" | Lưu cấu hình vào LocalStorage và chuyển hướng đến `/study/flashcard` |
 
 ## Validation Messages
 

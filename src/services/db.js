@@ -161,3 +161,53 @@ export async function updateCardStatus(cardId, type, status) {
     throw error;
   }
 }
+
+const STUDY_SETTINGS_KEY = 'seishun_study_settings';
+
+/**
+ * Get saved study settings from LocalStorage
+ */
+export function getStudySettings() {
+  try {
+    const data = localStorage.getItem(STUDY_SETTINGS_KEY);
+    return data ? JSON.parse(data) : null;
+  } catch (err) {
+    console.error('Lỗi khi đọc cấu hình học tập từ LocalStorage:', err);
+    return null;
+  }
+}
+
+/**
+ * Save study settings to LocalStorage
+ */
+export function saveStudySettings(settings) {
+  try {
+    localStorage.setItem(STUDY_SETTINGS_KEY, JSON.stringify(settings));
+  } catch (err) {
+    console.error('Lỗi khi lưu cấu hình học tập vào LocalStorage:', err);
+  }
+}
+
+/**
+ * Save study session results to Supabase
+ */
+export async function saveSessionResult(sessionData) {
+  const { totalCards, learnedCount, forgotCount } = sessionData;
+  const { data, error } = await supabase
+    .from('study_sessions')
+    .insert([
+      {
+        total_cards: totalCards,
+        learned_count: learnedCount,
+        forgot_count: forgotCount
+      }
+    ])
+    .select();
+
+  if (error) {
+    console.error('Lỗi khi lưu kết quả phiên học:', error);
+    throw error;
+  }
+  return data ? data[0] : null;
+}
+
