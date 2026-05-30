@@ -17,7 +17,11 @@ function mapRecordToCard(record) {
     exampleVi: record.example_vi || '',
     type: record.type,
     favorite: !!record.favorite,
-    mastered: record.status === 'learned'
+    mastered: record.status === 'learned',
+    radicalAnalysis: record.radical_analysis || '',
+    characterLogic: record.character_logic || '',
+    onyomi: record.onyomi || '',
+    kunyomi: record.kunyomi || ''
   };
 }
 

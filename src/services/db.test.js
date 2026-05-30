@@ -88,7 +88,7 @@ describe('db.js service tests', () => {
   describe('getCardsForLesson', () => {
     it('should fetch and combine vocabularies and sentences', async () => {
       const mockVocabs = [
-        { id: 'v1', type: 'vocab', kana: 'a', kanji: 'A', status: 'learned' }
+        { id: 'v1', type: 'vocab', kana: 'a', kanji: 'A', status: 'learned', radical_analysis: 'Phân tích bộ', character_logic: 'Liên tưởng từ', onyomi: 'ON_VAL', kunyomi: 'KUN_VAL' }
       ];
       const mockSentences = [
         { id: 's1', type: 'sentence', kana: 'b', kanji: 'B', status: 'forgot' }
@@ -102,6 +102,10 @@ describe('db.js service tests', () => {
       expect(result).toHaveLength(2);
       expect(result[0].id).toBe('v1');
       expect(result[0].mastered).toBe(true);
+      expect(result[0].radicalAnalysis).toBe('Phân tích bộ');
+      expect(result[0].characterLogic).toBe('Liên tưởng từ');
+      expect(result[0].onyomi).toBe('ON_VAL');
+      expect(result[0].kunyomi).toBe('KUN_VAL');
       expect(result[1].id).toBe('s1');
       expect(result[1].mastered).toBe(false);
     });

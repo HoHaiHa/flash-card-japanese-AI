@@ -86,6 +86,7 @@ function StudyList({ lessonId, onBack }) {
     
     // 2. Chip status filter
     if (filterMode === 'unlearned' && item.mastered) return false;
+    if (filterMode === 'favorite' && !item.favorite) return false;
     
     // 3. Search query filter
     const query = searchTerm.toLowerCase();
@@ -162,6 +163,12 @@ function StudyList({ lessonId, onBack }) {
           onClick={() => setFilterMode('unlearned')}
         >
           Chưa thuộc
+        </button>
+        <button 
+          className={`chip-btn ${filterMode === 'favorite' ? 'active' : ''}`}
+          onClick={() => setFilterMode('favorite')}
+        >
+          Yêu thích
         </button>
       </div>
 

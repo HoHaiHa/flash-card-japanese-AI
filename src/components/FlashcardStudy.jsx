@@ -36,6 +36,8 @@ function FlashcardStudy({ config, onBack }) {
   // Quick Filters state
   const [unlearnedOnly, setUnlearnedOnly] = useState(false);
   const [favoritesOnly, setFavoritesOnly] = useState(false);
+  const [isShuffled, setIsShuffled] = useState(false);
+  const cardRanks = useRef({});
 
   // Initialize cards from configurations
   useEffect(() => {
@@ -49,13 +51,16 @@ function FlashcardStudy({ config, onBack }) {
           // Set initial favorites mapping & loaded responses
           const favs = {};
           const initialResponses = {};
+          const ranks = {};
           cards.forEach(card => {
             favs[card.id] = card.favorite;
+            ranks[card.id] = Math.random();
             if (card.mastered) {
               initialResponses[card.id] = 'learned';
             }
           });
           setFavorites(favs);
+          cardRanks.current = ranks;
           setStudyResponses(initialResponses);
           setLoading(false);
         }
@@ -84,8 +89,13 @@ function FlashcardStudy({ config, onBack }) {
       result = result.filter(card => favorites[card.id]);
     }
 
+    // Stable Rank Shuffle if enabled
+    if (isShuffled) {
+      result.sort((a, b) => (cardRanks.current[a.id] || 0) - (cardRanks.current[b.id] || 0));
+    }
+
     return result;
-  }, [unlearnedOnly, favoritesOnly, originalCards, studyResponses, favorites]);
+  }, [unlearnedOnly, favoritesOnly, originalCards, studyResponses, favorites, isShuffled]);
 
   // Reset currentIndex when activeCards list changes
   const [prevActiveCards, setPrevActiveCards] = useState(activeCards);
@@ -187,24 +197,19 @@ function FlashcardStudy({ config, onBack }) {
     }, 300);
   };
 
-  // Handle xáo trộn thứ tự (Shuffle)
-  const handleShuffle = () => {
-    setOriginalCards(prev => {
-      const shuffled = [...prev];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  // Handle xáo trộn thứ tự (Shuffle toggle)
+  const handleShuffleToggle = () => {
+    setIsShuffled(prev => {
+      const next = !prev;
+      if (next) {
+        // Re-generate random ranks when turning shuffle on to get a fresh shuffle
+        const ranks = {};
+        originalCards.forEach(card => {
+          ranks[card.id] = Math.random();
+        });
+        cardRanks.current = ranks;
       }
-      return shuffled;
-    });
-    setCurrentIndex(0);
-    if (swiperInstance) {
-      swiperInstance.slideToLoop(0, 0);
-    }
-    Object.values(innerSwipers.current).forEach(s => {
-      if (s && typeof s.slideToLoop === 'function') {
-        s.slideToLoop(0, 0);
-      }
+      return next;
     });
   };
 
@@ -238,9 +243,37 @@ function FlashcardStudy({ config, onBack }) {
     // common header elements
     const renderHeader = (isFront) => {
       if (!isFront) return null;
+
+      const getTypeLabel = (type) => {
+        switch (type) {
+          case 'vocab': return 'Từ vựng';
+          case 'sentence': return 'Mẫu câu';
+          case 'kanji': return 'Hán tự';
+          default: return '';
+        }
+      };
+
+      const getTypeBadgeStyle = (type) => {
+        switch (type) {
+          case 'vocab':
+            return { color: 'var(--primary)', backgroundColor: 'rgba(0, 90, 224, 0.08)', border: '1px solid rgba(0, 90, 224, 0.16)' };
+          case 'sentence':
+            return { color: 'var(--secondary)', backgroundColor: 'rgba(0, 110, 80, 0.08)', border: '1px solid rgba(0, 110, 80, 0.16)' };
+          case 'kanji':
+            return { color: 'var(--tertiary)', backgroundColor: 'rgba(120, 70, 0, 0.08)', border: '1px solid rgba(120, 70, 0, 0.16)' };
+          default:
+            return {};
+        }
+      };
+
       return (
         <>
-          <span className="card-level-badge">{card.level}</span>
+          <div style={{ position: 'absolute', top: '16px', left: '16px', display: 'flex', gap: '6px', alignItems: 'center' }}>
+            <span className="card-level-badge" style={{ position: 'static', whiteSpace: 'nowrap', flexShrink: 0 }}>{card.level}</span>
+            <span className="card-level-badge" style={{ position: 'static', whiteSpace: 'nowrap', flexShrink: 0, ...getTypeBadgeStyle(card.type) }}>
+              {getTypeLabel(card.type)}
+            </span>
+          </div>
           <button 
             className="card-favorite-btn" 
             style={{ color: favorites[card.id] ? '#ffb800' : 'var(--outline-variant)' }}
@@ -266,7 +299,7 @@ function FlashcardStudy({ config, onBack }) {
             <SwiperSlide>
               <div className="swiper-card-face swiper-card-face-center">
                 {renderHeader(true)}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 16px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 16px', marginTop: '24px' }}>
                   <span className="font-headline-md text-on-surface" style={{ fontSize: '28px', fontWeight: '600', color: 'var(--primary)' }}>
                     {card.definition}
                   </span>
@@ -333,7 +366,7 @@ function FlashcardStudy({ config, onBack }) {
             <SwiperSlide>
               <div className="swiper-card-face swiper-card-face-center">
                 {renderHeader(true)}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginTop: '24px' }}>
                   <span className="font-display-jp text-on-surface mb-stack-sm" style={{ fontSize: card.kanji.length > 5 ? '32px' : '48px' }}>
                     {card.kanji}
                   </span>
@@ -400,72 +433,76 @@ function FlashcardStudy({ config, onBack }) {
       // Cấu trúc mẫu câu (Sentence Card)
       return (
         <>
-          {/* Mặt 1: Câu ví dụ tiếng Nhật chính */}
+          {/* Mặt 1: Cấu trúc ngữ pháp */}
           <SwiperSlide>
             <div className="swiper-card-face swiper-card-face-center">
               {renderHeader(true)}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 16px' }}>
-                <span className="font-display-jp text-on-surface mb-stack-sm" style={{ fontSize: card.kanji.length > 10 ? '24px' : '32px', lineHeight: '1.4' }}>
-                  {card.kanji}
-                </span>
-                <span className="font-body-lg text-on-surface-variant opacity-60">
-                  {card.kana}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 16px', marginTop: '24px' }}>
+                <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
+                  Cấu trúc Ngữ pháp
+                </div>
+                <span className="font-headline-md text-on-surface" style={{ fontSize: '22px', fontWeight: '700', color: 'var(--primary)', lineHeight: '1.4' }}>
+                  {card.details}
                 </span>
               </div>
               <div className="card-instruction-row">
                 <span className="material-symbols-outlined">touch_app</span>
-                <span>Chạm để xem ý nghĩa &amp; cấu trúc</span>
+                <span>Chạm để xem ví dụ &amp; ý nghĩa</span>
               </div>
             </div>
           </SwiperSlide>
 
-          {/* Mặt 2: Ý nghĩa tiếng Việt & cấu trúc */}
+          {/* Mặt 2: Ví dụ, Ý nghĩa & Phân tích trợ từ */}
           <SwiperSlide>
-            <div className="swiper-card-face swiper-card-face-center">
-              <div style={{ width: '100%', textAlign: 'center', padding: '0 16px' }}>
-                <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
-                  Ý nghĩa &amp; Cấu trúc
+            <div className="swiper-card-face" style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '20px 16px var(--spacing-stack-md) 16px' }}>
+              <div style={{ width: '100%', textAlign: 'center', marginBottom: '14px' }}>
+                <div className="font-label-sm uppercase tracking-widest text-outline block" style={{ fontSize: '11px', color: 'var(--primary)' }}>
+                  Ví dụ &amp; Phân tích chi tiết
                 </div>
-                <div style={{ backgroundColor: 'var(--surface-container-low)', padding: '10px 14px', borderRadius: '8px', display: 'inline-block', border: '1px solid var(--surface-variant)', marginBottom: '12px' }}>
-                  <span className="font-headline-md text-on-surface" style={{ fontSize: '15px', fontWeight: '600', color: 'var(--primary)' }}>
-                    {card.definition}
+              </div>
+              
+              {/* Scrollable Container to fit both parts neatly */}
+              <div className="custom-scrollbar" style={{ flexGrow: 1, overflowY: 'auto', paddingRight: '4px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {/* 1. Japanese Example Sentence & Vietnamese Meaning */}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', width: '100%' }}>
+                  <span className="font-display-jp text-on-surface" style={{ fontSize: card.kanji.length > 10 ? '22px' : '28px', lineHeight: '1.4', marginBottom: '6px', fontWeight: '700' }}>
+                    {card.kanji}
                   </span>
+                  <span className="font-body-lg text-on-surface-variant opacity-60" style={{ fontSize: '15px', marginBottom: '12px', fontWeight: '500' }}>
+                    {card.kana}
+                  </span>
+                  <div style={{ backgroundColor: 'var(--surface-container-low)', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--surface-variant)', width: '100%' }}>
+                    <span className="font-body-md text-on-surface" style={{ fontWeight: '600', color: 'var(--primary)', fontSize: '14px' }}>
+                      {card.definition}
+                    </span>
+                  </div>
                 </div>
-                {card.details && (
-                  <p style={{ fontSize: '13px', color: 'var(--on-surface-variant)', margin: '0 auto', maxWidth: '280px', lineHeight: '1.4' }}>
-                    <strong>Mẫu câu:</strong> {card.details}
-                  </p>
-                )}
-                {card.sinoVietnamese && (
-                  <p style={{ fontSize: '11px', color: 'var(--outline)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    {card.sinoVietnamese}
-                  </p>
-                )}
-              </div>
-              <div className="card-instruction-row">
-                <span className="material-symbols-outlined">rotate_right</span>
-                <span>Chạm để xem ví dụ chi tiết</span>
-              </div>
-            </div>
-          </SwiperSlide>
 
-          {/* Mặt 3: Ví dụ bổ sung / cách sử dụng */}
-          <SwiperSlide>
-            <div className="swiper-card-face swiper-card-face-center">
-              <div style={{ width: '100%', textAlign: 'center', padding: '0 16px' }}>
-                <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
-                  Cách sử dụng &amp; Ví dụ
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%', maxWidth: '300px', margin: '0 auto' }}>
-                  <p className="font-body-md text-on-surface-variant" style={{ fontStyle: 'italic', color: 'var(--primary)', fontWeight: '500', fontSize: '15px' }}>
-                    {card.exampleJp}
-                  </p>
-                  <p className="font-body-sm text-on-surface-variant opacity-80" style={{ fontSize: '13px' }}>
-                    {card.exampleVi}
-                  </p>
+                {/* 2. Particle Breakdown List */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
+                  <div style={{ borderTop: '1px dashed var(--outline-variant)', paddingTop: '12px', paddingBottom: '4px', textAlign: 'center' }}>
+                    <span className="font-label-sm uppercase tracking-widest text-outline block" style={{ fontSize: '10px', color: 'var(--on-surface-variant)' }}>
+                      Phân tích trợ từ &amp; thành phần
+                    </span>
+                  </div>
+                  {card.components && card.components.map((comp, idx) => (
+                    <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 12px', backgroundColor: 'var(--surface-container-low)', borderRadius: '8px', border: '1px solid var(--surface-variant)' }}>
+                      <span style={{ fontSize: '15px', fontWeight: 'bold', color: 'var(--primary)' }}>
+                        {comp.char}
+                      </span>
+                      <span style={{ fontSize: '12px', color: 'var(--on-surface-variant)', textAlign: 'left', lineHeight: '1.3' }}>
+                        {comp.meaning}
+                      </span>
+                    </div>
+                  ))}
+                  {(!card.components || card.components.length === 0) && (
+                    <span style={{ fontSize: '12px', color: 'var(--on-surface-variant)', textAlign: 'center', fontStyle: 'italic' }}>Không có phân tích thành phần.</span>
+                  )}
                 </div>
               </div>
-              <div className="card-instruction-row" style={{ marginTop: 'auto', justifyContent: 'center' }}>
+
+              {/* Bottom navigation hint */}
+              <div className="card-instruction-row" style={{ marginTop: '12px', justifyContent: 'center' }}>
                 <span className="material-symbols-outlined">restart_alt</span>
                 <span>Về mặt trước</span>
               </div>
@@ -481,13 +518,30 @@ function FlashcardStudy({ config, onBack }) {
           <SwiperSlide>
             <div className="swiper-card-face swiper-card-face-center">
               {renderHeader(true)}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                <span className="font-display-jp text-on-surface mb-stack-sm" style={{ fontSize: '72px', color: 'var(--tertiary)' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginTop: '24px' }}>
+                <span className="font-display-jp text-on-surface" style={{ fontSize: '88px', color: 'var(--tertiary)', marginBottom: '20px', display: 'block' }}>
                   {card.kanji}
                 </span>
-                <span className="font-body-lg text-on-surface-variant opacity-60">
-                  On/Kun: {card.kana}
-                </span>
+                {card.onyomi || card.kunyomi ? (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+                    {card.onyomi && (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '14px', backgroundColor: 'var(--surface-container-low)', padding: '4px 12px', borderRadius: '12px', border: '1px solid var(--surface-variant)' }}>
+                        <span style={{ fontWeight: '700', color: 'var(--tertiary)', textTransform: 'uppercase', letterSpacing: '0.5px', fontSize: '11px' }}>On:</span>
+                        <span className="font-body-md text-on-surface" style={{ fontWeight: '500' }}>{card.onyomi}</span>
+                      </div>
+                    )}
+                    {card.kunyomi && (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '14px', backgroundColor: 'var(--surface-container-low)', padding: '4px 12px', borderRadius: '12px', border: '1px solid var(--surface-variant)' }}>
+                        <span style={{ fontWeight: '700', color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.5px', fontSize: '11px' }}>Kun:</span>
+                        <span className="font-body-md text-on-surface" style={{ fontWeight: '500' }}>{card.kunyomi}</span>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <span className="font-body-lg text-on-surface-variant" style={{ opacity: 0.7, fontWeight: '500', fontSize: '18px' }}>
+                    On/Kun: {card.kana}
+                  </span>
+                )}
               </div>
               <div className="card-instruction-row">
                 <span className="material-symbols-outlined">touch_app</span>
@@ -524,30 +578,52 @@ function FlashcardStudy({ config, onBack }) {
             </div>
           </SwiperSlide>
 
-          {/* Mặt 3: Cấu tạo bộ thủ */}
+          {/* Mặt 3: Cấu tạo bộ thủ & Phân tích */}
           <SwiperSlide>
-            <div className="swiper-card-face swiper-card-face-center">
-              <div style={{ width: '100%', textAlign: 'center', padding: '0 16px' }}>
-                <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
-                  Cấu tạo bộ thủ
+            <div className="swiper-card-face" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+              <div style={{ width: '100%', textAlign: 'center', marginBottom: '12px' }}>
+                <div className="font-label-sm uppercase tracking-widest text-outline block" style={{ fontSize: '11px', marginBottom: '8px' }}>
+                  Cấu tạo &amp; Phân tích bộ thủ
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', width: '100%', maxWidth: '260px', margin: '0 auto' }}>
+              </div>
+              
+              {/* Scrollable analysis content */}
+              <div style={{ flexGrow: 1, overflowY: 'auto', paddingRight: '4px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {/* 1. Radicals List */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   {card.components && card.components.map((comp, idx) => (
-                    <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '6px 10px', backgroundColor: 'var(--surface-container-low)', borderRadius: '8px', width: '100%', border: '1px solid var(--surface-variant)' }}>
-                      <span style={{ fontSize: '18px', fontWeight: 'bold', color: 'var(--tertiary)' }}>
+                    <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '6px 10px', backgroundColor: 'var(--surface-container-low)', borderRadius: '8px', border: '1px solid var(--surface-variant)' }}>
+                      <span style={{ fontSize: '16px', fontWeight: 'bold', color: 'var(--tertiary)' }}>
                         {comp.char}
                       </span>
-                      <span style={{ fontSize: '12px', color: 'var(--on-surface-variant)', textAlign: 'left' }}>
+                      <span style={{ fontSize: '12px', color: 'var(--on-surface-variant)', fontWeight: '500' }}>
                         {comp.meaning}
                       </span>
                     </div>
                   ))}
                   {(!card.components || card.components.length === 0) && (
-                    <span style={{ fontSize: '12px', color: 'var(--on-surface-variant)' }}>Không có thông tin bộ thủ.</span>
+                    <span style={{ fontSize: '12px', color: 'var(--on-surface-variant)', textAlign: 'center' }}>Không có thông tin bộ thủ.</span>
                   )}
                 </div>
+
+                {/* 2. Radical Analysis Story */}
+                {card.radicalAnalysis && (
+                  <div style={{ backgroundColor: 'var(--surface-container-low)', padding: '10px 12px', borderRadius: '8px', borderLeft: '4px solid var(--primary)', fontSize: '12px', color: 'var(--on-surface-variant)', lineHeight: '1.4', textAlign: 'left' }}>
+                    <strong style={{ display: 'block', color: 'var(--primary)', marginBottom: '4px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Giải nghĩa bộ thủ</strong>
+                    {card.radicalAnalysis}
+                  </div>
+                )}
+
+                {/* 3. Word Logic Story */}
+                {card.characterLogic && (
+                  <div style={{ backgroundColor: 'var(--surface-container-low)', padding: '10px 12px', borderRadius: '8px', borderLeft: '4px solid var(--secondary)', fontSize: '12px', color: 'var(--on-surface-variant)', lineHeight: '1.4', textAlign: 'left' }}>
+                    <strong style={{ display: 'block', color: 'var(--secondary)', marginBottom: '4px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Liên tưởng ghi nhớ</strong>
+                    {card.characterLogic}
+                  </div>
+                )}
               </div>
-              <div className="card-instruction-row" style={{ marginTop: 'auto', justifyContent: 'center' }}>
+
+              <div className="card-instruction-row" style={{ marginTop: '12px', justifyContent: 'center' }}>
                 <span className="material-symbols-outlined">restart_alt</span>
                 <span>Về mặt trước</span>
               </div>
@@ -675,7 +751,10 @@ function FlashcardStudy({ config, onBack }) {
             <span>Chưa thuộc</span>
           </button>
 
-          <button className="quick-pill-btn" onClick={handleShuffle}>
+          <button 
+            className={`quick-pill-btn ${isShuffled ? 'active' : ''}`} 
+            onClick={handleShuffleToggle}
+          >
             <span className="material-symbols-outlined" style={{ fontSize: '18px', color: 'var(--primary)' }}>shuffle</span>
             <span>Ngẫu nhiên</span>
           </button>
