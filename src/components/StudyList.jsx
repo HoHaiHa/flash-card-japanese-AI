@@ -86,6 +86,7 @@ function StudyList({ lessonId, onBack }) {
     
     // 2. Chip status filter
     if (filterMode === 'unlearned' && item.mastered) return false;
+    if (filterMode === 'learned' && !item.mastered) return false;
     if (filterMode === 'favorite' && !item.favorite) return false;
     
     // 3. Search query filter
@@ -158,13 +159,19 @@ function StudyList({ lessonId, onBack }) {
         >
           Tất cả
         </button>
-        <button 
+        <button
           className={`chip-btn ${filterMode === 'unlearned' ? 'active' : ''}`}
           onClick={() => setFilterMode('unlearned')}
         >
           Chưa thuộc
         </button>
-        <button 
+        <button
+          className={`chip-btn ${filterMode === 'learned' ? 'active' : ''}`}
+          onClick={() => setFilterMode('learned')}
+        >
+          Đã thuộc
+        </button>
+        <button
           className={`chip-btn ${filterMode === 'favorite' ? 'active' : ''}`}
           onClick={() => setFilterMode('favorite')}
         >

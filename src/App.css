@@ -640,17 +640,23 @@
 /* Quick active button bar inside flashcard */
 .quick-action-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 6px;
   margin-bottom: var(--spacing-stack-lg);
   width: 100%;
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+.quick-action-bar::-webkit-scrollbar {
+  display: none;
 }
 
 .quick-pill-btn {
-  flex: 1;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;

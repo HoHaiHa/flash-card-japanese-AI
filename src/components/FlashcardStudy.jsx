@@ -97,14 +97,15 @@ function FlashcardStudy({ config, onBack }) {
     return result;
   }, [unlearnedOnly, favoritesOnly, originalCards, studyResponses, favorites, isShuffled]);
 
-  // Reset currentIndex when activeCards list changes
-  const [prevActiveCards, setPrevActiveCards] = useState(activeCards);
-  if (activeCards !== prevActiveCards) {
-    setPrevActiveCards(activeCards);
+  // Reset currentIndex only when the actual card IDs change (not just studyResponses reference)
+  const activeCardIds = activeCards.map(c => c.id).join(',');
+  const [prevActiveCardIds, setPrevActiveCardIds] = useState(activeCardIds);
+  if (activeCardIds !== prevActiveCardIds) {
+    setPrevActiveCardIds(activeCardIds);
     setCurrentIndex(0);
   }
 
-  // Reset swipers position when activeCards list changes
+  // Reset swipers position only when card IDs actually change
   useEffect(() => {
     if (swiperInstance) {
       swiperInstance.slideToLoop(0, 0);
@@ -114,7 +115,7 @@ function FlashcardStudy({ config, onBack }) {
         s.slideToLoop(0, 0);
       }
     });
-  }, [activeCards, swiperInstance]);
+  }, [activeCardIds, swiperInstance]);
 
   // Apply background flash style
   useEffect(() => {
@@ -156,12 +157,10 @@ function FlashcardStudy({ config, onBack }) {
     setFlashType(type);
     setIsPopping(true);
 
-    // Save to database
-    try {
-      await updateCardStatus(currentCard.id, currentCard.type, type);
-    } catch (err) {
+    // Save to database (fire-and-forget — không block navigation)
+    updateCardStatus(currentCard.id, currentCard.type, type).catch(err => {
       console.error('Lỗi khi cập nhật trạng thái:', err);
-    }
+    });
 
     setTimeout(() => {
       // Clear visual flash & advance
@@ -318,7 +317,7 @@ function FlashcardStudy({ config, onBack }) {
                   <span className="font-display-jp text-on-surface mb-stack-sm" style={{ fontSize: card.kanji.length > 5 ? '32px' : '48px' }}>
                     {card.kanji}
                   </span>
-                  <span className="font-body-lg text-on-surface-variant opacity-60">
+                  <span className="font-body-lg text-on-surface-variant opacity-60" style={{ fontSize: '22px' }}>
                     {card.kana}
                   </span>
                   {card.details && (
@@ -329,29 +328,6 @@ function FlashcardStudy({ config, onBack }) {
                 </div>
                 <div className="card-instruction-row">
                   <span className="material-symbols-outlined">rotate_right</span>
-                  <span>Xem cách sử dụng (Ví dụ)</span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            {/* Mặt 3: Cách sử dụng (Ví dụ) */}
-            <SwiperSlide>
-              <div className="swiper-card-face swiper-card-face-center">
-                <div style={{ width: '100%', textAlign: 'center', padding: '0 16px' }}>
-                  <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
-                    Cách sử dụng &amp; Ví dụ
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%', maxWidth: '300px', margin: '0 auto' }}>
-                    <p className="font-body-md text-on-surface-variant" style={{ fontStyle: 'italic', color: 'var(--primary)', fontWeight: '500', fontSize: '16px' }}>
-                      {card.exampleJp}
-                    </p>
-                    <p className="font-body-sm text-on-surface-variant opacity-80" style={{ fontSize: '14px' }}>
-                      {card.exampleVi}
-                    </p>
-                  </div>
-                </div>
-                <div className="card-instruction-row" style={{ marginTop: 'auto', justifyContent: 'center' }}>
-                  <span className="material-symbols-outlined">restart_alt</span>
                   <span>Về mặt trước</span>
                 </div>
               </div>
@@ -370,7 +346,7 @@ function FlashcardStudy({ config, onBack }) {
                   <span className="font-display-jp text-on-surface mb-stack-sm" style={{ fontSize: card.kanji.length > 5 ? '32px' : '48px' }}>
                     {card.kanji}
                   </span>
-                  <span className="font-body-lg text-on-surface-variant opacity-60">
+                  <span className="font-body-lg text-on-surface-variant opacity-60" style={{ fontSize: '22px' }}>
                     {card.kana}
                   </span>
                 </div>
@@ -399,29 +375,6 @@ function FlashcardStudy({ config, onBack }) {
                 </div>
                 <div className="card-instruction-row">
                   <span className="material-symbols-outlined">rotate_right</span>
-                  <span>Chạm để xem mẫu câu ví dụ</span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            {/* Mặt 3: Mẫu câu ví dụ */}
-            <SwiperSlide>
-              <div className="swiper-card-face swiper-card-face-center">
-                <div style={{ width: '100%', textAlign: 'center', padding: '0 16px' }}>
-                  <div className="font-label-sm uppercase tracking-widest text-outline mb-base block" style={{ fontSize: '11px' }}>
-                    Mẫu câu ví dụ
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%', maxWidth: '300px', margin: '0 auto' }}>
-                    <p className="font-body-md text-on-surface-variant" style={{ fontStyle: 'italic', color: 'var(--primary)', fontWeight: '500', fontSize: '16px' }}>
-                      {card.exampleJp}
-                    </p>
-                    <p className="font-body-sm text-on-surface-variant opacity-80" style={{ fontSize: '14px' }}>
-                      {card.exampleVi}
-                    </p>
-                  </div>
-                </div>
-                <div className="card-instruction-row" style={{ marginTop: 'auto', justifyContent: 'center' }}>
-                  <span className="material-symbols-outlined">restart_alt</span>
                   <span>Về mặt trước</span>
                 </div>
               </div>
@@ -638,7 +591,7 @@ function FlashcardStudy({ config, onBack }) {
 
   // Calculate statistics
   const totalCards = activeCards.length;
-  const progressPercent = totalCards > 0 ? (currentIndex / totalCards) * 100 : 0;
+  const progressPercent = totalCards > 0 ? Math.min(((currentIndex + 1) / totalCards) * 100, 100) : 0;
 
   const totalLearned = Object.values(studyResponses).filter(v => v === 'learned').length;
   const totalForgot = Object.values(studyResponses).filter(v => v === 'forgot').length;
@@ -717,7 +670,7 @@ function FlashcardStudy({ config, onBack }) {
         <div className="header-progress-text">
           <span className="progress-label">Session Progress</span>
           <span className="progress-value">
-            {totalCards > 0 ? `${currentIndex} / ${totalCards}` : '0 / 0'}
+            {totalCards > 0 ? `${Math.min(currentIndex + 1, totalCards)} / ${totalCards}` : '0 / 0'}
           </span>
         </div>
         <div className="user-avatar"></div>
@@ -745,14 +698,22 @@ function FlashcardStudy({ config, onBack }) {
         <div className="quick-action-bar">
           <button
             className={`quick-pill-btn ${unlearnedOnly ? 'active' : ''}`}
-            onClick={() => setUnlearnedOnly(!unlearnedOnly)}
+            onClick={() => { setUnlearnedOnly(!unlearnedOnly); setLearnedOnly(false); }}
           >
             <span className="material-symbols-outlined" style={{ fontSize: '18px', color: 'var(--error)' }}>close</span>
             <span>Chưa thuộc</span>
           </button>
 
-          <button 
-            className={`quick-pill-btn ${isShuffled ? 'active' : ''}`} 
+          <button
+            className={`quick-pill-btn ${learnedOnly ? 'active' : ''}`}
+            onClick={() => { setLearnedOnly(!learnedOnly); setUnlearnedOnly(false); }}
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: '18px', color: 'var(--correct, #00c985)' }}>check_circle</span>
+            <span>Đã thuộc</span>
+          </button>
+
+          <button
+            className={`quick-pill-btn ${isShuffled ? 'active' : ''}`}
             onClick={handleShuffleToggle}
           >
             <span className="material-symbols-outlined" style={{ fontSize: '18px', color: 'var(--primary)' }}>shuffle</span>
@@ -786,12 +747,24 @@ function FlashcardStudy({ config, onBack }) {
                     }
                   });
                 }}
+                spaceBetween={20}
                 style={{ width: '100%', height: '100%' }}
               >
                 {activeCards.map((card) => (
                   <SwiperSlide key={card.id}>
-                    <div 
-                      style={{ width: '100%', height: '100%' }}
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: '24px',
+                        border: studyResponses[card.id] === 'learned'
+                          ? '2px solid rgba(34, 197, 94, 0.55)'
+                          : studyResponses[card.id] === 'forgot'
+                          ? '2px solid rgba(239, 68, 68, 0.4)'
+                          : '2px solid transparent',
+                        transition: 'border 0.3s ease',
+                        overflow: 'hidden',
+                      }}
                       onClick={() => handleCardClick(card.id)}
                     >
                       <Swiper

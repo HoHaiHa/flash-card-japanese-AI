@@ -1,0 +1,192 @@
+{
+  "lessonName": "Bài 1 — はじめまして",
+  "level": "N5",
+  "vocabularies": [
+    {"kana": "わたし", "kanji": "", "sino_vietnamese": "", "definition": "Tôi", "example_jp": "", "example_vi": ""},
+    {"kana": "わたしたち", "kanji": "", "sino_vietnamese": "", "definition": "Chúng tôi, chúng ta", "example_jp": "", "example_vi": ""},
+    {"kana": "あなた", "kanji": "", "sino_vietnamese": "", "definition": "Anh/chị/ông/bà", "example_jp": "", "example_vi": ""},
+    {"kana": "あのひと", "kanji": "あの人", "sino_vietnamese": "", "definition": "Người kia, người đó", "example_jp": "", "example_vi": ""},
+    {"kana": "あのかた", "kanji": "あの方", "sino_vietnamese": "", "definition": "Vị kia (lịch sự)", "example_jp": "", "example_vi": ""},
+    {"kana": "みなさん", "kanji": "皆さん", "sino_vietnamese": "GIAI", "definition": "Các anh chị, quý vị", "example_jp": "", "example_vi": ""},
+    {"kana": "～さん", "kanji": "", "sino_vietnamese": "", "definition": "Anh, chị, ông, bà (hậu tố lịch sự)", "example_jp": "", "example_vi": ""},
+    {"kana": "～ちゃん", "kanji": "", "sino_vietnamese": "", "definition": "Hậu tố thân mật cho trẻ em (thay ～さん)", "example_jp": "", "example_vi": ""},
+    {"kana": "～くん", "kanji": "～君", "sino_vietnamese": "QUÂN", "definition": "Hậu tố thân mật cho nam giới", "example_jp": "", "example_vi": ""},
+    {"kana": "～じん", "kanji": "～人", "sino_vietnamese": "NHÂN", "definition": "Người (nước ...)", "example_jp": "", "example_vi": ""},
+    {"kana": "せんせい", "kanji": "先生", "sino_vietnamese": "TIÊN SINH", "definition": "Thầy/cô", "example_jp": "", "example_vi": ""},
+    {"kana": "きょうし", "kanji": "教師", "sino_vietnamese": "GIÁO SƯ", "definition": "Giáo viên (danh từ chỉ nghề)", "example_jp": "", "example_vi": ""},
+    {"kana": "がくせい", "kanji": "学生", "sino_vietnamese": "HỌC SINH", "definition": "Học sinh, sinh viên", "example_jp": "", "example_vi": ""},
+    {"kana": "かいしゃいん", "kanji": "会社員", "sino_vietnamese": "HỘI XÃ VIÊN", "definition": "Nhân viên công ty", "example_jp": "", "example_vi": ""},
+    {"kana": "しゃいん", "kanji": "社員", "sino_vietnamese": "XÃ VIÊN", "definition": "Nhân viên công ty", "example_jp": "", "example_vi": ""},
+    {"kana": "ぎんこういん", "kanji": "銀行員", "sino_vietnamese": "NGÂN HÀNG VIÊN", "definition": "Nhân viên ngân hàng", "example_jp": "", "example_vi": ""},
+    {"kana": "いしゃ", "kanji": "医者", "sino_vietnamese": "Y GIẢ", "definition": "Bác sĩ", "example_jp": "", "example_vi": ""},
+    {"kana": "けんきゅうしゃ", "kanji": "研究者", "sino_vietnamese": "NGHIÊN CỨU GIẢ", "definition": "Nhà nghiên cứu", "example_jp": "", "example_vi": ""},
+    {"kana": "エンジニア", "kanji": "", "sino_vietnamese": "", "definition": "Kỹ sư", "example_jp": "", "example_vi": ""},
+    {"kana": "だいがく", "kanji": "大学", "sino_vietnamese": "ĐẠI HỌC", "definition": "Đại học, trường đại học", "example_jp": "", "example_vi": ""},
+    {"kana": "びょういん", "kanji": "病院", "sino_vietnamese": "BỆNH VIỆN", "definition": "Bệnh viện", "example_jp": "", "example_vi": ""},
+    {"kana": "でんき", "kanji": "電気", "sino_vietnamese": "ĐIỆN KHÍ", "definition": "Điện, đèn điện", "example_jp": "", "example_vi": ""},
+    {"kana": "だれ", "kanji": "", "sino_vietnamese": "", "definition": "Ai", "example_jp": "", "example_vi": ""},
+    {"kana": "どなた", "kanji": "", "sino_vietnamese": "", "definition": "Vị nào (lịch sự hơn だれ)", "example_jp": "", "example_vi": ""},
+    {"kana": "～さい", "kanji": "～歳", "sino_vietnamese": "TUẾ", "definition": "Tuổi", "example_jp": "", "example_vi": ""},
+    {"kana": "なんさい", "kanji": "何歳", "sino_vietnamese": "HÀ TUẾ", "definition": "Mấy tuổi, bao nhiêu tuổi", "example_jp": "", "example_vi": ""},
+    {"kana": "おいくつ", "kanji": "", "sino_vietnamese": "", "definition": "Mấy tuổi (lịch sự)", "example_jp": "", "example_vi": ""},
+    {"kana": "はい", "kanji": "", "sino_vietnamese": "", "definition": "Vâng, dạ", "example_jp": "", "example_vi": ""},
+    {"kana": "いいえ", "kanji": "", "sino_vietnamese": "", "definition": "Không", "example_jp": "", "example_vi": ""},
+    {"kana": "しつれいですが", "kanji": "失礼ですが", "sino_vietnamese": "THẤT LỄ", "definition": "Xin lỗi (mở đầu câu hỏi lịch sự)", "example_jp": "", "example_vi": ""},
+    {"kana": "おなまえは", "kanji": "お名前は", "sino_vietnamese": "DANH", "definition": "Tên anh/chị là gì?", "example_jp": "", "example_vi": ""},
+    {"kana": "はじめまして", "kanji": "初めまして", "sino_vietnamese": "SƠ", "definition": "Rất hân hạnh được gặp (lần đầu)", "example_jp": "", "example_vi": ""},
+    {"kana": "どうぞよろしく", "kanji": "", "sino_vietnamese": "", "definition": "Rất mong được giúp đỡ", "example_jp": "", "example_vi": ""},
+    {"kana": "こちらは～さんです", "kanji": "", "sino_vietnamese": "", "definition": "Đây là anh/chị/ông/bà ~", "example_jp": "", "example_vi": ""},
+    {"kana": "～からきました", "kanji": "～から来ました", "sino_vietnamese": "", "definition": "Tôi đến từ ~", "example_jp": "", "example_vi": ""},
+    {"kana": "アメリカ", "kanji": "", "sino_vietnamese": "", "definition": "Mỹ (Hoa Kỳ)", "example_jp": "", "example_vi": ""},
+    {"kana": "イギリス", "kanji": "", "sino_vietnamese": "", "definition": "Anh (Vương quốc Anh)", "example_jp": "", "example_vi": ""},
+    {"kana": "インド", "kanji": "", "sino_vietnamese": "", "definition": "Ấn Độ", "example_jp": "", "example_vi": ""},
+    {"kana": "インドネシア", "kanji": "", "sino_vietnamese": "", "definition": "Indonesia", "example_jp": "", "example_vi": ""},
+    {"kana": "かんこく", "kanji": "韓国", "sino_vietnamese": "HÀN QUỐC", "definition": "Hàn Quốc", "example_jp": "", "example_vi": ""},
+    {"kana": "タイ", "kanji": "", "sino_vietnamese": "", "definition": "Thái Lan", "example_jp": "", "example_vi": ""},
+    {"kana": "ちゅうごく", "kanji": "中国", "sino_vietnamese": "TRUNG QUỐC", "definition": "Trung Quốc", "example_jp": "", "example_vi": ""},
+    {"kana": "ドイツ", "kanji": "", "sino_vietnamese": "", "definition": "Đức", "example_jp": "", "example_vi": ""},
+    {"kana": "にほん", "kanji": "日本", "sino_vietnamese": "NHẬT BẢN", "definition": "Nhật Bản", "example_jp": "", "example_vi": ""},
+    {"kana": "フランス", "kanji": "", "sino_vietnamese": "", "definition": "Pháp", "example_jp": "", "example_vi": ""},
+    {"kana": "ブラジル", "kanji": "", "sino_vietnamese": "", "definition": "Braxin", "example_jp": "", "example_vi": ""},
+    {"kana": "さくらだいがく", "kanji": "さくら大学", "sino_vietnamese": "", "definition": "Đại học Sakura", "example_jp": "", "example_vi": ""},
+    {"kana": "ふじだいがく", "kanji": "富士大学", "sino_vietnamese": "PHÚ SĨ ĐẠI HỌC", "definition": "Đại học Phú Sĩ", "example_jp": "", "example_vi": ""},
+    {"kana": "こうべびょういん", "kanji": "神戸病院", "sino_vietnamese": "THẦN HỘ BỆNH VIỆN", "definition": "Bệnh viện Kobe", "example_jp": "", "example_vi": ""}
+  ],
+  "kanjis": [
+    {
+      "kanji": "人", "kana": "じん/にん/ひと", "sino_vietnamese": "NHÂN",
+      "definition": "Người",
+      "details": "Onyomi: じん、にん; Kunyomi: ひと; Từ ghép: 人 (じん), 日本人 (にほんじん)",
+      "components": [{"char": "人", "meaning": "Bộ Nhân (người)"}],
+      "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "方", "kana": "ほう/かた", "sino_vietnamese": "PHƯƠNG",
+      "definition": "Phía, hướng, vị (lịch sự)",
+      "details": "Onyomi: ほう; Kunyomi: かた; Từ ghép: あの方 (あのかた)",
+      "components": [{"char": "方", "meaning": "Bộ Phương (hướng)"}],
+      "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "皆", "kana": "かい/みな", "sino_vietnamese": "GIAI",
+      "definition": "Tất cả, mọi người",
+      "details": "Onyomi: かい; Kunyomi: みな; Từ ghép: 皆さん (みなさん)",
+      "components": [{"char": "白", "meaning": "Bộ Bạch (trắng)"}, {"char": "比", "meaning": "Bộ Tỉ (so sánh)"}],
+      "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "教", "kana": "きょう/おしえる", "sino_vietnamese": "GIÁO",
+      "definition": "Dạy, giáo dục",
+      "details": "Onyomi: きょう; Kunyomi: おしえる; Từ ghép: 教師 (きょうし)",
+      "components": [{"char": "攴", "meaning": "Bộ Phộc (đánh nhẹ)"}, {"char": "子", "meaning": "Bộ Tử (con)"}],
+      "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "師", "kana": "し", "sino_vietnamese": "SƯ",
+      "definition": "Thầy, người dạy",
+      "details": "Onyomi: し; Từ ghép: 教師 (きょうし), 先生 (せんせい)",
+      "components": [{"char": "巾", "meaning": "Bộ Cân (khăn)"}],
+      "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "先", "kana": "せん/さき", "sino_vietnamese": "TIÊN",
+      "definition": "Trước, đầu, ngọn",
+      "details": "Onyomi: せん; Kunyomi: さき; Từ ghép: 先生 (せんせい)",
+      "components": [{"char": "儿", "meaning": "Bộ Nhân (người)"}, {"char": "土", "meaning": "Bộ Thổ (đất)"}],
+      "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "生", "kana": "せい/しょう/いきる", "sino_vietnamese": "SINH",
+      "definition": "Sống, sinh ra",
+      "details": "Onyomi: せい; Kunyomi: いきる; Từ ghép: 先生 (せんせい), 学生 (がくせい)",
+      "components": [{"char": "生", "meaning": "Bộ Sinh (sống)"}],
+      "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "学", "kana": "がく/まなぶ", "sino_vietnamese": "HỌC",
+      "definition": "Học, học vấn",
+      "details": "Onyomi: がく; Kunyomi: まなぶ; Từ ghép: 学生 (がくせい), 大学 (だいがく)",
+      "components": [{"char": "子", "meaning": "Bộ Tử (con)"}],
+      "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "大", "kana": "だい/たい/おおきい", "sino_vietnamese": "ĐẠI",
+      "definition": "Lớn, to",
+      "details": "Onyomi: だい、たい; Kunyomi: おおきい; Từ ghép: 大学 (だいがく)",
+      "components": [{"char": "大", "meaning": "Bộ Đại (lớn)"}],
+      "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "社", "kana": "しゃ", "sino_vietnamese": "XÃ",
+      "definition": "Công ty, xã hội, đền thờ",
+      "details": "Onyomi: しゃ; Từ ghép: 会社員 (かいしゃいん), 社員 (しゃいん)",
+      "components": [{"char": "示", "meaning": "Bộ Thị (thần linh)"}, {"char": "土", "meaning": "Bộ Thổ (đất)"}],
+      "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "員", "kana": "いん", "sino_vietnamese": "VIÊN",
+      "definition": "Thành viên, nhân viên",
+      "details": "Onyomi: いん; Từ ghép: 会社員 (かいしゃいん), 銀行員 (ぎんこういん)",
+      "components": [{"char": "口", "meaning": "Bộ Khẩu (miệng)"}, {"char": "貝", "meaning": "Bộ Bối (tiền bạc)"}],
+      "example_jp": "", "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kanji": "さくらさんは 先生 です。",
+      "kana": "さくらさんは せんせい です。",
+      "sino_vietnamese": "",
+      "definition": "Cô Sakura là giáo viên.",
+      "details": "N1はN2です: Câu khẳng định cơ bản \"N1 là N2\"",
+      "components": [], "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "さくらさんは 先生 じゃありません。",
+      "kana": "さくらさんは せんせい じゃありません。",
+      "sino_vietnamese": "",
+      "definition": "Cô Sakura không phải là giáo viên.",
+      "details": "N1はN2じゃありません: Câu phủ định \"N1 không phải N2\"",
+      "components": [], "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "さくらさんは 先生 ですか。",
+      "kana": "さくらさんは せんせい ですか。",
+      "sino_vietnamese": "",
+      "definition": "Cô Sakura có phải là giáo viên không?",
+      "details": "N1はN2ですか: Câu nghi vấn, thêm か vào cuối",
+      "components": [], "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "あのひとは だれ ですか。",
+      "kana": "あのひとは だれ ですか。",
+      "sino_vietnamese": "",
+      "definition": "Người kia là ai?",
+      "details": "だれ/どなた: Hỏi về danh tính người",
+      "components": [], "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "サントスさんも 先生 です。",
+      "kana": "サントスさんも せんせい です。",
+      "sino_vietnamese": "",
+      "definition": "Anh Santos cũng là giáo viên.",
+      "details": "Nも: Thay は bằng も để nói \"cũng\"",
+      "components": [], "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "さくらさんは 日本大学 の 先生 です。",
+      "kana": "さくらさんは にほんだいがくの せんせい です。",
+      "sino_vietnamese": "",
+      "definition": "Cô Sakura là giáo viên của Đại học Nhật Bản.",
+      "details": "N1のN2: の nối hai danh từ (sở hữu/thuộc về)",
+      "components": [], "example_jp": "", "example_vi": ""
+    },
+    {
+      "kanji": "さくらさんは なんさい ですか。",
+      "kana": "さくらさんは なんさい ですか。",
+      "sino_vietnamese": "",
+      "definition": "Cô Sakura bao nhiêu tuổi?",
+      "details": "なんさい/おいくつ: Hỏi tuổi (おいくつ lịch sự hơn)",
+      "components": [], "example_jp": "", "example_vi": ""
+    }
+  ]
+}
