@@ -1,0 +1,565 @@
+{
+  "lessonName": "Bài 6 — 毎朝 何を 食べますか",
+  "level": "N5",
+  "vocabularies": [
+    {
+      "kana": "たべます",
+      "kanji": "食べます",
+      "sino_vietnamese": "THỰC",
+      "definition": "Ăn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "のみます",
+      "kanji": "飲みます",
+      "sino_vietnamese": "ẨM",
+      "definition": "Uống",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "すいます",
+      "kanji": "吸います",
+      "sino_vietnamese": "HÚT",
+      "definition": "Hút (thuốc lá)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "みます",
+      "kanji": "見ます",
+      "sino_vietnamese": "KIẾN",
+      "definition": "Xem, nhìn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ききます",
+      "kanji": "聞きます",
+      "sino_vietnamese": "VĂN",
+      "definition": "Nghe",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "よみます",
+      "kanji": "読みます",
+      "sino_vietnamese": "ĐỌC",
+      "definition": "Đọc",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かきます",
+      "kanji": "書きます",
+      "sino_vietnamese": "THƯ",
+      "definition": "Viết",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かいます",
+      "kanji": "買います",
+      "sino_vietnamese": "MUA",
+      "definition": "Mua",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "とります",
+      "kanji": "撮ります",
+      "sino_vietnamese": "THỦ",
+      "definition": "Chụp (ảnh)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "します",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Làm (động từ chung)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ごはん",
+      "kanji": "ご飯",
+      "sino_vietnamese": "PHẠN",
+      "definition": "Cơm, bữa ăn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あさごはん",
+      "kanji": "朝ご飯",
+      "sino_vietnamese": "TRIÊU PHẠN",
+      "definition": "Bữa sáng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひるごはん",
+      "kanji": "昼ご飯",
+      "sino_vietnamese": "TRÚ PHẠN",
+      "definition": "Bữa trưa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ばんごはん",
+      "kanji": "晩ご飯",
+      "sino_vietnamese": "MÃN PHẠN",
+      "definition": "Bữa tối",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "パン",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Bánh mì",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たまご",
+      "kanji": "卵",
+      "sino_vietnamese": "NOÃN",
+      "definition": "Trứng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "にく",
+      "kanji": "肉",
+      "sino_vietnamese": "NHỤC",
+      "definition": "Thịt",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "さかな",
+      "kanji": "魚",
+      "sino_vietnamese": "NGƯ",
+      "definition": "Cá",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "やさい",
+      "kanji": "野菜",
+      "sino_vietnamese": "DÃ THÁI",
+      "definition": "Rau, rau củ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "くだもの",
+      "kanji": "果物",
+      "sino_vietnamese": "QUẢ VẬT",
+      "definition": "Hoa quả, trái cây",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おかし",
+      "kanji": "お菓子",
+      "sino_vietnamese": "QUẢ TỬ",
+      "definition": "Bánh kẹo, đồ ngọt",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "みず",
+      "kanji": "水",
+      "sino_vietnamese": "THỦY",
+      "definition": "Nước (lọc)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おちゃ",
+      "kanji": "お茶",
+      "sino_vietnamese": "TRÀ",
+      "definition": "Trà (Nhật)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "こうちゃ",
+      "kanji": "紅茶",
+      "sino_vietnamese": "HỒNG TRÀ",
+      "definition": "Trà đen",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "コーヒー",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cà phê",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ジュース",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Nước ép, nước trái cây",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ビール",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Bia",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おさけ",
+      "kanji": "お酒",
+      "sino_vietnamese": "TỬU",
+      "definition": "Rượu, đồ có cồn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ミルク",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Sữa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たばこ",
+      "kanji": "煙草",
+      "sino_vietnamese": "YÊN THẢO",
+      "definition": "Thuốc lá",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しんぶん",
+      "kanji": "新聞",
+      "sino_vietnamese": "TÂN VĂN",
+      "definition": "Báo (tờ báo)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "テレビ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "TV, ti vi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "えいが",
+      "kanji": "映画",
+      "sino_vietnamese": "ĐIỆN ẢNH",
+      "definition": "Phim điện ảnh",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おんがく",
+      "kanji": "音楽",
+      "sino_vietnamese": "ÂM NHẠC",
+      "definition": "Âm nhạc",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "スポーツ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Thể thao",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しゃしん",
+      "kanji": "写真",
+      "sino_vietnamese": "CHÂN",
+      "definition": "Ảnh, hình chụp",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "てがみ",
+      "kanji": "手紙",
+      "sino_vietnamese": "THỦ CHỈ",
+      "definition": "Thư (tay viết)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "レポート",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Báo cáo, report",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なに",
+      "kanji": "何",
+      "sino_vietnamese": "HÀ",
+      "definition": "Cái gì (tân ngữ)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "を",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Trợ từ tân ngữ (を)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "で",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Trợ từ địa điểm hành động (で)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いっしょに",
+      "kanji": "一緒に",
+      "sino_vietnamese": "NHẤT TỰ",
+      "definition": "Cùng với, cùng nhau",
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "kanjis": [
+    {
+      "kanji": "食",
+      "kana": "しょく/たべる",
+      "sino_vietnamese": "THỰC",
+      "definition": "Ăn, thức ăn",
+      "details": "Onyomi: しょく; Kunyomi: たべる、くう; Từ ghép: 食べます (たべます), 食堂 (しょくどう)",
+      "components": [
+        {
+          "char": "食",
+          "meaning": "Hình vẽ bát cơm đặt trên bàn"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "飲",
+      "kana": "いん/のむ",
+      "sino_vietnamese": "ẨM",
+      "definition": "Uống",
+      "details": "Onyomi: いん; Kunyomi: のむ; Từ ghép: 飲みます (のみます), 飲み物 (のみもの)",
+      "components": [
+        {
+          "char": "食",
+          "meaning": "Bộ Thực (ăn uống)"
+        },
+        {
+          "char": "欠",
+          "meaning": "Bộ Khiếm (há miệng)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "見",
+      "kana": "けん/みる",
+      "sino_vietnamese": "KIẾN",
+      "definition": "Xem, nhìn, thấy",
+      "details": "Onyomi: けん; Kunyomi: みる; Từ ghép: 見ます (みます), 見物 (けんぶつ)",
+      "components": [
+        {
+          "char": "目",
+          "meaning": "Bộ Mục (mắt)"
+        },
+        {
+          "char": "儿",
+          "meaning": "Bộ Nhân (người)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "聞",
+      "kana": "ぶん/もん/きく",
+      "sino_vietnamese": "VĂN",
+      "definition": "Nghe, hỏi",
+      "details": "Onyomi: ぶん、もん; Kunyomi: きく; Từ ghép: 聞きます (ききます), 新聞 (しんぶん)",
+      "components": [
+        {
+          "char": "門",
+          "meaning": "Bộ Môn (cổng)"
+        },
+        {
+          "char": "耳",
+          "meaning": "Bộ Nhĩ (tai)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "読",
+      "kana": "どく/よむ",
+      "sino_vietnamese": "ĐỌC",
+      "definition": "Đọc",
+      "details": "Onyomi: どく; Kunyomi: よむ; Từ ghép: 読みます (よみます), 読書 (どくしょ)",
+      "components": [
+        {
+          "char": "言",
+          "meaning": "Bộ Ngôn (nói)"
+        },
+        {
+          "char": "売",
+          "meaning": "âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "書",
+      "kana": "しょ/かく",
+      "sino_vietnamese": "THƯ",
+      "definition": "Viết",
+      "details": "Onyomi: しょ; Kunyomi: かく; Từ ghép: 書きます (かきます), 図書館 (としょかん)",
+      "components": [
+        {
+          "char": "聿",
+          "meaning": "Bộ Duật (cầm bút)"
+        },
+        {
+          "char": "日",
+          "meaning": "Bộ Nhật (mặt trời)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "買",
+      "kana": "ばい/かう",
+      "sino_vietnamese": "MUA",
+      "definition": "Mua",
+      "details": "Onyomi: ばい; Kunyomi: かう; Từ ghép: 買います (かいます), 売買 (ばいばい)",
+      "components": [
+        {
+          "char": "网",
+          "meaning": "Bộ Võng (lưới)"
+        },
+        {
+          "char": "貝",
+          "meaning": "Bộ Bối (tiền)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kana": "まいあさ なに を たべますか",
+      "kanji": "毎朝 何を 食べますか",
+      "definition": "Mỗi sáng bạn ăn gì?",
+      "details": "Câu hỏi với を",
+      "components": [
+        {
+          "part": "まいあさ",
+          "meaning": "mỗi sáng"
+        },
+        {
+          "part": "なに を",
+          "meaning": "cái gì (tân ngữ)"
+        },
+        {
+          "part": "たべますか",
+          "meaning": "ăn? (hỏi)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ で ～ を ～ます",
+      "kanji": "～ で ～ を ～ます",
+      "definition": "Tôi ~ ~ ở ~",
+      "details": "Trợ từ で (địa điểm hành động)",
+      "components": [
+        {
+          "part": "で",
+          "meaning": "ở, tại (địa điểm)"
+        },
+        {
+          "part": "を",
+          "meaning": "tân ngữ"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いっしょに ～ を ～ませんか",
+      "kanji": "一緒に ～ を ～ませんか",
+      "definition": "Cùng ~ nhau ~ không?",
+      "details": "Mời rủ với ませんか",
+      "components": [
+        {
+          "part": "いっしょに",
+          "meaning": "cùng nhau"
+        },
+        {
+          "part": "ませんか",
+          "meaning": "...không? (mời)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "そうしましょう",
+      "kanji": "そうしましょう",
+      "definition": "Vậy thì hãy làm như vậy, được!",
+      "details": "Câu đồng ý mời rủ",
+      "components": [
+        {
+          "part": "そう",
+          "meaning": "như vậy"
+        },
+        {
+          "part": "しましょう",
+          "meaning": "hãy làm"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ を ～ながら ～ます",
+      "kanji": "～ を ～ながら ～ます",
+      "definition": "Vừa ~ vừa ~",
+      "details": "Diễn tả hai hành động đồng thời",
+      "components": [
+        {
+          "part": "ながら",
+          "meaning": "vừa ~ vừa ~ (đồng thời)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ]
+}

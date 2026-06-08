@@ -1,0 +1,594 @@
+{
+  "lessonName": "Bài 5 — いつ 行きますか",
+  "level": "N5",
+  "vocabularies": [
+    {
+      "kana": "いつ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Khi nào, lúc nào",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なんようび",
+      "kanji": "何曜日",
+      "sino_vietnamese": "HÀ DIỆU NHẬT",
+      "definition": "Thứ mấy",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "にちようび",
+      "kanji": "日曜日",
+      "sino_vietnamese": "NHẬT DIỆU NHẬT",
+      "definition": "Chủ nhật",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "げつようび",
+      "kanji": "月曜日",
+      "sino_vietnamese": "NGUYỆT DIỆU NHẬT",
+      "definition": "Thứ hai",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かようび",
+      "kanji": "火曜日",
+      "sino_vietnamese": "HỎA DIỆU NHẬT",
+      "definition": "Thứ ba",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "すいようび",
+      "kanji": "水曜日",
+      "sino_vietnamese": "THỦY DIỆU NHẬT",
+      "definition": "Thứ tư",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "もくようび",
+      "kanji": "木曜日",
+      "sino_vietnamese": "MỘC DIỆU NHẬT",
+      "definition": "Thứ năm",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きんようび",
+      "kanji": "金曜日",
+      "sino_vietnamese": "KIM DIỆU NHẬT",
+      "definition": "Thứ sáu",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どようび",
+      "kanji": "土曜日",
+      "sino_vietnamese": "THỔ DIỆU NHẬT",
+      "definition": "Thứ bảy",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なんがつ",
+      "kanji": "何月",
+      "sino_vietnamese": "HÀ NGUYỆT",
+      "definition": "Tháng mấy",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いちがつ",
+      "kanji": "一月",
+      "sino_vietnamese": "NHẤT NGUYỆT",
+      "definition": "Tháng một (tháng 1)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "にがつ",
+      "kanji": "二月",
+      "sino_vietnamese": "NHỊ NGUYỆT",
+      "definition": "Tháng hai (tháng 2)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "さんがつ",
+      "kanji": "三月",
+      "sino_vietnamese": "TAM NGUYỆT",
+      "definition": "Tháng ba (tháng 3)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しがつ",
+      "kanji": "四月",
+      "sino_vietnamese": "TỨ NGUYỆT",
+      "definition": "Tháng tư (tháng 4)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ごがつ",
+      "kanji": "五月",
+      "sino_vietnamese": "NGŨ NGUYỆT",
+      "definition": "Tháng năm (tháng 5)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ろくがつ",
+      "kanji": "六月",
+      "sino_vietnamese": "LỤC NGUYỆT",
+      "definition": "Tháng sáu (tháng 6)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しちがつ",
+      "kanji": "七月",
+      "sino_vietnamese": "THẤT NGUYỆT",
+      "definition": "Tháng bảy (tháng 7)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "はちがつ",
+      "kanji": "八月",
+      "sino_vietnamese": "BÁT NGUYỆT",
+      "definition": "Tháng tám (tháng 8)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "くがつ",
+      "kanji": "九月",
+      "sino_vietnamese": "CỬU NGUYỆT",
+      "definition": "Tháng chín (tháng 9)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "じゅうがつ",
+      "kanji": "十月",
+      "sino_vietnamese": "THẬP NGUYỆT",
+      "definition": "Tháng mười (tháng 10)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "じゅういちがつ",
+      "kanji": "十一月",
+      "sino_vietnamese": "",
+      "definition": "Tháng mười một (tháng 11)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "じゅうにがつ",
+      "kanji": "十二月",
+      "sino_vietnamese": "",
+      "definition": "Tháng mười hai (tháng 12)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なんにち",
+      "kanji": "何日",
+      "sino_vietnamese": "HÀ NHẬT",
+      "definition": "Ngày mấy, mấy ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ついたち",
+      "kanji": "一日",
+      "sino_vietnamese": "NHẤT NHẬT",
+      "definition": "Ngày mồng 1",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ふつか",
+      "kanji": "二日",
+      "sino_vietnamese": "NHỊ NHẬT",
+      "definition": "Ngày 2, 2 ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "みっか",
+      "kanji": "三日",
+      "sino_vietnamese": "TAM NHẬT",
+      "definition": "Ngày 3, 3 ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "よっか",
+      "kanji": "四日",
+      "sino_vietnamese": "TỨ NHẬT",
+      "definition": "Ngày 4, 4 ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いつか",
+      "kanji": "五日",
+      "sino_vietnamese": "NGŨ NHẬT",
+      "definition": "Ngày 5, 5 ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "むいか",
+      "kanji": "六日",
+      "sino_vietnamese": "LỤC NHẬT",
+      "definition": "Ngày 6, 6 ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なのか",
+      "kanji": "七日",
+      "sino_vietnamese": "THẤT NHẬT",
+      "definition": "Ngày 7, 7 ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ようか",
+      "kanji": "八日",
+      "sino_vietnamese": "BÁT NHẬT",
+      "definition": "Ngày 8, 8 ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ここのか",
+      "kanji": "九日",
+      "sino_vietnamese": "CỬU NHẬT",
+      "definition": "Ngày 9, 9 ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "とおか",
+      "kanji": "十日",
+      "sino_vietnamese": "THẬP NHẬT",
+      "definition": "Ngày 10, 10 ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "はつか",
+      "kanji": "二十日",
+      "sino_vietnamese": "NHỊ THẬP NHẬT",
+      "definition": "Ngày 20, 20 ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "にじゅうよっか",
+      "kanji": "二十四日",
+      "sino_vietnamese": "",
+      "definition": "Ngày 24",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "やすみ",
+      "kanji": "休み",
+      "sino_vietnamese": "HƯU",
+      "definition": "Ngày nghỉ, kỳ nghỉ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たんじょうび",
+      "kanji": "誕生日",
+      "sino_vietnamese": "ĐẢN SINH NHẬT",
+      "definition": "Sinh nhật",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おたんじょうびおめでとうございます",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Chúc mừng sinh nhật!",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しゅうまつ",
+      "kanji": "週末",
+      "sino_vietnamese": "TUẦN MẠT",
+      "definition": "Cuối tuần",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "せんしゅう",
+      "kanji": "先週",
+      "sino_vietnamese": "TIÊN TUẦN",
+      "definition": "Tuần trước",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "こんしゅう",
+      "kanji": "今週",
+      "sino_vietnamese": "KIM TUẦN",
+      "definition": "Tuần này",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "らいしゅう",
+      "kanji": "来週",
+      "sino_vietnamese": "LAI TUẦN",
+      "definition": "Tuần sau",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "せんげつ",
+      "kanji": "先月",
+      "sino_vietnamese": "TIÊN NGUYỆT",
+      "definition": "Tháng trước",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "こんげつ",
+      "kanji": "今月",
+      "sino_vietnamese": "KIM NGUYỆT",
+      "definition": "Tháng này",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "らいげつ",
+      "kanji": "来月",
+      "sino_vietnamese": "LAI NGUYỆT",
+      "definition": "Tháng sau",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きょねん",
+      "kanji": "去年",
+      "sino_vietnamese": "KHỨ NIÊN",
+      "definition": "Năm ngoái",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ことし",
+      "kanji": "今年",
+      "sino_vietnamese": "KIM NIÊN",
+      "definition": "Năm nay",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "らいねん",
+      "kanji": "来年",
+      "sino_vietnamese": "LAI NIÊN",
+      "definition": "Năm sau",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひ",
+      "kanji": "日",
+      "sino_vietnamese": "NHẬT",
+      "definition": "Ngày (trong năm)",
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "kanjis": [
+    {
+      "kanji": "月",
+      "kana": "げつ/がつ/つき",
+      "sino_vietnamese": "NGUYỆT",
+      "definition": "Tháng, mặt trăng",
+      "details": "Onyomi: げつ、がつ; Kunyomi: つき; Từ ghép: 月曜日 (げつようび), 来月 (らいげつ)",
+      "components": [
+        {
+          "char": "月",
+          "meaning": "Hình vẽ mặt trăng"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "火",
+      "kana": "か/ひ",
+      "sino_vietnamese": "HỎA",
+      "definition": "Lửa",
+      "details": "Onyomi: か; Kunyomi: ひ; Từ ghép: 火曜日 (かようび), 火事 (かじ)",
+      "components": [
+        {
+          "char": "火",
+          "meaning": "Hình vẽ ngọn lửa"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "水",
+      "kana": "すい/みず",
+      "sino_vietnamese": "THỦY",
+      "definition": "Nước",
+      "details": "Onyomi: すい; Kunyomi: みず; Từ ghép: 水曜日 (すいようび), 水 (みず)",
+      "components": [
+        {
+          "char": "水",
+          "meaning": "Hình vẽ dòng nước"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "木",
+      "kana": "もく/ぼく/き",
+      "sino_vietnamese": "MỘC",
+      "definition": "Cây, gỗ",
+      "details": "Onyomi: もく、ぼく; Kunyomi: き; Từ ghép: 木曜日 (もくようび), 木 (き)",
+      "components": [
+        {
+          "char": "木",
+          "meaning": "Hình vẽ cái cây"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "金",
+      "kana": "きん/こん/かね",
+      "sino_vietnamese": "KIM",
+      "definition": "Vàng, tiền, kim loại",
+      "details": "Onyomi: きん; Kunyomi: かね; Từ ghép: 金曜日 (きんようび), お金 (おかね)",
+      "components": [
+        {
+          "char": "金",
+          "meaning": "Hình vẽ mỏ vàng dưới đất"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "土",
+      "kana": "ど/つち",
+      "sino_vietnamese": "THỔ",
+      "definition": "Đất",
+      "details": "Onyomi: ど; Kunyomi: つち; Từ ghép: 土曜日 (どようび), 土 (つち)",
+      "components": [
+        {
+          "char": "土",
+          "meaning": "Hình vẽ đất đắp thành mô"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "曜",
+      "kana": "よう",
+      "sino_vietnamese": "DIỆU",
+      "definition": "Ngày trong tuần (thiên thể)",
+      "details": "Onyomi: よう; Từ ghép: 日曜日 (にちようび), 何曜日 (なんようび)",
+      "components": [
+        {
+          "char": "日",
+          "meaning": "Bộ Nhật (mặt trời)"
+        },
+        {
+          "char": "翟",
+          "meaning": "Con chim lông dài — âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "年",
+      "kana": "ねん/とし",
+      "sino_vietnamese": "NIÊN",
+      "definition": "Năm",
+      "details": "Onyomi: ねん; Kunyomi: とし; Từ ghép: 来年 (らいねん), 今年 (ことし)",
+      "components": [
+        {
+          "char": "年",
+          "meaning": "Hình vẽ thu hoạch mùa màng hằng năm"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kana": "～は なんようび ですか",
+      "kanji": "～ は 何曜日 ですか",
+      "definition": "~ là thứ mấy?",
+      "details": "Hỏi thứ trong tuần",
+      "components": [
+        {
+          "part": "なんようび",
+          "meaning": "thứ mấy"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～は いつ ですか",
+      "kanji": "～ は いつ ですか",
+      "definition": "~ là khi nào / ngày nào?",
+      "details": "Hỏi thời điểm chung",
+      "components": [
+        {
+          "part": "いつ",
+          "meaning": "khi nào"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たんじょうび は なんがつ なんにち ですか",
+      "kanji": "誕生日 は 何月 何日 ですか",
+      "definition": "Sinh nhật của bạn là ngày mấy tháng mấy?",
+      "details": "Hỏi ngày tháng",
+      "components": [
+        {
+          "part": "なんがつ",
+          "meaning": "tháng mấy"
+        },
+        {
+          "part": "なんにち",
+          "meaning": "ngày mấy"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "やすみは ～がつ ～にち から ～がつ ～にち まで です",
+      "kanji": "休みは ～月 ～日 から ～月 ～日 まで です",
+      "definition": "Kỳ nghỉ từ ngày ~ tháng ~ đến ngày ~ tháng ~",
+      "details": "Khoảng thời gian",
+      "components": [
+        {
+          "part": "から",
+          "meaning": "từ"
+        },
+        {
+          "part": "まで",
+          "meaning": "đến"
+        },
+        {
+          "part": "です",
+          "meaning": "là"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ]
+}

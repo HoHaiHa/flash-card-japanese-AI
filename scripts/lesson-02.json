@@ -1,0 +1,640 @@
+{
+  "lessonName": "Bài 2 — これは 何ですか",
+  "level": "N5",
+  "vocabularies": [
+    {
+      "kana": "これ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cái này (gần người nói)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "それ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cái đó (gần người nghe)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あれ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cái kia (xa cả hai)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どれ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cái nào",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "この",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cái này ~ (trước danh từ)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "その",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cái đó ~ (trước danh từ)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あの",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cái kia ~ (trước danh từ)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どの",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cái nào ~ (trước danh từ)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ほん",
+      "kanji": "本",
+      "sino_vietnamese": "BẢN",
+      "definition": "Sách, quyển sách",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "じしょ",
+      "kanji": "辞書",
+      "sino_vietnamese": "TỪ THƯ",
+      "definition": "Từ điển",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ざっし",
+      "kanji": "雑誌",
+      "sino_vietnamese": "TẠP CHÍ",
+      "definition": "Tạp chí",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しんぶん",
+      "kanji": "新聞",
+      "sino_vietnamese": "TÂN VĂN",
+      "definition": "Báo (tờ báo)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ノート",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Vở, tập",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "てちょう",
+      "kanji": "手帳",
+      "sino_vietnamese": "THỦ TRƯỚNG",
+      "definition": "Sổ tay, planner",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "カード",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Thẻ, card",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "えんぴつ",
+      "kanji": "鉛筆",
+      "sino_vietnamese": "DIÊN BÚT",
+      "definition": "Bút chì",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ボールペン",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Bút bi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "シャープペンシル",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Bút chì bấm",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かぎ",
+      "kanji": "鍵",
+      "sino_vietnamese": "KIỆN",
+      "definition": "Chìa khóa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "とけい",
+      "kanji": "時計",
+      "sino_vietnamese": "THỜI KẾ",
+      "definition": "Đồng hồ (đeo tay hoặc treo tường)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かさ",
+      "kanji": "傘",
+      "sino_vietnamese": "TẢN",
+      "definition": "Ô, dù",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かばん",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Túi xách, cặp",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "カメラ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Máy ảnh",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "テレビ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "TV, ti vi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ラジオ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Đài radio",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "パソコン",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Máy tính (cá nhân)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "くるま",
+      "kanji": "車",
+      "sino_vietnamese": "XA",
+      "definition": "Xe (ô tô)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "めがね",
+      "kanji": "眼鏡",
+      "sino_vietnamese": "NHÃN KÍNH",
+      "definition": "Kính mắt",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "スプーン",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Muỗng, thìa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "フォーク",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Nĩa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ナイフ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Dao",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "チョコレート",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Sô-cô-la",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ケーキ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Bánh kem",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "にほんご",
+      "kanji": "日本語",
+      "sino_vietnamese": "NHẬT BẢN NGỮ",
+      "definition": "Tiếng Nhật",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "えいご",
+      "kanji": "英語",
+      "sino_vietnamese": "ANH NGỮ",
+      "definition": "Tiếng Anh",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ちゅうごくご",
+      "kanji": "中国語",
+      "sino_vietnamese": "TRUNG QUỐC NGỮ",
+      "definition": "Tiếng Trung",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かんこくご",
+      "kanji": "韓国語",
+      "sino_vietnamese": "HÀN QUỐC NGỮ",
+      "definition": "Tiếng Hàn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "フランスご",
+      "kanji": "フランス語",
+      "sino_vietnamese": "NGỮ",
+      "definition": "Tiếng Pháp",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "スペインご",
+      "kanji": "スペイン語",
+      "sino_vietnamese": "NGỮ",
+      "definition": "Tiếng Tây Ban Nha",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ポルトガルご",
+      "kanji": "ポルトガル語",
+      "sino_vietnamese": "NGỮ",
+      "definition": "Tiếng Bồ Đào Nha",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "アラビアご",
+      "kanji": "アラビア語",
+      "sino_vietnamese": "NGỮ",
+      "definition": "Tiếng Ả Rập",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "タイご",
+      "kanji": "タイ語",
+      "sino_vietnamese": "NGỮ",
+      "definition": "Tiếng Thái",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ベトナムご",
+      "kanji": "ベトナム語",
+      "sino_vietnamese": "NGỮ",
+      "definition": "Tiếng Việt",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ご",
+      "kanji": "～語",
+      "sino_vietnamese": "NGỮ",
+      "definition": "Tiếng ~ (hậu tố chỉ ngôn ngữ)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なに/なん",
+      "kanji": "何",
+      "sino_vietnamese": "HÀ",
+      "definition": "Cái gì, điều gì",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "そうです",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Đúng vậy, đúng rồi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "そうですか",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Thế à, vậy à (cảm thán)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ちがいます",
+      "kanji": "違います",
+      "sino_vietnamese": "VI",
+      "definition": "Không phải, sai rồi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あのう",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ờ, xin lỗi (từ đệm lịch sự)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "えーと",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ờ... để tôi nghĩ (từ đệm)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "うかがいますが",
+      "kanji": "伺いますが",
+      "sino_vietnamese": "",
+      "definition": "Tôi xin hỏi... (mở đầu câu hỏi lịch sự)",
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "kanjis": [
+    {
+      "kanji": "何",
+      "kana": "なに/なん",
+      "sino_vietnamese": "HÀ",
+      "definition": "Cái gì, điều gì",
+      "details": "Onyomi: か; Kunyomi: なに、なん; Từ ghép: 何 (なに), 何語 (なにご)",
+      "components": [
+        {
+          "char": "口",
+          "meaning": "Bộ Khẩu (miệng)"
+        },
+        {
+          "char": "人",
+          "meaning": "Bộ Nhân (người)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "本",
+      "kana": "ほん/もと",
+      "sino_vietnamese": "BẢN",
+      "definition": "Sách, gốc, cội nguồn",
+      "details": "Onyomi: ほん; Kunyomi: もと; Từ ghép: 本 (ほん), 日本 (にほん), 本当 (ほんとう)",
+      "components": [
+        {
+          "char": "木",
+          "meaning": "Bộ Mộc (cây)"
+        },
+        {
+          "char": "一",
+          "meaning": "Nét chỉ gốc cây"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "語",
+      "kana": "ご/かたる",
+      "sino_vietnamese": "NGỮ",
+      "definition": "Ngôn ngữ, lời nói",
+      "details": "Onyomi: ご、ぎょ; Kunyomi: かたる; Từ ghép: 日本語 (にほんご), 語学 (ごがく)",
+      "components": [
+        {
+          "char": "言",
+          "meaning": "Bộ Ngôn (nói)"
+        },
+        {
+          "char": "吾",
+          "meaning": "Ngô (tôi) — âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "英",
+      "kana": "えい",
+      "sino_vietnamese": "ANH",
+      "definition": "Nước Anh, xuất sắc, hoa",
+      "details": "Onyomi: えい; Từ ghép: 英語 (えいご), 英国 (えいこく)",
+      "components": [
+        {
+          "char": "艸",
+          "meaning": "Bộ Thảo (cỏ)"
+        },
+        {
+          "char": "央",
+          "meaning": "Trung tâm"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "日",
+      "kana": "にち/じつ/ひ/か",
+      "sino_vietnamese": "NHẬT",
+      "definition": "Ngày, mặt trời, Nhật Bản",
+      "details": "Onyomi: にち、じつ; Kunyomi: ひ、か; Từ ghép: 日本 (にほん), 日曜日 (にちようび)",
+      "components": [
+        {
+          "char": "日",
+          "meaning": "Hình vẽ mặt trời"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "車",
+      "kana": "しゃ/くるま",
+      "sino_vietnamese": "XA",
+      "definition": "Xe, ô tô",
+      "details": "Onyomi: しゃ; Kunyomi: くるま; Từ ghép: 車 (くるま), 電車 (でんしゃ)",
+      "components": [
+        {
+          "char": "車",
+          "meaning": "Hình vẽ bánh xe"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kana": "これ/それ/あれ は ～ です",
+      "kanji": "これ/それ/あれ は ～ です",
+      "definition": "Cái này/đó/kia là ~",
+      "details": "Mẫu câu cơ bản với đại từ chỉ thị",
+      "components": [
+        {
+          "part": "これ",
+          "meaning": "cái này"
+        },
+        {
+          "part": "は",
+          "meaning": "trợ từ chủ đề"
+        },
+        {
+          "part": "～",
+          "meaning": "danh từ"
+        },
+        {
+          "part": "です",
+          "meaning": "là"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "これ は なん ですか",
+      "kanji": "これ は 何 ですか",
+      "definition": "Cái này là gì?",
+      "details": "Câu hỏi với なん",
+      "components": [
+        {
+          "part": "これ",
+          "meaning": "cái này"
+        },
+        {
+          "part": "は",
+          "meaning": "trợ từ"
+        },
+        {
+          "part": "なん",
+          "meaning": "cái gì"
+        },
+        {
+          "part": "ですか",
+          "meaning": "là? (hỏi)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "これ は ～ の ～ です",
+      "kanji": "これ は ～ の ～ です",
+      "definition": "Cái này là ~ của ~",
+      "details": "Cấu trúc sở hữu với の",
+      "components": [
+        {
+          "part": "の",
+          "meaning": "trợ từ sở hữu"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "この ～ は だれ の ですか",
+      "kanji": "この ～ は だれ の ですか",
+      "definition": "~ này là của ai?",
+      "details": "Câu hỏi sở hữu",
+      "components": [
+        {
+          "part": "だれ",
+          "meaning": "ai"
+        },
+        {
+          "part": "の",
+          "meaning": "của"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "これ は ～ の です",
+      "kanji": "これ は ～ の です",
+      "definition": "Cái này là của ~",
+      "details": "Rút gọn danh từ với の",
+      "components": [
+        {
+          "part": "の",
+          "meaning": "(thay thế danh từ đã biết)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どれ が ～ の ですか",
+      "kanji": "どれ が ～ の ですか",
+      "definition": "Cái nào là của ~?",
+      "details": "Câu hỏi chọn lựa với どれ",
+      "components": [
+        {
+          "part": "どれ",
+          "meaning": "cái nào"
+        },
+        {
+          "part": "が",
+          "meaning": "trợ từ chủ ngữ"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ]
+}

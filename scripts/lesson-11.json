@@ -1,0 +1,565 @@
+{
+  "lessonName": "Bài 11 — この部屋は ひろいですね",
+  "level": "N5",
+  "vocabularies": [
+    {
+      "kana": "へや",
+      "kanji": "部屋",
+      "sino_vietnamese": "BỘ ỐC",
+      "definition": "Phòng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "アパート",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Căn hộ, chung cư",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "マンション",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Căn hộ cao cấp",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いえ/うち",
+      "kanji": "家",
+      "sino_vietnamese": "GIA",
+      "definition": "Nhà, ngôi nhà",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひろい",
+      "kanji": "広い",
+      "sino_vietnamese": "QUẢNG",
+      "definition": "Rộng rãi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "せまい",
+      "kanji": "狭い",
+      "sino_vietnamese": "HIỆP",
+      "definition": "Chật, hẹp",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あかるい",
+      "kanji": "明るい",
+      "sino_vietnamese": "MINH",
+      "definition": "Sáng (ánh sáng, tính cách)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "くらい",
+      "kanji": "暗い",
+      "sino_vietnamese": "ÁM",
+      "definition": "Tối tăm",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しずかな",
+      "kanji": "静かな",
+      "sino_vietnamese": "TĨNH",
+      "definition": "Yên tĩnh",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "うるさい",
+      "kanji": "うるさい",
+      "sino_vietnamese": "",
+      "definition": "Ồn ào, phiền",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あたらしい",
+      "kanji": "新しい",
+      "sino_vietnamese": "TÂN",
+      "definition": "Mới",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ふるい",
+      "kanji": "古い",
+      "sino_vietnamese": "CỔ",
+      "definition": "Cũ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きたない",
+      "kanji": "汚い",
+      "sino_vietnamese": "Ô",
+      "definition": "Bẩn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きれいな",
+      "kanji": "きれいな",
+      "sino_vietnamese": "",
+      "definition": "Sạch, đẹp",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "べんりな",
+      "kanji": "便利な",
+      "sino_vietnamese": "TIỆN LỢI",
+      "definition": "Tiện lợi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ふべんな",
+      "kanji": "不便な",
+      "sino_vietnamese": "BẤT TIỆN",
+      "definition": "Bất tiện",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ちかい",
+      "kanji": "近い",
+      "sino_vietnamese": "CẬN",
+      "definition": "Gần",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "とおい",
+      "kanji": "遠い",
+      "sino_vietnamese": "VIỄN",
+      "definition": "Xa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おおきい",
+      "kanji": "大きい",
+      "sino_vietnamese": "ĐẠI",
+      "definition": "To, lớn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ちいさい",
+      "kanji": "小さい",
+      "sino_vietnamese": "TIỂU",
+      "definition": "Nhỏ, bé",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たかい",
+      "kanji": "高い",
+      "sino_vietnamese": "CAO",
+      "definition": "Cao, đắt",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひくい",
+      "kanji": "低い",
+      "sino_vietnamese": "ĐỂ",
+      "definition": "Thấp",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たてもの",
+      "kanji": "建物",
+      "sino_vietnamese": "KIẾN VẬT",
+      "definition": "Tòa nhà, công trình",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まち",
+      "kanji": "町",
+      "sino_vietnamese": "ĐINH",
+      "definition": "Thị trấn, khu phố",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "にわ",
+      "kanji": "庭",
+      "sino_vietnamese": "ĐÌNH",
+      "definition": "Vườn (sân nhà)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いけ",
+      "kanji": "池",
+      "sino_vietnamese": "TRÌ",
+      "definition": "Ao, hồ (nhỏ)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かわ",
+      "kanji": "川",
+      "sino_vietnamese": "XUYÊN",
+      "definition": "Sông",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "うみ",
+      "kanji": "海",
+      "sino_vietnamese": "HẢI",
+      "definition": "Biển",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ですね",
+      "kanji": "～ですね",
+      "sino_vietnamese": "",
+      "definition": "~ nhỉ, ~ nhé (đồng cảm)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ですよ",
+      "kanji": "～ですよ",
+      "sino_vietnamese": "",
+      "definition": "~ đấy (nhấn mạnh)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "そうですね",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ừ nhỉ, đúng thật nhỉ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "そうですよ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Đúng vậy đó",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ほんとうに",
+      "kanji": "本当に",
+      "sino_vietnamese": "BẢN ĐƯƠNG",
+      "definition": "Thật sự",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "とても",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Rất, lắm",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "けっこう",
+      "kanji": "結構",
+      "sino_vietnamese": "KẾT CẤU",
+      "definition": "Khá, cũng được / Không cần (từ chối)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まあまあ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Tàm tạm, cũng được",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～くて",
+      "kanji": "～くて",
+      "sino_vietnamese": "",
+      "definition": "~ và (nối tính từ い)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～で",
+      "kanji": "～で",
+      "sino_vietnamese": "",
+      "definition": "~ và (nối tính từ な)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～くない",
+      "kanji": "～くない",
+      "sino_vietnamese": "",
+      "definition": "Không ~ (phủ định tính từ い)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～じゃない",
+      "kanji": "～じゃない",
+      "sino_vietnamese": "",
+      "definition": "Không ~ (phủ định tính từ な)",
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "kanjis": [
+    {
+      "kanji": "部",
+      "kana": "ぶ",
+      "sino_vietnamese": "BỘ",
+      "definition": "Bộ phận, phần, phòng",
+      "details": "Onyomi: ぶ; Từ ghép: 部屋 (へや), 部分 (ぶぶん)",
+      "components": [
+        {
+          "char": "邑",
+          "meaning": "Bộ Ấp (làng)"
+        },
+        {
+          "char": "咅",
+          "meaning": "Âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "屋",
+      "kana": "おく/や",
+      "sino_vietnamese": "ỐC",
+      "definition": "Mái nhà, cửa hàng",
+      "details": "Onyomi: おく; Kunyomi: や; Từ ghép: 部屋 (へや), パン屋 (パンや)",
+      "components": [
+        {
+          "char": "尸",
+          "meaning": "Bộ Thi (mái nhà)"
+        },
+        {
+          "char": "至",
+          "meaning": "Đến"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "広",
+      "kana": "こう/ひろい",
+      "sino_vietnamese": "QUẢNG",
+      "definition": "Rộng rãi",
+      "details": "Onyomi: こう; Kunyomi: ひろい; Từ ghép: 広い (ひろい), 広場 (ひろば)",
+      "components": [
+        {
+          "char": "广",
+          "meaning": "Bộ Yêm (mái nhà rộng)"
+        },
+        {
+          "char": "厶",
+          "meaning": "Bộ Tư (cá nhân)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "明",
+      "kana": "めい/みょう/あかるい",
+      "sino_vietnamese": "MINH",
+      "definition": "Sáng, rõ ràng",
+      "details": "Onyomi: めい、みょう; Kunyomi: あかるい; Từ ghép: 明るい (あかるい), 説明 (せつめい)",
+      "components": [
+        {
+          "char": "日",
+          "meaning": "Bộ Nhật (mặt trời)"
+        },
+        {
+          "char": "月",
+          "meaning": "Bộ Nguyệt (mặt trăng)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "近",
+      "kana": "きん/ちかい",
+      "sino_vietnamese": "CẬN",
+      "definition": "Gần",
+      "details": "Onyomi: きん; Kunyomi: ちかい; Từ ghép: 近い (ちかい), 近所 (きんじょ)",
+      "components": [
+        {
+          "char": "辶",
+          "meaning": "Bộ Sước (đi)"
+        },
+        {
+          "char": "斤",
+          "meaning": "Rìu — âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "遠",
+      "kana": "えん/とおい",
+      "sino_vietnamese": "VIỄN",
+      "definition": "Xa",
+      "details": "Onyomi: えん; Kunyomi: とおい; Từ ghép: 遠い (とおい), 遠足 (えんそく)",
+      "components": [
+        {
+          "char": "辶",
+          "meaning": "Bộ Sước (đi)"
+        },
+        {
+          "char": "袁",
+          "meaning": "Áo dài — âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "高",
+      "kana": "こう/たかい",
+      "sino_vietnamese": "CAO",
+      "definition": "Cao, đắt tiền",
+      "details": "Onyomi: こう; Kunyomi: たかい; Từ ghép: 高い (たかい), 高校 (こうこう)",
+      "components": [
+        {
+          "char": "高",
+          "meaning": "Hình vẽ tòa nhà cao"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kana": "この ～ は ～い/～な です",
+      "kanji": "この ～ は ～い/～な です",
+      "definition": "Cái ~ này rất ~",
+      "details": "Câu mô tả với tính từ",
+      "components": [
+        {
+          "part": "この",
+          "meaning": "cái này (chỉ định)"
+        },
+        {
+          "part": "は",
+          "meaning": "trợ từ chủ đề"
+        },
+        {
+          "part": "～い/な",
+          "meaning": "tính từ"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ くて、～ です",
+      "kanji": "～ くて、～ です",
+      "definition": "~ và ~... (liệt kê tính từ い)",
+      "details": "Nối tính từ い bằng くて",
+      "components": [
+        {
+          "part": "くて",
+          "meaning": "và (nối tính từ い)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ で、～ です",
+      "kanji": "～ で、～ です",
+      "definition": "~ và ~... (liệt kê tính từ な)",
+      "details": "Nối tính từ な bằng で",
+      "components": [
+        {
+          "part": "で",
+          "meaning": "và (nối tính từ な / danh từ)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ は ～ くない です",
+      "kanji": "～ は ～ くない です",
+      "definition": "~ không ~",
+      "details": "Phủ định tính từ い",
+      "components": [
+        {
+          "part": "くない",
+          "meaning": "không ~ (phủ định tính từ い)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ は ～ じゃ ない です",
+      "kanji": "～ は ～ じゃ ない です",
+      "definition": "~ không phải ~",
+      "details": "Phủ định tính từ な",
+      "components": [
+        {
+          "part": "じゃ ない",
+          "meaning": "không ~ (phủ định tính từ な)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ ですね",
+      "kanji": "～ ですね",
+      "definition": "~ nhỉ (tìm đồng cảm)",
+      "details": "Trợ từ cuối câu ね",
+      "components": [
+        {
+          "part": "ね",
+          "meaning": "nhỉ, nhé (tìm sự đồng cảm)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ ですよ",
+      "kanji": "～ ですよ",
+      "definition": "~ đấy (nhấn mạnh, thông báo)",
+      "details": "Trợ từ cuối câu よ",
+      "components": [
+        {
+          "part": "よ",
+          "meaning": "đấy, đó (nhấn mạnh, thông báo)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ]
+}

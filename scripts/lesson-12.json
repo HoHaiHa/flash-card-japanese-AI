@@ -1,0 +1,535 @@
+{
+  "lessonName": "Bài 12 — ちょっと 待ってください",
+  "level": "N5",
+  "vocabularies": [
+    {
+      "kana": "ちょっと まってください",
+      "kanji": "ちょっと 待ってください",
+      "sino_vietnamese": "",
+      "definition": "Xin chờ một chút",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まって",
+      "kanji": "待って",
+      "sino_vietnamese": "",
+      "definition": "Đợi (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おして",
+      "kanji": "押して",
+      "sino_vietnamese": "",
+      "definition": "Ấn, nhấn (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひいて",
+      "kanji": "引いて",
+      "sino_vietnamese": "",
+      "definition": "Kéo (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まがって",
+      "kanji": "曲がって",
+      "sino_vietnamese": "",
+      "definition": "Rẽ, quẹo (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "わたって",
+      "kanji": "渡って",
+      "sino_vietnamese": "",
+      "definition": "Qua (đường/cầu) (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あるいて",
+      "kanji": "歩いて",
+      "sino_vietnamese": "BỘ",
+      "definition": "Đi bộ (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "のって",
+      "kanji": "乗って",
+      "sino_vietnamese": "",
+      "definition": "Lên xe (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おりて",
+      "kanji": "降りて",
+      "sino_vietnamese": "",
+      "definition": "Xuống xe (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "とまって",
+      "kanji": "止まって",
+      "sino_vietnamese": "",
+      "definition": "Dừng lại (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～てください",
+      "kanji": "～てください",
+      "sino_vietnamese": "",
+      "definition": "Xin hãy ~ (yêu cầu lịch sự)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ないでください",
+      "kanji": "～ないでください",
+      "sino_vietnamese": "",
+      "definition": "Xin đừng ~ (cấm lịch sự)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "すみません",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Xin lỗi (xin phép hỏi)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "みち",
+      "kanji": "道",
+      "sino_vietnamese": "ĐẠO",
+      "definition": "Đường, con đường",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "こうさてん",
+      "kanji": "交差点",
+      "sino_vietnamese": "GIAO SAI ĐIỂM",
+      "definition": "Ngã tư",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しんごう",
+      "kanji": "信号",
+      "sino_vietnamese": "TÍN HIỆU",
+      "definition": "Đèn giao thông",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かど",
+      "kanji": "角",
+      "sino_vietnamese": "GIÁC",
+      "definition": "Góc (đường phố)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "はし",
+      "kanji": "橋",
+      "sino_vietnamese": "KIỀU",
+      "definition": "Cầu (bắc qua sông)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きっぷ",
+      "kanji": "切符",
+      "sino_vietnamese": "",
+      "definition": "Vé (tàu xe)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "じどうはんばいき",
+      "kanji": "自動販売機",
+      "sino_vietnamese": "TỰ ĐỘNG BÁN MÁY",
+      "definition": "Máy bán hàng tự động",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "じかん",
+      "kanji": "時間",
+      "sino_vietnamese": "THỜI GIAN",
+      "definition": "Thời gian",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "やすみます",
+      "kanji": "休みます",
+      "sino_vietnamese": "HƯU",
+      "definition": "Nghỉ ngơi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "みて",
+      "kanji": "見て",
+      "sino_vietnamese": "KIẾN",
+      "definition": "Xem, nhìn (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きいて",
+      "kanji": "聞いて",
+      "sino_vietnamese": "VĂN",
+      "definition": "Nghe (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "よんで",
+      "kanji": "読んで",
+      "sino_vietnamese": "ĐỌC",
+      "definition": "Đọc (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かいて",
+      "kanji": "書いて",
+      "sino_vietnamese": "THƯ",
+      "definition": "Viết (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いって",
+      "kanji": "言って",
+      "sino_vietnamese": "",
+      "definition": "Nói (thể て)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～てから",
+      "kanji": "～てから",
+      "sino_vietnamese": "",
+      "definition": "Sau khi ~ thì ~",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ています",
+      "kanji": "～ています",
+      "sino_vietnamese": "",
+      "definition": "Đang ~ (tiến hành)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "でんわ",
+      "kanji": "電話",
+      "sino_vietnamese": "ĐIỆN THOẠI",
+      "definition": "Điện thoại",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ところ",
+      "kanji": "所",
+      "sino_vietnamese": "SỞ",
+      "definition": "Nơi, chỗ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ちかく",
+      "kanji": "近く",
+      "sino_vietnamese": "CẬN",
+      "definition": "Gần, gần đây",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まっすぐ",
+      "kanji": "真っ直ぐ",
+      "sino_vietnamese": "CHÂN TRỰC",
+      "definition": "Đi thẳng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "みぎに まがる",
+      "kanji": "右に 曲がる",
+      "sino_vietnamese": "",
+      "definition": "Rẽ phải",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひだりに まがる",
+      "kanji": "左に 曲がる",
+      "sino_vietnamese": "",
+      "definition": "Rẽ trái",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "すぐ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ngay, lập tức",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "もうすこし",
+      "kanji": "もう少し",
+      "sino_vietnamese": "",
+      "definition": "Thêm một chút nữa",
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "kanjis": [
+    {
+      "kanji": "待",
+      "kana": "たい/まつ",
+      "sino_vietnamese": "ĐÃI",
+      "definition": "Đợi, chờ",
+      "details": "Onyomi: たい; Kunyomi: まつ; Từ ghép: 待ちます (まちます), 待合室 (まちあいしつ)",
+      "components": [
+        {
+          "char": "彳",
+          "meaning": "Bộ Sước (bước chân)"
+        },
+        {
+          "char": "寺",
+          "meaning": "Chùa — âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "道",
+      "kana": "どう/みち",
+      "sino_vietnamese": "ĐẠO",
+      "definition": "Đường, con đường",
+      "details": "Onyomi: どう; Kunyomi: みち; Từ ghép: 道 (みち), 道路 (どうろ)",
+      "components": [
+        {
+          "char": "辶",
+          "meaning": "Bộ Sước (đi)"
+        },
+        {
+          "char": "首",
+          "meaning": "Bộ Thủ (đầu)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "橋",
+      "kana": "きょう/はし",
+      "sino_vietnamese": "KIỀU",
+      "definition": "Cầu",
+      "details": "Onyomi: きょう; Kunyomi: はし; Từ ghép: 橋 (はし), 鉄橋 (てっきょう)",
+      "components": [
+        {
+          "char": "木",
+          "meaning": "Bộ Mộc (cây/gỗ)"
+        },
+        {
+          "char": "喬",
+          "meaning": "Cao — âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "止",
+      "kana": "し/とまる",
+      "sino_vietnamese": "CHỈ",
+      "definition": "Dừng lại, ngừng",
+      "details": "Onyomi: し; Kunyomi: とまる; Từ ghép: 止まります (とまります), 中止 (ちゅうし)",
+      "components": [
+        {
+          "char": "止",
+          "meaning": "Hình vẽ bàn chân đứng lại"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "乗",
+      "kana": "じょう/のる",
+      "sino_vietnamese": "THỪA",
+      "definition": "Lên xe, cưỡi",
+      "details": "Onyomi: じょう; Kunyomi: のる; Từ ghép: 乗ります (のります), 乗車 (じょうしゃ)",
+      "components": [
+        {
+          "char": "木",
+          "meaning": "Bộ Mộc"
+        },
+        {
+          "char": "丬",
+          "meaning": "Bộ Tường"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "降",
+      "kana": "こう/おりる",
+      "sino_vietnamese": "GIÁNG",
+      "definition": "Xuống, giáng",
+      "details": "Onyomi: こう; Kunyomi: おりる; Từ ghép: 降ります (おります), 降水 (こうすい)",
+      "components": [
+        {
+          "char": "阜",
+          "meaning": "Bộ Phụ (đồi núi)"
+        },
+        {
+          "char": "夅",
+          "meaning": "Xuống"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "曲",
+      "kana": "きょく/まがる",
+      "sino_vietnamese": "KHÚC",
+      "definition": "Rẽ, khúc (nhạc), bẻ cong",
+      "details": "Onyomi: きょく; Kunyomi: まがる; Từ ghép: 曲がります (まがります), 曲 (きょく)",
+      "components": [
+        {
+          "char": "曲",
+          "meaning": "Hình vẽ vật bị bẻ cong"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kana": "～て ください",
+      "kanji": "～て ください",
+      "definition": "Xin hãy ~",
+      "details": "Yêu cầu lịch sự với てください",
+      "components": [
+        {
+          "part": "て",
+          "meaning": "thể て (liên kết)"
+        },
+        {
+          "part": "ください",
+          "meaning": "xin hãy, vui lòng"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ない で ください",
+      "kanji": "～ない で ください",
+      "definition": "Xin đừng ~",
+      "details": "Cấm lịch sự với ないでください",
+      "components": [
+        {
+          "part": "ない",
+          "meaning": "phủ định"
+        },
+        {
+          "part": "でください",
+          "meaning": "xin đừng"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～て から、～ます",
+      "kanji": "～て から、～ます",
+      "definition": "Sau khi ~ rồi thì ~",
+      "details": "Trình tự hành động với てから",
+      "components": [
+        {
+          "part": "てから",
+          "meaning": "sau khi ~ (rồi mới)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～て います",
+      "kanji": "～て います",
+      "definition": "Đang ~, đang trong trạng thái ~",
+      "details": "Tiến hành thể với ている",
+      "components": [
+        {
+          "part": "て",
+          "meaning": "thể て"
+        },
+        {
+          "part": "います",
+          "meaning": "đang (tiến hành/trạng thái)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まっすぐ いって、～ て ください",
+      "kanji": "真っ直ぐ 行って、～て ください",
+      "definition": "Đi thẳng rồi ~",
+      "details": "Chỉ đường cơ bản",
+      "components": [
+        {
+          "part": "まっすぐ",
+          "meaning": "đi thẳng"
+        },
+        {
+          "part": "いって",
+          "meaning": "đi (thể て)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "すみません、～ は どこ ですか",
+      "kanji": "すみません、～ は どこ ですか",
+      "definition": "Xin lỗi, ~ ở đâu ạ?",
+      "details": "Hỏi đường lịch sự",
+      "components": [
+        {
+          "part": "すみません",
+          "meaning": "xin lỗi"
+        },
+        {
+          "part": "どこ",
+          "meaning": "ở đâu"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ]
+}

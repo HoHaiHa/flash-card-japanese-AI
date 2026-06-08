@@ -1,0 +1,632 @@
+{
+  "lessonName": "Bài 10 — どんな 音楽が 好きですか",
+  "level": "N5",
+  "vocabularies": [
+    {
+      "kana": "すきです",
+      "kanji": "好きです",
+      "sino_vietnamese": "HẢO",
+      "definition": "Thích",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きらいです",
+      "kanji": "嫌いです",
+      "sino_vietnamese": "HIỀM",
+      "definition": "Ghét, không thích",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "じょうずです",
+      "kanji": "上手です",
+      "sino_vietnamese": "THƯỢNG THỦ",
+      "definition": "Giỏi, khéo léo",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "へたです",
+      "kanji": "下手です",
+      "sino_vietnamese": "HẠ THỦ",
+      "definition": "Kém, vụng về",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どんな",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Loại nào, như thế nào",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どれくらい",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Bao nhiêu, đến mức nào",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～が",
+      "kanji": "～が",
+      "sino_vietnamese": "",
+      "definition": "~ (trợ từ chủ ngữ, đối tượng thích/ghét)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おんがく",
+      "kanji": "音楽",
+      "sino_vietnamese": "ÂM NHẠC",
+      "definition": "Âm nhạc",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "スポーツ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Thể thao",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "りょうり",
+      "kanji": "料理",
+      "sino_vietnamese": "LIỆU LÝ",
+      "definition": "Nấu ăn, món ăn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "えいが",
+      "kanji": "映画",
+      "sino_vietnamese": "ĐIỆN ẢNH",
+      "definition": "Phim điện ảnh",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ダンス",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Khiêu vũ, nhảy",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "アニメ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Anime",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まんが",
+      "kanji": "漫画",
+      "sino_vietnamese": "MẠN HỌA",
+      "definition": "Truyện tranh (manga)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "えほん",
+      "kanji": "絵本",
+      "sino_vietnamese": "HỌA BẢN",
+      "definition": "Sách tranh",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "やきゅう",
+      "kanji": "野球",
+      "sino_vietnamese": "DÃ CẦU",
+      "definition": "Bóng chày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "サッカー",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Bóng đá",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "テニス",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Tennis",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ゴルフ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Golf",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いい/よい",
+      "kanji": "良い/よい",
+      "sino_vietnamese": "LƯƠNG",
+      "definition": "Tốt, hay",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "わるい",
+      "kanji": "悪い",
+      "sino_vietnamese": "ÁC",
+      "definition": "Xấu, tệ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おいしい",
+      "kanji": "美味しい",
+      "sino_vietnamese": "MỸ VỊ",
+      "definition": "Ngon",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まずい",
+      "kanji": "まずい",
+      "sino_vietnamese": "",
+      "definition": "Dở, không ngon",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "からい",
+      "kanji": "辛い",
+      "sino_vietnamese": "TÂN",
+      "definition": "Cay",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あまい",
+      "kanji": "甘い",
+      "sino_vietnamese": "CAM",
+      "definition": "Ngọt",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "すっぱい",
+      "kanji": "酸っぱい",
+      "sino_vietnamese": "TOAN",
+      "definition": "Chua",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しおからい",
+      "kanji": "塩辛い",
+      "sino_vietnamese": "",
+      "definition": "Mặn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "つめたい",
+      "kanji": "冷たい",
+      "sino_vietnamese": "LÃNH",
+      "definition": "Lạnh (thức ăn/đồ uống)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あつい",
+      "kanji": "熱い",
+      "sino_vietnamese": "NHIỆT",
+      "definition": "Nóng (thức ăn/đồ uống)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おおきい",
+      "kanji": "大きい",
+      "sino_vietnamese": "ĐẠI",
+      "definition": "To, lớn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ちいさい",
+      "kanji": "小さい",
+      "sino_vietnamese": "TIỂU",
+      "definition": "Nhỏ, bé",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ながい",
+      "kanji": "長い",
+      "sino_vietnamese": "TRƯỜNG",
+      "definition": "Dài",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "みじかい",
+      "kanji": "短い",
+      "sino_vietnamese": "ĐOẢN",
+      "definition": "Ngắn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おもい",
+      "kanji": "重い",
+      "sino_vietnamese": "TRỌNG",
+      "definition": "Nặng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かるい",
+      "kanji": "軽い",
+      "sino_vietnamese": "KHINH",
+      "definition": "Nhẹ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "むずかしい",
+      "kanji": "難しい",
+      "sino_vietnamese": "NAN",
+      "definition": "Khó",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "やさしい",
+      "kanji": "優しい/易しい",
+      "sino_vietnamese": "DỄ",
+      "definition": "Dễ / Hiền lành",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おもしろい",
+      "kanji": "面白い",
+      "sino_vietnamese": "DIỆN BẠCH",
+      "definition": "Thú vị, hay, buồn cười",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "つまらない",
+      "kanji": "つまらない",
+      "sino_vietnamese": "",
+      "definition": "Chán, nhạt nhẽo",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たのしい",
+      "kanji": "楽しい",
+      "sino_vietnamese": "LẠC",
+      "definition": "Vui vẻ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いそがしい",
+      "kanji": "忙しい",
+      "sino_vietnamese": "MANG",
+      "definition": "Bận rộn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひま",
+      "kanji": "暇",
+      "sino_vietnamese": "HẠ",
+      "definition": "Rảnh rỗi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きれいな",
+      "kanji": "きれいな",
+      "sino_vietnamese": "",
+      "definition": "Đẹp, sạch sẽ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "にぎやかな",
+      "kanji": "賑やかな",
+      "sino_vietnamese": "",
+      "definition": "Sầm uất, náo nhiệt",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しずかな",
+      "kanji": "静かな",
+      "sino_vietnamese": "TĨNH",
+      "definition": "Yên tĩnh, lặng yên",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "べんりな",
+      "kanji": "便利な",
+      "sino_vietnamese": "TIỆN LỢI",
+      "definition": "Tiện lợi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ゆうめいな",
+      "kanji": "有名な",
+      "sino_vietnamese": "HỮU DANH",
+      "definition": "Nổi tiếng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "すてきな",
+      "kanji": "素敵な",
+      "sino_vietnamese": "",
+      "definition": "Tuyệt vời, đẹp lắm",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どくとくな",
+      "kanji": "独特な",
+      "sino_vietnamese": "ĐỘC ĐẶC",
+      "definition": "Độc đáo",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まじめな",
+      "kanji": "真面目な",
+      "sino_vietnamese": "CHÂN DIỆN MỤC",
+      "definition": "Nghiêm túc, chăm chỉ",
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "kanjis": [
+    {
+      "kanji": "好",
+      "kana": "こう/すき",
+      "sino_vietnamese": "HẢO",
+      "definition": "Thích, yêu thích",
+      "details": "Onyomi: こう; Kunyomi: すき; Từ ghép: 好き (すき), 好物 (こうぶつ)",
+      "components": [
+        {
+          "char": "女",
+          "meaning": "Bộ Nữ (phụ nữ)"
+        },
+        {
+          "char": "子",
+          "meaning": "Bộ Tử (con)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "音",
+      "kana": "おん/いん/おと",
+      "sino_vietnamese": "ÂM",
+      "definition": "Âm thanh",
+      "details": "Onyomi: おん、いん; Kunyomi: おと; Từ ghép: 音楽 (おんがく), 音 (おと)",
+      "components": [
+        {
+          "char": "日",
+          "meaning": "Bộ Nhật (mặt trời)"
+        },
+        {
+          "char": "立",
+          "meaning": "Bộ Lập (đứng)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "楽",
+      "kana": "らく/がく/たのしい",
+      "sino_vietnamese": "LẠC/NHẠC",
+      "definition": "Vui vẻ; Âm nhạc",
+      "details": "Onyomi: らく、がく; Kunyomi: たのしい; Từ ghép: 音楽 (おんがく), 楽しい (たのしい)",
+      "components": [
+        {
+          "char": "木",
+          "meaning": "Bộ Mộc (cây)"
+        },
+        {
+          "char": "白",
+          "meaning": "Bộ Bạch (trắng)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "大",
+      "kana": "だい/たい/おおきい",
+      "sino_vietnamese": "ĐẠI",
+      "definition": "To, lớn",
+      "details": "Onyomi: だい、たい; Kunyomi: おおきい; Từ ghép: 大学 (だいがく), 大きい (おおきい)",
+      "components": [
+        {
+          "char": "大",
+          "meaning": "Hình vẽ người dang tay chỉ sự lớn"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "小",
+      "kana": "しょう/ちいさい",
+      "sino_vietnamese": "TIỂU",
+      "definition": "Nhỏ, bé",
+      "details": "Onyomi: しょう; Kunyomi: ちいさい; Từ ghép: 小学校 (しょうがっこう), 小さい (ちいさい)",
+      "components": [
+        {
+          "char": "小",
+          "meaning": "Hình vẽ nét nhỏ ở giữa"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "長",
+      "kana": "ちょう/ながい",
+      "sino_vietnamese": "TRƯỜNG",
+      "definition": "Dài, trưởng",
+      "details": "Onyomi: ちょう; Kunyomi: ながい; Từ ghép: 長い (ながい), 校長 (こうちょう)",
+      "components": [
+        {
+          "char": "長",
+          "meaning": "Hình vẽ người già tóc dài"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "難",
+      "kana": "なん/むずかしい",
+      "sino_vietnamese": "NAN",
+      "definition": "Khó, gian nan",
+      "details": "Onyomi: なん; Kunyomi: むずかしい; Từ ghép: 難しい (むずかしい), 困難 (こんなん)",
+      "components": [
+        {
+          "char": "隹",
+          "meaning": "Bộ Chuy (chim)"
+        },
+        {
+          "char": "又",
+          "meaning": "Bộ Hựu (tay)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "静",
+      "kana": "せい/しずか",
+      "sino_vietnamese": "TĨNH",
+      "definition": "Yên tĩnh, tĩnh lặng",
+      "details": "Onyomi: せい; Kunyomi: しずか; Từ ghép: 静か (しずか), 静止 (せいし)",
+      "components": [
+        {
+          "char": "青",
+          "meaning": "Bộ Thanh (xanh)"
+        },
+        {
+          "char": "争",
+          "meaning": "Tranh luận"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kana": "～が すきです",
+      "kanji": "～が 好きです",
+      "definition": "Tôi thích ~",
+      "details": "Cấu trúc が好きです",
+      "components": [
+        {
+          "part": "が",
+          "meaning": "trợ từ chủ ngữ (đối tượng thích)"
+        },
+        {
+          "part": "すきです",
+          "meaning": "thích"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どんな ～が すきですか",
+      "kanji": "どんな ～が 好きですか",
+      "definition": "Bạn thích ~ loại nào?",
+      "details": "Hỏi sở thích cụ thể với どんな",
+      "components": [
+        {
+          "part": "どんな",
+          "meaning": "loại nào"
+        },
+        {
+          "part": "が すきですか",
+          "meaning": "thích? (hỏi)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～は ～より ～です",
+      "kanji": "～は ～より ～です",
+      "definition": "~ hơn ~ (so sánh hơn)",
+      "details": "So sánh hơn với より",
+      "components": [
+        {
+          "part": "より",
+          "meaning": "hơn (so sánh)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～と ～と どちらが ～ですか",
+      "kanji": "～と ～と どちらが ～ですか",
+      "definition": "Giữa ~ và ~, cái nào ~ hơn?",
+      "details": "So sánh hai đối tượng",
+      "components": [
+        {
+          "part": "と",
+          "meaning": "và"
+        },
+        {
+          "part": "どちら",
+          "meaning": "cái nào (trong hai)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～が いちばん ～です",
+      "kanji": "～が いちばん ～です",
+      "definition": "~ là ~ nhất",
+      "details": "So sánh nhất với いちばん",
+      "components": [
+        {
+          "part": "いちばん",
+          "meaning": "nhất, số một"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ]
+}

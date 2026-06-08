@@ -1,0 +1,539 @@
+{
+  "lessonName": "Bài 7 — 休みに どこかへ 行きますか",
+  "level": "N5",
+  "vocabularies": [
+    {
+      "kana": "いきます",
+      "kanji": "行きます",
+      "sino_vietnamese": "HÀNH",
+      "definition": "Đi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きます",
+      "kanji": "来ます",
+      "sino_vietnamese": "LAI",
+      "definition": "Đến, tới",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かえります",
+      "kanji": "帰ります",
+      "sino_vietnamese": "QUY",
+      "definition": "Trở về",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～へ",
+      "kanji": "～へ",
+      "sino_vietnamese": "",
+      "definition": "Đến ~ (hướng đến, trợ từ phương hướng)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～に",
+      "kanji": "～に",
+      "sino_vietnamese": "",
+      "definition": "Đến ~ (điểm đến, trợ từ đích đến)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なんで/どうやって",
+      "kanji": "何で/どうやって",
+      "sino_vietnamese": "",
+      "definition": "Bằng phương tiện gì / bằng cách nào",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "でんしゃ",
+      "kanji": "電車",
+      "sino_vietnamese": "ĐIỆN XA",
+      "definition": "Tàu điện",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ちかてつ",
+      "kanji": "地下鉄",
+      "sino_vietnamese": "ĐỊA HẠ THIẾT",
+      "definition": "Tàu điện ngầm, metro",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "バス",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Xe buýt",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "タクシー",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Taxi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひこうき",
+      "kanji": "飛行機",
+      "sino_vietnamese": "PHI HÀNH CƠ",
+      "definition": "Máy bay",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ふね",
+      "kanji": "船",
+      "sino_vietnamese": "THUYỀN",
+      "definition": "Tàu thuyền",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しんかんせん",
+      "kanji": "新幹線",
+      "sino_vietnamese": "TÂN CÁN TUYẾN",
+      "definition": "Tàu siêu tốc Shinkansen",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あるいて",
+      "kanji": "歩いて",
+      "sino_vietnamese": "BỘ",
+      "definition": "Đi bộ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "じてんしゃ",
+      "kanji": "自転車",
+      "sino_vietnamese": "TỰ CHUYỂN XA",
+      "definition": "Xe đạp",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "オートバイ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Xe máy",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "くるま",
+      "kanji": "車",
+      "sino_vietnamese": "XA",
+      "definition": "Xe ô tô",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "と",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Và, cùng với (trợ từ đồng hành)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひとりで",
+      "kanji": "一人で",
+      "sino_vietnamese": "NHẤT NHÂN",
+      "definition": "Một mình",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かぞく",
+      "kanji": "家族",
+      "sino_vietnamese": "GIA TỘC",
+      "definition": "Gia đình",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ともだち",
+      "kanji": "友達",
+      "sino_vietnamese": "HỮU ĐẠT",
+      "definition": "Bạn bè",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かれ",
+      "kanji": "彼",
+      "sino_vietnamese": "",
+      "definition": "Anh ấy, người yêu (nam)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かのじょ",
+      "kanji": "彼女",
+      "sino_vietnamese": "",
+      "definition": "Cô ấy, người yêu (nữ)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どこか",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Đâu đó, một nơi nào đó",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なにか",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Gì đó, điều gì đó",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "だれか",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ai đó",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どこも",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ở đâu cũng, không đâu cả (phủ định)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なにも",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Không có gì (phủ định)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "だれも",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Không ai (phủ định)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "こうえん",
+      "kanji": "公園",
+      "sino_vietnamese": "CÔNG VIÊN",
+      "definition": "Công viên",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "うみ",
+      "kanji": "海",
+      "sino_vietnamese": "HẢI",
+      "definition": "Biển",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "やま",
+      "kanji": "山",
+      "sino_vietnamese": "SƠN",
+      "definition": "Núi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かわ",
+      "kanji": "川",
+      "sino_vietnamese": "XUYÊN",
+      "definition": "Sông",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おんせん",
+      "kanji": "温泉",
+      "sino_vietnamese": "ÔN TUYỀN",
+      "definition": "Suối nước nóng, onsen",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "りょかん",
+      "kanji": "旅館",
+      "sino_vietnamese": "LỮ QUÁN",
+      "definition": "Nhà trọ kiểu Nhật",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ホテル",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Khách sạn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～に のります",
+      "kanji": "～に 乗ります",
+      "sino_vietnamese": "",
+      "definition": "Lên ~ (xe, tàu)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～を おります",
+      "kanji": "～を 降ります",
+      "sino_vietnamese": "",
+      "definition": "Xuống ~ (xe, tàu)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～で のりかえます",
+      "kanji": "～で 乗り換えます",
+      "sino_vietnamese": "",
+      "definition": "Chuyển ~ (phương tiện) tại ~",
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "kanjis": [
+    {
+      "kanji": "行",
+      "kana": "こう/ぎょう/いく",
+      "sino_vietnamese": "HÀNH",
+      "definition": "Đi",
+      "details": "Onyomi: こう、ぎょう; Kunyomi: いく; Từ ghép: 行きます (いきます), 旅行 (りょこう)",
+      "components": [
+        {
+          "char": "行",
+          "meaning": "Hình vẽ ngã tư đường"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "来",
+      "kana": "らい/くる",
+      "sino_vietnamese": "LAI",
+      "definition": "Đến, tới, lại",
+      "details": "Onyomi: らい; Kunyomi: くる; Từ ghép: 来ます (きます), 来週 (らいしゅう)",
+      "components": [
+        {
+          "char": "来",
+          "meaning": "Hình vẽ cây lúa mạch đến đất"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "帰",
+      "kana": "き/かえる",
+      "sino_vietnamese": "QUY",
+      "definition": "Trở về",
+      "details": "Onyomi: き; Kunyomi: かえる; Từ ghép: 帰ります (かえります), 帰国 (きこく)",
+      "components": [
+        {
+          "char": "帚",
+          "meaning": "Bộ Tảo (quét nhà)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "電",
+      "kana": "でん",
+      "sino_vietnamese": "ĐIỆN",
+      "definition": "Điện",
+      "details": "Onyomi: でん; Từ ghép: 電車 (でんしゃ), 電話 (でんわ), 電気 (でんき)",
+      "components": [
+        {
+          "char": "雨",
+          "meaning": "Bộ Vũ (mưa)"
+        },
+        {
+          "char": "申",
+          "meaning": "Bộ Thân (sấm)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "車",
+      "kana": "しゃ/くるま",
+      "sino_vietnamese": "XA",
+      "definition": "Xe, bánh xe",
+      "details": "Onyomi: しゃ; Kunyomi: くるま; Từ ghép: 電車 (でんしゃ), 車 (くるま)",
+      "components": [
+        {
+          "char": "車",
+          "meaning": "Hình vẽ bánh xe"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "海",
+      "kana": "かい/うみ",
+      "sino_vietnamese": "HẢI",
+      "definition": "Biển",
+      "details": "Onyomi: かい; Kunyomi: うみ; Từ ghép: 海 (うみ), 海外 (かいがい)",
+      "components": [
+        {
+          "char": "水",
+          "meaning": "Bộ Thủy (nước)"
+        },
+        {
+          "char": "毎",
+          "meaning": "Bộ Mỗi — âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "山",
+      "kana": "さん/やま",
+      "sino_vietnamese": "SƠN",
+      "definition": "Núi",
+      "details": "Onyomi: さん; Kunyomi: やま; Từ ghép: 山 (やま), 富士山 (ふじさん)",
+      "components": [
+        {
+          "char": "山",
+          "meaning": "Hình vẽ ba đỉnh núi"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kana": "～に/へ いきます",
+      "kanji": "～に/へ 行きます",
+      "definition": "Tôi đi đến ~",
+      "details": "Trợ từ hướng đến に/へ",
+      "components": [
+        {
+          "part": "に/へ",
+          "meaning": "đến (hướng đến, điểm đến)"
+        },
+        {
+          "part": "いきます",
+          "meaning": "đi"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なんで いきますか",
+      "kanji": "何で 行きますか",
+      "definition": "Bạn đi bằng phương tiện gì?",
+      "details": "Hỏi phương tiện",
+      "components": [
+        {
+          "part": "なんで",
+          "meaning": "bằng gì"
+        },
+        {
+          "part": "いきますか",
+          "meaning": "đi?"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "だれと いきますか",
+      "kanji": "だれと 行きますか",
+      "definition": "Bạn đi với ai?",
+      "details": "Hỏi người đi cùng",
+      "components": [
+        {
+          "part": "だれと",
+          "meaning": "với ai"
+        },
+        {
+          "part": "いきますか",
+          "meaning": "đi?"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひとりで いきます",
+      "kanji": "一人で 行きます",
+      "definition": "Tôi đi một mình",
+      "details": "Trạng từ ひとりで",
+      "components": [
+        {
+          "part": "ひとりで",
+          "meaning": "một mình"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どこか へ いきますか",
+      "kanji": "どこかへ 行きますか",
+      "definition": "Bạn có đi đâu không?",
+      "details": "Câu hỏi với どこか",
+      "components": [
+        {
+          "part": "どこか",
+          "meaning": "đâu đó"
+        },
+        {
+          "part": "へ",
+          "meaning": "đến"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どこも いきません",
+      "kanji": "どこも 行きません",
+      "definition": "Tôi không đi đâu cả",
+      "details": "Phủ định với どこも",
+      "components": [
+        {
+          "part": "どこも",
+          "meaning": "không đâu"
+        },
+        {
+          "part": "いきません",
+          "meaning": "không đi"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ]
+}

@@ -1,0 +1,527 @@
+{
+  "lessonName": "Bài 9 — 誕生日は いつですか",
+  "level": "N5",
+  "vocabularies": [
+    {
+      "kana": "あげます",
+      "kanji": "あげます",
+      "sino_vietnamese": "",
+      "definition": "Tặng, cho (mình tặng người khác)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "もらいます",
+      "kanji": "もらいます",
+      "sino_vietnamese": "",
+      "definition": "Nhận được (nhận từ người khác)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "くれます",
+      "kanji": "くれます",
+      "sino_vietnamese": "",
+      "definition": "Tặng (người khác tặng mình)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おくります",
+      "kanji": "送ります",
+      "sino_vietnamese": "",
+      "definition": "Gửi, tặng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "だれに",
+      "kanji": "だれに",
+      "sino_vietnamese": "",
+      "definition": "Cho ai (recipient)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "だれから",
+      "kanji": "だれから",
+      "sino_vietnamese": "",
+      "definition": "Từ ai (giver)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なにを",
+      "kanji": "何を",
+      "sino_vietnamese": "",
+      "definition": "Cái gì (tặng)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "プレゼント",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Quà tặng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "はな",
+      "kanji": "花",
+      "sino_vietnamese": "HOA",
+      "definition": "Hoa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ワイン",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Rượu vang",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ネクタイ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cà vạt",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "スカーフ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Khăn quàng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "バッグ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Túi xách",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "アクセサリー",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Phụ kiện trang sức",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ゆびわ",
+      "kanji": "指輪",
+      "sino_vietnamese": "CHỈ LUÂN",
+      "definition": "Nhẫn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ネックレス",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Dây chuyền",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おかし",
+      "kanji": "お菓子",
+      "sino_vietnamese": "QUẢ TỬ",
+      "definition": "Bánh kẹo",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おもちゃ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Đồ chơi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ぬいぐるみ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Thú nhồi bông",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ふく",
+      "kanji": "服",
+      "sino_vietnamese": "PHỤC",
+      "definition": "Quần áo",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "くつ",
+      "kanji": "靴",
+      "sino_vietnamese": "NGOA",
+      "definition": "Giày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たんじょうび",
+      "kanji": "誕生日",
+      "sino_vietnamese": "ĐẢN SINH NHẬT",
+      "definition": "Sinh nhật",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "クリスマス",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Giáng sinh (Christmas)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "バレンタインデー",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ngày Valentine",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ホワイトデー",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ngày White Day (14/3 ở Nhật)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "にゅうがくしき",
+      "kanji": "入学式",
+      "sino_vietnamese": "NHẬP HỌC THỨC",
+      "definition": "Lễ nhập học",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "そつぎょうしき",
+      "kanji": "卒業式",
+      "sino_vietnamese": "TỐT NGHIỆP THỨC",
+      "definition": "Lễ tốt nghiệp",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "けっこんしき",
+      "kanji": "結婚式",
+      "sino_vietnamese": "KẾT HÔN THỨC",
+      "definition": "Lễ cưới",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "パーティー",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Tiệc, party",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ふるい",
+      "kanji": "古い",
+      "sino_vietnamese": "CỔ",
+      "definition": "Cũ, lâu đời",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あたらしい",
+      "kanji": "新しい",
+      "sino_vietnamese": "TÂN",
+      "definition": "Mới",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たかい",
+      "kanji": "高い",
+      "sino_vietnamese": "CAO",
+      "definition": "Đắt, cao",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "やすい",
+      "kanji": "安い",
+      "sino_vietnamese": "AN",
+      "definition": "Rẻ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かわいい",
+      "kanji": "可愛い",
+      "sino_vietnamese": "KHẢ ÁI",
+      "definition": "Dễ thương, đáng yêu",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "すてきな",
+      "kanji": "素敵な",
+      "sino_vietnamese": "TỐ ĐỊCH",
+      "definition": "Tuyệt vời, đẹp lắm",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "うれしい",
+      "kanji": "嬉しい",
+      "sino_vietnamese": "HỶ",
+      "definition": "Vui mừng, hạnh phúc",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ありがとうございます",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cảm ơn (trân trọng)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どうもありがとうございました",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cảm ơn rất nhiều (sau khi nhận)",
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "kanjis": [
+    {
+      "kanji": "誕",
+      "kana": "たん",
+      "sino_vietnamese": "ĐẢN",
+      "definition": "Sinh ra, ra đời",
+      "details": "Onyomi: たん; Từ ghép: 誕生日 (たんじょうび)",
+      "components": [
+        {
+          "char": "言",
+          "meaning": "Bộ Ngôn (nói)"
+        },
+        {
+          "char": "延",
+          "meaning": "Kéo dài — âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "生",
+      "kana": "せい/しょう/うまれる/いきる",
+      "sino_vietnamese": "SINH",
+      "definition": "Sống, sinh ra",
+      "details": "Onyomi: せい、しょう; Kunyomi: うまれる、いきる; Từ ghép: 誕生 (たんじょう), 学生 (がくせい)",
+      "components": [
+        {
+          "char": "生",
+          "meaning": "Hình vẽ cây nảy mầm từ đất"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "花",
+      "kana": "か/はな",
+      "sino_vietnamese": "HOA",
+      "definition": "Hoa",
+      "details": "Onyomi: か; Kunyomi: はな; Từ ghép: 花 (はな), 花見 (はなみ)",
+      "components": [
+        {
+          "char": "艸",
+          "meaning": "Bộ Thảo (cỏ)"
+        },
+        {
+          "char": "化",
+          "meaning": "Hóa — âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "古",
+      "kana": "こ/ふるい",
+      "sino_vietnamese": "CỔ",
+      "definition": "Cũ, xưa",
+      "details": "Onyomi: こ; Kunyomi: ふるい; Từ ghép: 古い (ふるい), 古典 (こてん)",
+      "components": [
+        {
+          "char": "十",
+          "meaning": "Bộ Thập (nhiều)"
+        },
+        {
+          "char": "口",
+          "meaning": "Bộ Khẩu (miệng)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "新",
+      "kana": "しん/あたらしい",
+      "sino_vietnamese": "TÂN",
+      "definition": "Mới",
+      "details": "Onyomi: しん; Kunyomi: あたらしい; Từ ghép: 新しい (あたらしい), 新聞 (しんぶん)",
+      "components": [
+        {
+          "char": "立",
+          "meaning": "Bộ Lập (đứng)"
+        },
+        {
+          "char": "木",
+          "meaning": "Bộ Mộc (cây)"
+        },
+        {
+          "char": "斤",
+          "meaning": "Bộ Cân (rìu)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "高",
+      "kana": "こう/たかい",
+      "sino_vietnamese": "CAO",
+      "definition": "Cao, đắt",
+      "details": "Onyomi: こう; Kunyomi: たかい; Từ ghép: 高い (たかい), 高校 (こうこう)",
+      "components": [
+        {
+          "char": "高",
+          "meaning": "Hình vẽ tòa nhà cao tầng"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "安",
+      "kana": "あん/やすい",
+      "sino_vietnamese": "AN",
+      "definition": "Rẻ, an toàn, bình an",
+      "details": "Onyomi: あん; Kunyomi: やすい; Từ ghép: 安い (やすい), 安全 (あんぜん)",
+      "components": [
+        {
+          "char": "宀",
+          "meaning": "Bộ Miên (mái nhà)"
+        },
+        {
+          "char": "女",
+          "meaning": "Bộ Nữ (phụ nữ)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kana": "～に ～を あげます",
+      "kanji": "～に ～を あげます",
+      "definition": "Tặng ~ cho ~",
+      "details": "Cấu trúc あげます (mình tặng)",
+      "components": [
+        {
+          "part": "に",
+          "meaning": "cho (người nhận)"
+        },
+        {
+          "part": "を",
+          "meaning": "tân ngữ (vật tặng)"
+        },
+        {
+          "part": "あげます",
+          "meaning": "tặng"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～から/に ～を もらいます",
+      "kanji": "～から/に ～を もらいます",
+      "definition": "Nhận được ~ từ ~",
+      "details": "Cấu trúc もらいます (mình nhận)",
+      "components": [
+        {
+          "part": "から/に",
+          "meaning": "từ (người tặng)"
+        },
+        {
+          "part": "を",
+          "meaning": "tân ngữ"
+        },
+        {
+          "part": "もらいます",
+          "meaning": "nhận được"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～が ～に ～を くれます",
+      "kanji": "～が ～に ～を くれます",
+      "definition": "~ tặng ~ cho (mình/nhóm mình)",
+      "details": "Cấu trúc くれます (người tặng mình)",
+      "components": [
+        {
+          "part": "が",
+          "meaning": "chủ ngữ (người tặng)"
+        },
+        {
+          "part": "に",
+          "meaning": "cho mình"
+        },
+        {
+          "part": "くれます",
+          "meaning": "tặng (cho mình)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たんじょうびは いつですか",
+      "kanji": "誕生日は いつですか",
+      "definition": "Sinh nhật của bạn là khi nào?",
+      "details": "Hỏi ngày sinh",
+      "components": [
+        {
+          "part": "たんじょうび",
+          "meaning": "sinh nhật"
+        },
+        {
+          "part": "いつ",
+          "meaning": "khi nào"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ]
+}

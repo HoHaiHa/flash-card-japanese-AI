@@ -35,6 +35,7 @@ function FlashcardStudy({ config, onBack }) {
 
   // Quick Filters state
   const [unlearnedOnly, setUnlearnedOnly] = useState(false);
+  const [learnedOnly, setLearnedOnly] = useState(false);
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [isShuffled, setIsShuffled] = useState(false);
   const cardRanks = useRef({});
@@ -84,6 +85,11 @@ function FlashcardStudy({ config, onBack }) {
       result = result.filter(card => studyResponses[card.id] !== 'learned');
     }
 
+    // Filter learned only
+    if (learnedOnly) {
+      result = result.filter(card => studyResponses[card.id] === 'learned');
+    }
+
     // Filter favorites only
     if (favoritesOnly) {
       result = result.filter(card => favorites[card.id]);
@@ -95,7 +101,7 @@ function FlashcardStudy({ config, onBack }) {
     }
 
     return result;
-  }, [unlearnedOnly, favoritesOnly, originalCards, studyResponses, favorites, isShuffled]);
+  }, [unlearnedOnly, learnedOnly, favoritesOnly, originalCards, studyResponses, favorites, isShuffled]);
 
   // Reset currentIndex only when the actual card IDs change (not just studyResponses reference)
   const activeCardIds = activeCards.map(c => c.id).join(',');

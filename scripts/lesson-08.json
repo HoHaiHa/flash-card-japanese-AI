@@ -1,0 +1,540 @@
+{
+  "lessonName": "Bài 8 — 京都へ 旅行しました",
+  "level": "N5",
+  "vocabularies": [
+    {
+      "kana": "りょこうします",
+      "kanji": "旅行します",
+      "sino_vietnamese": "LỮ HÀNH",
+      "definition": "Du lịch, đi du lịch",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かいものします",
+      "kanji": "買い物します",
+      "sino_vietnamese": "MUA VẬT",
+      "definition": "Đi mua sắm",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "さんぽします",
+      "kanji": "散歩します",
+      "sino_vietnamese": "TẢN BỘ",
+      "definition": "Đi dạo",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "りょうりします",
+      "kanji": "料理します",
+      "sino_vietnamese": "LIỆU LÝ",
+      "definition": "Nấu ăn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "でんわします",
+      "kanji": "電話します",
+      "sino_vietnamese": "ĐIỆN THOẠI",
+      "definition": "Gọi điện",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "べんきょうします",
+      "kanji": "勉強します",
+      "sino_vietnamese": "HỌC",
+      "definition": "Học bài",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しごとします",
+      "kanji": "仕事します",
+      "sino_vietnamese": "",
+      "definition": "Làm việc",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ました",
+      "kanji": "～ました",
+      "sino_vietnamese": "",
+      "definition": "~ (đã làm, quá khứ khẳng định)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ませんでした",
+      "kanji": "～ませんでした",
+      "sino_vietnamese": "",
+      "definition": "Đã không ~ (quá khứ phủ định)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どうでしたか",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Như thế nào? (hỏi cảm nhận)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たのしかったです",
+      "kanji": "楽しかったです",
+      "sino_vietnamese": "LẠC",
+      "definition": "Đã rất vui, đã thú vị",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おもしろかったです",
+      "kanji": "面白かったです",
+      "sino_vietnamese": "DIỆN BẠCH",
+      "definition": "Đã thú vị",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "よかったです",
+      "kanji": "良かったです",
+      "sino_vietnamese": "LƯƠNG",
+      "definition": "Thật tốt, may quá",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きれいでした",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Đã đẹp",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "つかれました",
+      "kanji": "疲れました",
+      "sino_vietnamese": "BÌ",
+      "definition": "Mệt rồi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "それから",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Sau đó, rồi thì",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "そして",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Và, rồi (nối câu)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "でも",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Nhưng mà, tuy nhiên",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～が、",
+      "kanji": "～が、",
+      "sino_vietnamese": "",
+      "definition": "Nhưng (vế câu)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "また",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Lại, thêm nữa, lần nữa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "よる",
+      "kanji": "夜",
+      "sino_vietnamese": "DẠ",
+      "definition": "Ban đêm, buổi tối",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひるやすみ",
+      "kanji": "昼休み",
+      "sino_vietnamese": "TRÚ HƯU",
+      "definition": "Giờ nghỉ trưa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きのう",
+      "kanji": "昨日",
+      "sino_vietnamese": "TÁC NHẬT",
+      "definition": "Hôm qua",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おととい",
+      "kanji": "一昨日",
+      "sino_vietnamese": "",
+      "definition": "Hôm kia",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "さきおととい",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ba ngày trước",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "こんばん",
+      "kanji": "今晩",
+      "sino_vietnamese": "KIM MÃN",
+      "definition": "Tối nay",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "けさ",
+      "kanji": "今朝",
+      "sino_vietnamese": "KIM TRIÊU",
+      "definition": "Sáng nay",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きょう",
+      "kanji": "今日",
+      "sino_vietnamese": "KIM NHẬT",
+      "definition": "Hôm nay",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きのうの よる",
+      "kanji": "昨日の 夜",
+      "sino_vietnamese": "",
+      "definition": "Tối hôm qua",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "せんじつ",
+      "kanji": "先日",
+      "sino_vietnamese": "TIÊN NHẬT",
+      "definition": "Hôm nọ, mấy hôm trước",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おみやげ",
+      "kanji": "お土産",
+      "sino_vietnamese": "THỔ SẢN",
+      "definition": "Quà lưu niệm, đặc sản",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おてら",
+      "kanji": "お寺",
+      "sino_vietnamese": "TỰ",
+      "definition": "Chùa, đền (Nhật Bản)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "じんじゃ",
+      "kanji": "神社",
+      "sino_vietnamese": "THẦN XÃ",
+      "definition": "Đền thờ Shinto",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "びじゅつかん",
+      "kanji": "美術館",
+      "sino_vietnamese": "MỸ THUẬT QUÁN",
+      "definition": "Bảo tàng mỹ thuật",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きょうと",
+      "kanji": "京都",
+      "sino_vietnamese": "KINH ĐÔ",
+      "definition": "Kyoto",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なら",
+      "kanji": "奈良",
+      "sino_vietnamese": "NA LƯƠNG",
+      "definition": "Nara",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "とうきょう",
+      "kanji": "東京",
+      "sino_vietnamese": "ĐÔNG KINH",
+      "definition": "Tokyo",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おおさか",
+      "kanji": "大阪",
+      "sino_vietnamese": "ĐẠI PHẢN",
+      "definition": "Osaka",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "りょかん",
+      "kanji": "旅館",
+      "sino_vietnamese": "LỮ QUÁN",
+      "definition": "Nhà trọ kiểu Nhật (ryokan)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ふじさん",
+      "kanji": "富士山",
+      "sino_vietnamese": "PHÚ SĨ SƠN",
+      "definition": "Núi Phú Sĩ",
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "kanjis": [
+    {
+      "kanji": "旅",
+      "kana": "りょ/たび",
+      "sino_vietnamese": "LỮ",
+      "definition": "Du lịch, hành trình",
+      "details": "Onyomi: りょ; Kunyomi: たび; Từ ghép: 旅行 (りょこう), 旅館 (りょかん)",
+      "components": [
+        {
+          "char": "方",
+          "meaning": "Bộ Phương (hướng)"
+        },
+        {
+          "char": "人",
+          "meaning": "Bộ Nhân (người)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "昨",
+      "kana": "さく",
+      "sino_vietnamese": "TÁC",
+      "definition": "Hôm qua, ngày trước",
+      "details": "Onyomi: さく; Từ ghép: 昨日 (きのう), 昨年 (さくねん)",
+      "components": [
+        {
+          "char": "日",
+          "meaning": "Bộ Nhật (ngày)"
+        },
+        {
+          "char": "乍",
+          "meaning": "Âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "楽",
+      "kana": "らく/がく/たのしい",
+      "sino_vietnamese": "LẠC",
+      "definition": "Vui vẻ, thoải mái",
+      "details": "Onyomi: らく、がく; Kunyomi: たのしい; Từ ghép: 楽しい (たのしい), 音楽 (おんがく)",
+      "components": [
+        {
+          "char": "木",
+          "meaning": "Bộ Mộc (cây)"
+        },
+        {
+          "char": "白",
+          "meaning": "Bộ Bạch (trắng)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "買",
+      "kana": "ばい/かう",
+      "sino_vietnamese": "MUA",
+      "definition": "Mua",
+      "details": "Onyomi: ばい; Kunyomi: かう; Từ ghép: 買い物 (かいもの), 売買 (ばいばい)",
+      "components": [
+        {
+          "char": "网",
+          "meaning": "Bộ Võng (lưới)"
+        },
+        {
+          "char": "貝",
+          "meaning": "Bộ Bối (tiền)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "京",
+      "kana": "きょう/けい",
+      "sino_vietnamese": "KINH",
+      "definition": "Kinh đô, Tokyo/Kyoto",
+      "details": "Onyomi: きょう、けい; Từ ghép: 京都 (きょうと), 東京 (とうきょう)",
+      "components": [
+        {
+          "char": "亠",
+          "meaning": "Bộ Đầu (đỉnh)"
+        },
+        {
+          "char": "口",
+          "meaning": "Bộ Khẩu (cổng)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "東",
+      "kana": "とう/ひがし",
+      "sino_vietnamese": "ĐÔNG",
+      "definition": "Phương đông",
+      "details": "Onyomi: とう; Kunyomi: ひがし; Từ ghép: 東京 (とうきょう), 東 (ひがし)",
+      "components": [
+        {
+          "char": "木",
+          "meaning": "Bộ Mộc (cây)"
+        },
+        {
+          "char": "日",
+          "meaning": "Mặt trời sau cây"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kana": "きのう ～ に いきました",
+      "kanji": "昨日 ～ に 行きました",
+      "definition": "Hôm qua tôi đã đi đến ~",
+      "details": "Quá khứ với ました",
+      "components": [
+        {
+          "part": "きのう",
+          "meaning": "hôm qua"
+        },
+        {
+          "part": "いきました",
+          "meaning": "đã đi"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ ましたか",
+      "kanji": "～ ましたか",
+      "definition": "Bạn đã ~ chưa / rồi không?",
+      "details": "Câu hỏi quá khứ",
+      "components": [
+        {
+          "part": "ました",
+          "meaning": "đã (làm)"
+        },
+        {
+          "part": "か",
+          "meaning": "hỏi"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ ませんでした",
+      "kanji": "～ ませんでした",
+      "definition": "Tôi đã không ~",
+      "details": "Phủ định quá khứ",
+      "components": [
+        {
+          "part": "ませんでした",
+          "meaning": "đã không ~"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どうでしたか",
+      "kanji": "どうでしたか",
+      "definition": "Như thế nào? Thấy thế nào?",
+      "details": "Hỏi cảm nhận về quá khứ",
+      "components": [
+        {
+          "part": "どう",
+          "meaning": "thế nào"
+        },
+        {
+          "part": "でしたか",
+          "meaning": "đã là? (hỏi)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～が、～ました",
+      "kanji": "～が、～ました",
+      "definition": "Tuy ~ nhưng đã ~",
+      "details": "Liên kết vế đối nghịch nhẹ",
+      "components": [
+        {
+          "part": "が",
+          "meaning": "nhưng (vế nhẹ)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "それから、～ました",
+      "kanji": "それから、～ました",
+      "definition": "Sau đó, tôi đã ~",
+      "details": "Trình tự hành động",
+      "components": [
+        {
+          "part": "それから",
+          "meaning": "sau đó"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ]
+}

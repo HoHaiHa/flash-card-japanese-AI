@@ -1,0 +1,537 @@
+{
+  "lessonName": "Bài 4 — 何時に 起きますか",
+  "level": "N5",
+  "vocabularies": [
+    {
+      "kana": "～じ",
+      "kanji": "～時",
+      "sino_vietnamese": "THỜI",
+      "definition": "~ giờ (chỉ giờ)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ふん/ぷん",
+      "kanji": "～分",
+      "sino_vietnamese": "PHÂN",
+      "definition": "~ phút",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～はん",
+      "kanji": "～半",
+      "sino_vietnamese": "BÁN",
+      "definition": "~ rưỡi (30 phút)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なんじ",
+      "kanji": "何時",
+      "sino_vietnamese": "HÀ THỜI",
+      "definition": "Mấy giờ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なんぷん",
+      "kanji": "何分",
+      "sino_vietnamese": "HÀ PHÂN",
+      "definition": "Mấy phút",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ごぜん",
+      "kanji": "午前",
+      "sino_vietnamese": "NGỌ TIỀN",
+      "definition": "Buổi sáng, trước 12 giờ trưa (AM)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ごご",
+      "kanji": "午後",
+      "sino_vietnamese": "NGỌ HẬU",
+      "definition": "Buổi chiều, sau 12 giờ trưa (PM)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あさ",
+      "kanji": "朝",
+      "sino_vietnamese": "TRIÊU",
+      "definition": "Buổi sáng (sớm)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひる",
+      "kanji": "昼",
+      "sino_vietnamese": "TRÚ",
+      "definition": "Buổi trưa, ban ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ばん/よる",
+      "kanji": "晩/夜",
+      "sino_vietnamese": "MÃN/DẠ",
+      "definition": "Buổi tối, ban đêm",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おきます",
+      "kanji": "起きます",
+      "sino_vietnamese": "",
+      "definition": "Thức dậy, dậy",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ねます",
+      "kanji": "寝ます",
+      "sino_vietnamese": "",
+      "definition": "Đi ngủ, nằm",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "はたらきます",
+      "kanji": "働きます",
+      "sino_vietnamese": "",
+      "definition": "Làm việc",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "やすみます",
+      "kanji": "休みます",
+      "sino_vietnamese": "",
+      "definition": "Nghỉ ngơi, nghỉ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "べんきょうします",
+      "kanji": "勉強します",
+      "sino_vietnamese": "MIỄN CƯỜNG",
+      "definition": "Học bài",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おわります",
+      "kanji": "終わります",
+      "sino_vietnamese": "",
+      "definition": "Kết thúc, xong",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "はじまります",
+      "kanji": "始まります",
+      "sino_vietnamese": "",
+      "definition": "Bắt đầu",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いまなんじですか",
+      "kanji": "今何時ですか",
+      "sino_vietnamese": "",
+      "definition": "Bây giờ mấy giờ rồi?",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いま",
+      "kanji": "今",
+      "sino_vietnamese": "KIM",
+      "definition": "Bây giờ, hiện tại",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まいにち",
+      "kanji": "毎日",
+      "sino_vietnamese": "MỖI NHẬT",
+      "definition": "Mỗi ngày, hằng ngày",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まいあさ",
+      "kanji": "毎朝",
+      "sino_vietnamese": "MỖI TRIÊU",
+      "definition": "Mỗi buổi sáng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まいばん",
+      "kanji": "毎晩",
+      "sino_vietnamese": "MỖI MÃN",
+      "definition": "Mỗi tối",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～から",
+      "kanji": "～から",
+      "sino_vietnamese": "",
+      "definition": "Từ ~ (thời gian bắt đầu)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～まで",
+      "kanji": "～まで",
+      "sino_vietnamese": "",
+      "definition": "Đến ~ (thời gian kết thúc)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひるやすみ",
+      "kanji": "昼休み",
+      "sino_vietnamese": "TRÚ HƯU",
+      "definition": "Giờ nghỉ trưa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "にほんご",
+      "kanji": "日本語",
+      "sino_vietnamese": "",
+      "definition": "Tiếng Nhật",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "じゅぎょう",
+      "kanji": "授業",
+      "sino_vietnamese": "THỤ NGHIỆP",
+      "definition": "Tiết học, giờ học",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かいぎ",
+      "kanji": "会議",
+      "sino_vietnamese": "HỘI NGHỊ",
+      "definition": "Cuộc họp",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ぎんこう",
+      "kanji": "銀行",
+      "sino_vietnamese": "NGÂN HÀNG",
+      "definition": "Ngân hàng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "えいがかん",
+      "kanji": "映画館",
+      "sino_vietnamese": "ĐIỆN ẢNH QUÁN",
+      "definition": "Rạp chiếu phim",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "はやい",
+      "kanji": "早い",
+      "sino_vietnamese": "TẢO",
+      "definition": "Sớm",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おそい",
+      "kanji": "遅い",
+      "sino_vietnamese": "TRÌ",
+      "definition": "Muộn, trễ",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いつも",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Luôn luôn, thường xuyên",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "たいてい",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Thường thường, đa phần",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ときどき",
+      "kanji": "時々",
+      "sino_vietnamese": "",
+      "definition": "Thỉnh thoảng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あまり",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Không mấy, không lắm (dùng với phủ định)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ぜんぜん",
+      "kanji": "全然",
+      "sino_vietnamese": "TOÀN NHIÊN",
+      "definition": "Không hề, hoàn toàn không",
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "kanjis": [
+    {
+      "kanji": "時",
+      "kana": "じ/とき",
+      "sino_vietnamese": "THỜI",
+      "definition": "Giờ, thời gian",
+      "details": "Onyomi: じ; Kunyomi: とき; Từ ghép: 何時 (なんじ), 時間 (じかん)",
+      "components": [
+        {
+          "char": "日",
+          "meaning": "Bộ Nhật (mặt trời)"
+        },
+        {
+          "char": "寺",
+          "meaning": "Bộ Tự (chùa) — âm đọc"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "分",
+      "kana": "ぶん/ふん/わかる",
+      "sino_vietnamese": "PHÂN",
+      "definition": "Phút, phần, hiểu",
+      "details": "Onyomi: ぶん、ふん; Kunyomi: わかる; Từ ghép: 何分 (なんぷん), 自分 (じぶん)",
+      "components": [
+        {
+          "char": "刀",
+          "meaning": "Bộ Đao (dao)"
+        },
+        {
+          "char": "八",
+          "meaning": "Bộ Bát (tám) — phân chia"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "半",
+      "kana": "はん",
+      "sino_vietnamese": "BÁN",
+      "definition": "Nửa, giữa",
+      "details": "Onyomi: はん; Từ ghép: 半 (はん), 半分 (はんぶん)",
+      "components": [
+        {
+          "char": "八",
+          "meaning": "Bộ Bát (chia đôi)"
+        },
+        {
+          "char": "牛",
+          "meaning": "Bộ Ngưu (trâu bò)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "今",
+      "kana": "こん/きん/いま",
+      "sino_vietnamese": "KIM",
+      "definition": "Bây giờ, hiện tại",
+      "details": "Onyomi: こん、きん; Kunyomi: いま; Từ ghép: 今 (いま), 今日 (きょう)",
+      "components": [
+        {
+          "char": "亼",
+          "meaning": "Bộ Tập (gom lại)"
+        },
+        {
+          "char": "𠄌",
+          "meaning": "Nét ngang"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "毎",
+      "kana": "まい",
+      "sino_vietnamese": "MỖI",
+      "definition": "Mỗi, hằng",
+      "details": "Onyomi: まい; Từ ghép: 毎日 (まいにち), 毎週 (まいしゅう)",
+      "components": [
+        {
+          "char": "母",
+          "meaning": "Bộ Mẫu (mẹ)"
+        },
+        {
+          "char": "𠂉",
+          "meaning": "Nét trên đầu"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "起",
+      "kana": "き/おきる",
+      "sino_vietnamese": "KHỞI",
+      "definition": "Dậy, bắt đầu",
+      "details": "Onyomi: き; Kunyomi: おきる; Từ ghép: 起きます (おきます), 起立 (きりつ)",
+      "components": [
+        {
+          "char": "走",
+          "meaning": "Bộ Tẩu (chạy)"
+        },
+        {
+          "char": "己",
+          "meaning": "Bộ Kỷ (mình)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "寝",
+      "kana": "しん/ねる",
+      "sino_vietnamese": "TẨM",
+      "definition": "Ngủ, nằm",
+      "details": "Onyomi: しん; Kunyomi: ねる; Từ ghép: 寝ます (ねます), 寝室 (しんしつ)",
+      "components": [
+        {
+          "char": "宀",
+          "meaning": "Bộ Miên (mái nhà)"
+        },
+        {
+          "char": "爿",
+          "meaning": "Bộ Tường (giường)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kana": "なんじ に ～ますか",
+      "kanji": "何時 に ～ますか",
+      "definition": "Lúc mấy giờ bạn ~?",
+      "details": "Câu hỏi thời gian với に",
+      "components": [
+        {
+          "part": "なんじ",
+          "meaning": "mấy giờ"
+        },
+        {
+          "part": "に",
+          "meaning": "trợ từ thời gian"
+        },
+        {
+          "part": "～ます",
+          "meaning": "động từ lịch sự"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～じ に ～ます",
+      "kanji": "～時 に ～ます",
+      "definition": "Lúc ~ giờ tôi ~",
+      "details": "Trả lời thời gian",
+      "components": [
+        {
+          "part": "～じ",
+          "meaning": "giờ cụ thể"
+        },
+        {
+          "part": "に",
+          "meaning": "trợ từ thời gian"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～から ～まで はたらきます",
+      "kanji": "～から ～まで 働きます",
+      "definition": "Tôi làm việc từ ~ đến ~",
+      "details": "Khoảng thời gian から～まで",
+      "components": [
+        {
+          "part": "から",
+          "meaning": "từ (bắt đầu)"
+        },
+        {
+          "part": "まで",
+          "meaning": "đến (kết thúc)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まいにち ～じかん ～ます",
+      "kanji": "毎日 ～時間 ～ます",
+      "definition": "Mỗi ngày tôi ~ ~ tiếng",
+      "details": "Diễn tả thời lượng",
+      "components": [
+        {
+          "part": "まいにち",
+          "meaning": "mỗi ngày"
+        },
+        {
+          "part": "～じかん",
+          "meaning": "~ tiếng đồng hồ"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いつも/たいてい/ときどき ～ます",
+      "kanji": "いつも/たいてい/時々 ～ます",
+      "definition": "Tôi luôn/thường/thỉnh thoảng ~",
+      "details": "Trạng từ tần suất",
+      "components": [
+        {
+          "part": "いつも",
+          "meaning": "luôn luôn"
+        },
+        {
+          "part": "たいてい",
+          "meaning": "thường"
+        },
+        {
+          "part": "ときどき",
+          "meaning": "thỉnh thoảng"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ]
+}

@@ -1,0 +1,637 @@
+{
+  "lessonName": "Bài 3 — ここは どこですか",
+  "level": "N5",
+  "vocabularies": [
+    {
+      "kana": "ここ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ở đây, nơi này",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "そこ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ở đó, nơi đó",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あそこ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ở kia, nơi kia",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どこ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Ở đâu, nơi nào",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "こちら",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Hướng này, đây (lịch sự)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "そちら",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Hướng đó, đó (lịch sự)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あちら",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Hướng kia, kia (lịch sự)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どちら",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Hướng nào, đâu (lịch sự)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "うえ",
+      "kanji": "上",
+      "sino_vietnamese": "THƯỢNG",
+      "definition": "Trên, phía trên",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "した",
+      "kanji": "下",
+      "sino_vietnamese": "HẠ",
+      "definition": "Dưới, phía dưới",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "まえ",
+      "kanji": "前",
+      "sino_vietnamese": "TIỀN",
+      "definition": "Trước, phía trước",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "うしろ",
+      "kanji": "後ろ",
+      "sino_vietnamese": "HẬU",
+      "definition": "Sau, phía sau",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "みぎ",
+      "kanji": "右",
+      "sino_vietnamese": "HỮU",
+      "definition": "Bên phải",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ひだり",
+      "kanji": "左",
+      "sino_vietnamese": "TẢ",
+      "definition": "Bên trái",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "なか",
+      "kanji": "中",
+      "sino_vietnamese": "TRUNG",
+      "definition": "Bên trong, giữa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "そと",
+      "kanji": "外",
+      "sino_vietnamese": "NGOẠI",
+      "definition": "Bên ngoài",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "となり",
+      "kanji": "隣",
+      "sino_vietnamese": "LÂN",
+      "definition": "Bên cạnh, hàng xóm",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ちかく",
+      "kanji": "近く",
+      "sino_vietnamese": "CẬN",
+      "definition": "Gần, gần đây",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "あいだ",
+      "kanji": "間",
+      "sino_vietnamese": "GIAN",
+      "definition": "Khoảng giữa, giữa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "デパート",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Siêu thị, trung tâm thương mại",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "スーパー",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Siêu thị (thực phẩm)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "コンビニ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cửa hàng tiện lợi",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "レストラン",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Nhà hàng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "しょくどう",
+      "kanji": "食堂",
+      "sino_vietnamese": "THỰC ĐƯỜNG",
+      "definition": "Căn tin, quán ăn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ぎんこう",
+      "kanji": "銀行",
+      "sino_vietnamese": "NGÂN HÀNG",
+      "definition": "Ngân hàng",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ゆうびんきょく",
+      "kanji": "郵便局",
+      "sino_vietnamese": "BƯU TIỆN CỤC",
+      "definition": "Bưu điện",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "としょかん",
+      "kanji": "図書館",
+      "sino_vietnamese": "ĐỒ THƯ QUÁN",
+      "definition": "Thư viện",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "びょういん",
+      "kanji": "病院",
+      "sino_vietnamese": "BỆNH VIỆN",
+      "definition": "Bệnh viện",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ホテル",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Khách sạn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "えき",
+      "kanji": "駅",
+      "sino_vietnamese": "DỊCH",
+      "definition": "Ga (tàu điện, tàu hỏa)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "くうこう",
+      "kanji": "空港",
+      "sino_vietnamese": "KHÔNG CẢNG",
+      "definition": "Sân bay",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "こうえん",
+      "kanji": "公園",
+      "sino_vietnamese": "CÔNG VIÊN",
+      "definition": "Công viên",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "えいがかん",
+      "kanji": "映画館",
+      "sino_vietnamese": "ĐIỆN ẢNH QUÁN",
+      "definition": "Rạp chiếu phim",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "びじゅつかん",
+      "kanji": "美術館",
+      "sino_vietnamese": "MỸ THUẬT QUÁN",
+      "definition": "Bảo tàng mỹ thuật",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "きっさてん",
+      "kanji": "喫茶店",
+      "sino_vietnamese": "KHIẾT TRÀ ĐIẾM",
+      "definition": "Quán cà phê, tiệm trà",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "パン屋",
+      "kanji": "パン屋",
+      "sino_vietnamese": "",
+      "definition": "Tiệm bánh mì",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "はなや",
+      "kanji": "花屋",
+      "sino_vietnamese": "",
+      "definition": "Cửa hàng hoa",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "にくや",
+      "kanji": "肉屋",
+      "sino_vietnamese": "",
+      "definition": "Tiệm thịt",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "くすりや",
+      "kanji": "薬屋",
+      "sino_vietnamese": "",
+      "definition": "Hiệu thuốc",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "トイレ",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Nhà vệ sinh, toilet",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "かいだん",
+      "kanji": "階段",
+      "sino_vietnamese": "GIAI THANG",
+      "definition": "Cầu thang",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "エレベーター",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Thang máy",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "エスカレーター",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Thang cuốn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～かい",
+      "kanji": "～階",
+      "sino_vietnamese": "GIAI",
+      "definition": "~ tầng (tầng 1, tầng 2...)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ちか",
+      "kanji": "地下",
+      "sino_vietnamese": "ĐỊA HẠ",
+      "definition": "Tầng hầm, tầng B",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "いりぐち",
+      "kanji": "入り口",
+      "sino_vietnamese": "NHẬP KHẨU",
+      "definition": "Lối vào, cửa vào",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "でぐち",
+      "kanji": "出口",
+      "sino_vietnamese": "XUẤT KHẨU",
+      "definition": "Lối ra, cửa ra",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "おてあらい",
+      "kanji": "お手洗い",
+      "sino_vietnamese": "THỦ TẨY",
+      "definition": "Nhà vệ sinh (lịch sự)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "すみません",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Xin lỗi, làm ơn",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "ありがとうございます",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cảm ơn (trân trọng)",
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "どうも",
+      "kanji": "",
+      "sino_vietnamese": "",
+      "definition": "Cảm ơn, xin lỗi (thông thường)",
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "kanjis": [
+    {
+      "kanji": "上",
+      "kana": "じょう/うえ/あがる",
+      "sino_vietnamese": "THƯỢNG",
+      "definition": "Trên, phía trên",
+      "details": "Onyomi: じょう; Kunyomi: うえ、あがる; Từ ghép: 上 (うえ), 以上 (いじょう)",
+      "components": [
+        {
+          "char": "上",
+          "meaning": "Hình vẽ vị trí trên đường thẳng"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "下",
+      "kana": "か/げ/した/さがる",
+      "sino_vietnamese": "HẠ",
+      "definition": "Dưới, phía dưới",
+      "details": "Onyomi: か、げ; Kunyomi: した、さがる; Từ ghép: 下 (した), 以下 (いか)",
+      "components": [
+        {
+          "char": "下",
+          "meaning": "Hình vẽ vị trí dưới đường thẳng"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "前",
+      "kana": "ぜん/まえ",
+      "sino_vietnamese": "TIỀN",
+      "definition": "Trước, phía trước",
+      "details": "Onyomi: ぜん; Kunyomi: まえ; Từ ghép: 前 (まえ), 午前 (ごぜん)",
+      "components": [
+        {
+          "char": "月",
+          "meaning": "Bộ Nguyệt (trăng)"
+        },
+        {
+          "char": "刀",
+          "meaning": "Bộ Đao (dao)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "右",
+      "kana": "う/みぎ",
+      "sino_vietnamese": "HỮU",
+      "definition": "Bên phải",
+      "details": "Onyomi: う; Kunyomi: みぎ; Từ ghép: 右 (みぎ), 右折 (うせつ)",
+      "components": [
+        {
+          "char": "口",
+          "meaning": "Bộ Khẩu (miệng)"
+        },
+        {
+          "char": "又",
+          "meaning": "Bộ Hựu (tay phải)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "左",
+      "kana": "さ/ひだり",
+      "sino_vietnamese": "TẢ",
+      "definition": "Bên trái",
+      "details": "Onyomi: さ; Kunyomi: ひだり; Từ ghép: 左 (ひだり), 左折 (させつ)",
+      "components": [
+        {
+          "char": "工",
+          "meaning": "Bộ Công (thợ)"
+        },
+        {
+          "char": "又",
+          "meaning": "Bộ Hựu (tay)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "中",
+      "kana": "ちゅう/なか",
+      "sino_vietnamese": "TRUNG",
+      "definition": "Giữa, bên trong",
+      "details": "Onyomi: ちゅう; Kunyomi: なか; Từ ghép: 中 (なか), 中国 (ちゅうごく)",
+      "components": [
+        {
+          "char": "口",
+          "meaning": "Bộ Khẩu (hộp)"
+        },
+        {
+          "char": "丨",
+          "meaning": "Nét sổ giữa"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kanji": "外",
+      "kana": "がい/そと",
+      "sino_vietnamese": "NGOẠI",
+      "definition": "Bên ngoài, nước ngoài",
+      "details": "Onyomi: がい; Kunyomi: そと; Từ ghép: 外 (そと), 外国 (がいこく)",
+      "components": [
+        {
+          "char": "夕",
+          "meaning": "Bộ Tịch (buổi chiều)"
+        },
+        {
+          "char": "卜",
+          "meaning": "Bộ Bốc (bói toán)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ],
+  "sentences": [
+    {
+      "kana": "ここ/そこ/あそこ は ～ です",
+      "kanji": "ここ/そこ/あそこ は ～ です",
+      "definition": "Đây/đó/kia là ~",
+      "details": "Chỉ thị địa điểm",
+      "components": [
+        {
+          "part": "ここ",
+          "meaning": "đây/nơi này"
+        },
+        {
+          "part": "は",
+          "meaning": "trợ từ chủ đề"
+        },
+        {
+          "part": "です",
+          "meaning": "là"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ は どこ ですか",
+      "kanji": "～ は どこ ですか",
+      "definition": "~ ở đâu?",
+      "details": "Câu hỏi địa điểm",
+      "components": [
+        {
+          "part": "どこ",
+          "meaning": "ở đâu"
+        },
+        {
+          "part": "ですか",
+          "meaning": "là? (hỏi)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ は ～ の ちかく です",
+      "kanji": "～ は ～ の 近く です",
+      "definition": "~ ở gần ~",
+      "details": "Diễn tả vị trí tương đối",
+      "components": [
+        {
+          "part": "の",
+          "meaning": "trợ từ"
+        },
+        {
+          "part": "ちかく",
+          "meaning": "gần"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ の うえ/した/まえ/うしろ に ～ が あります",
+      "kanji": "～ の 上/下/前/後ろ に ～ が あります",
+      "definition": "Trên/dưới/trước/sau ~ có ~",
+      "details": "Diễn tả vị trí đồ vật",
+      "components": [
+        {
+          "part": "に",
+          "meaning": "trợ từ vị trí"
+        },
+        {
+          "part": "が あります",
+          "meaning": "có (đồ vật)"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    },
+    {
+      "kana": "～ は なんがい ですか",
+      "kanji": "～ は 何階 ですか",
+      "definition": "~ ở tầng mấy?",
+      "details": "Hỏi số tầng",
+      "components": [
+        {
+          "part": "なんがい",
+          "meaning": "tầng mấy"
+        },
+        {
+          "part": "ですか",
+          "meaning": "hỏi"
+        }
+      ],
+      "example_jp": "",
+      "example_vi": ""
+    }
+  ]
+}
